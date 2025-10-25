@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-family-poppins: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+  --container-padding: 2rem;
+  --container-max-width-2xl: 1400px;
+
+  --color-border: oklch(88% 0.03 260);
+  --color-input: oklch(88% 0.03 260);
+  --color-ring: oklch(65% 0.2 270);
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(25% 0.15 260);
+  --color-primary: oklch(65% 0.2 270);
+  --color-primary-foreground: oklch(98% 0.01 270);
+  --color-secondary: oklch(80% 0.1 190);
+  --color-secondary-foreground: oklch(25% 0.15 260);
+  --color-accent: oklch(80% 0.15 60);
+  --color-accent-foreground: oklch(25% 0.15 260);
+  --color-muted: oklch(90% 0.02 260);
+  --color-muted-foreground: oklch(60% 0.05 260);
+  --color-card: oklch(98% 0.01 260);
+  --color-card-foreground: oklch(25% 0.15 260);
+}
+
+@layer base {
+  :root {
+    --background: oklch(100% 0 0);
+    --foreground: oklch(25% 0.15 260);
+    --card: oklch(98% 0.01 260);
+    --card-foreground: oklch(25% 0.15 260);
+    --popover: oklch(98% 0.01 260);
+    --popover-foreground: oklch(25% 0.15 260);
+    --primary: oklch(65% 0.2 270);
+    --primary-foreground: oklch(98% 0.01 270);
+    --secondary: oklch(80% 0.1 190);
+    --secondary-foreground: oklch(25% 0.15 260);
+    --muted: oklch(90% 0.02 260);
+    --muted-foreground: oklch(60% 0.05 260);
+    --accent: oklch(80% 0.15 60);
+    --accent-foreground: oklch(25% 0.15 260);
+    --border: oklch(88% 0.03 260);
+    --input: oklch(88% 0.03 260);
+    --ring: oklch(65% 0.2 270);
+  }
+
+  .dark {
+    --background: oklch(15% 0.05 260);
+    --foreground: oklch(90% 0.02 260);
+    --card: oklch(20% 0.05 260);
+    --card-foreground: oklch(90% 0.02 260);
+    --popover: oklch(20% 0.05 260);
+    --popover-foreground: oklch(90% 0.02 260);
+    --primary: oklch(30% 0.05 260);
+    --primary-foreground: oklch(90% 0.02 260);
+    --secondary: oklch(40% 0.06 260);
+    --secondary-foreground: oklch(90% 0.02 260);
+    --muted: oklch(30% 0.04 260);
+    --muted-foreground: oklch(65% 0.05 260);
+    --accent: oklch(75% 0.15 60);
+    --accent-foreground: oklch(90% 0.02 260);
+    --border: oklch(30% 0.04 260);
+    --input: oklch(30% 0.04 260);
+    --ring: oklch(30% 0.05 260);
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply overflow-x-hidden max-w-full;
+  }
+  html {
+    @apply overflow-x-hidden max-w-full;
+  }
+}
