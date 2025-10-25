@@ -1,0 +1,40 @@
+{
+  "navigation": {
+    "posts": "Posts",
+    "home": "Home",
+    "github": "GitHub"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "notFound": "Not found",
+    "goBack": "Go back",
+    "readMore": "Read more",
+    "language": "Language"
+  },
+  "posts": {
+    "title": "Blog Posts",
+    "description": "Discover our latest articles and insights",
+    "categories": "Categories",
+    "all": "All",
+    "technology": "Technology",
+    "programming": "Programming",
+    "design": "Design",
+    "sortBy": "Sort by",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "popular": "Popular",
+    "searchPlaceholder": "Search posts...",
+    "noResults": "No posts found",
+    "readTime": "{minutes} min read",
+    "views": "{count} views",
+    "comments": "{count} comments"
+  },
+  "home": {
+    "title": "Welcome to EasySpeak",
+    "subtitle": "A modern Next.js 15 template with TypeScript, Tailwind CSS, and more",
+    "description": "Start building amazing web applications with our production-ready boilerplate featuring the latest technologies and best practices.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  }
+}

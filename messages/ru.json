@@ -1,0 +1,40 @@
+{
+  "navigation": {
+    "posts": "Посты",
+    "home": "Главная",
+    "github": "GitHub"
+  },
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "notFound": "Не найдено",
+    "goBack": "Назад",
+    "readMore": "Читать далее",
+    "language": "Язык"
+  },
+  "posts": {
+    "title": "Блог-посты",
+    "description": "Откройте для себя наши последние статьи и идеи",
+    "categories": "Категории",
+    "all": "Все",
+    "technology": "Технологии",
+    "programming": "Программирование",
+    "design": "Дизайн",
+    "sortBy": "Сортировать по",
+    "newest": "Новые",
+    "oldest": "Старые",
+    "popular": "Популярные",
+    "searchPlaceholder": "Поиск постов...",
+    "noResults": "Посты не найдены",
+    "readTime": "{minutes} мин чтения",
+    "views": "{count} просмотров",
+    "comments": "{count} комментариев"
+  },
+  "home": {
+    "title": "Добро пожаловать в EasySpeak",
+    "subtitle": "Современный шаблон Next.js 15 с TypeScript, Tailwind CSS и многим другим",
+    "description": "Начните создавать удивительные веб-приложения с нашим готовым к продакшену шаблоном, включающим новейшие технологии и лучшие практики.",
+    "getStarted": "Начать"
+
+  }
+}
