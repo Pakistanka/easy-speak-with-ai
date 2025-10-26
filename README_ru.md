@@ -79,7 +79,7 @@ src/
 
 1. **Клонировать репозиторий**
 ```bash
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/Pakistanka/easy-speak-with-ai.git)
 cd easy-speak-2
 ```
 
