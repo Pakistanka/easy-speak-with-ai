@@ -9,6 +9,7 @@ import '@/shared/styles/globals.css';
 import type { ChildrenProps } from '@/shared/types';
 import MainNavbar from '@/shared/ui/Navbar';
 import MainFooter from '@/widgets/Footer';
+import { BASE_URL, generateUniversalMetadata, TLocale } from '@/shared/lib/metadata';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -24,33 +25,29 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
-export const metadata = {
-  title: 'Easy Speak | The place where you can talk with teacher and AI',
-  description:
-    'A highly opinionated and production-ready Next.js 15 boilerplate with TypeScript, Tailwind CSS, ESLint, Prettier, Husky, and comprehensive SEO optimization.',
-  keywords:
-    'next.js, boilerplate, typescript, tailwind css, eslint, prettier, husky, seo, nextjs 15, react, web development',
-  authors: [{ name: 'Anastasiia Polozova' }],
-  creator: 'Anastasiia Polozova',
-  metadataBase: new URL('https://your-domain.com'),
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://your-domain.com',
-    title: 'Easy Speak | The place where you can talk with teacher and AI',
-    description:
-      'Production-ready Next.js 15 boilerplate with all the essential tools',
-    siteName: 'Next.js Boilerplate',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Easy Speak',
-    description:
-      'Production-ready Next.js 15 boilerplate with all the essential tools',
-    creator: '@AnnaPolo',
-  },
-};
+export async function generateMetadata({ params }: { params: { locale: TLocale } }) {
+  const metadata = await generateUniversalMetadata({
+    locale: params.locale,
+    namespace: 'common'
+  });
 
+  return {
+    ...metadata,
+    authors: [{ name: 'Anastasiia Polozova' }],
+    creator: 'Anastasiia Polozova',
+    metadataBase: BASE_URL,
+    icons: {
+      icon: [
+        { url: '/icons/favicon.ico' },
+        { url: '/icons/favicon-16x16.png', sizes: '16x16', type: 'image/svg' },
+        { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/svg' },
+      ],
+      apple: [
+        { url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      ]
+    }
+  };
+}
 
 export default async function RootLayout({ children }: ChildrenProps) {
   const locale = await getLocale();
