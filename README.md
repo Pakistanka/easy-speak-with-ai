@@ -73,7 +73,7 @@ src/
 
 ### Prerequisites
 - Node.js >= 20.0.0
-- Yarn or npm
+- Yarn
 
 ### Installation
 
@@ -86,8 +86,6 @@ cd easy-speak-2
 2. **Install dependencies**
 ```bash
 yarn install
-# or
-npm install
 ```
 
 3. **Set up environment variables**
@@ -98,8 +96,6 @@ cp .env.example .env.local
 4. **Start development server**
 ```bash
 yarn dev
-# or
-npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.

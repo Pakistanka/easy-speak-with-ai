@@ -1,5 +1,10 @@
 {
   "common": {
+    "metadata": {
+      "title": "Practice Languages with AI Tutors & Real Teachers | Easy Speak",
+      "description": "Easy Speak combines adaptive AI teachers and professional human tutors for effective language learning. Get personalized speaking practice, receive instant feedback on your pronunciation, and achieve fluency faster.",
+      "keywords": "learn English online, AI language tutor, speaking practice, conversation practice, improve pronunciation, online language school, fluent English, English with native speakers, adaptive learning, language learning app"
+    },
     "loading": "Loading...",
     "error": "Error",
     "notFound": "Not found",
