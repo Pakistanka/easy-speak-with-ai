@@ -1,8 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-family-poppins: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-family-sans: var(--font-helvetica), ui-sans-serif, system-ui, sans-serif;
 
   --container-padding: 2rem;
   --container-max-width-2xl: 1400px;

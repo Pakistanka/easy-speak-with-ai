@@ -1,9 +1,4 @@
 {
-  "navigation": {
-    "posts": "Posts",
-    "home": "Home",
-    "github": "GitHub"
-  },
   "common": {
     "metadata": {
       "title": "Practice Languages with AI Tutors & Real Teachers | Easy Speak",
@@ -16,6 +11,19 @@
     "goBack": "Go back",
     "readMore": "Read more",
     "language": "Language"
+  },
+  "navigation": {
+    "features": "Features",
+    "howItWorks": "How it works",
+    "contactUs": "Contact us",
+    "faqs": "FAQs",
+    "settings": "Settings"
+  },
+  "footer": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiesSettings": "Cookies Settings",
+    "allRightsReserved": "All rights reserved"
   },
   "posts": {
     "title": "Blog Posts",

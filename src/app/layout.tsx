@@ -1,4 +1,4 @@
-import { Inter, Poppins } from 'next/font/google';
+import { fonts } from '@/shared/fonts';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { Toaster } from 'react-hot-toast';
@@ -10,20 +10,6 @@ import type { ChildrenProps } from '@/shared/types';
 import MainNavbar from '@/shared/ui/Navbar';
 import MainFooter from '@/widgets/Footer';
 import { BASE_URL, generateUniversalMetadata, TLocale } from '@/shared/lib/metadata';
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-  adjustFontFallback: false,
-});
-
-const poppins = Poppins({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins',
-});
 
 export async function generateMetadata({ params }: { params: { locale: TLocale } }) {
   const metadata = await generateUniversalMetadata({
@@ -56,7 +42,7 @@ export default async function RootLayout({ children }: ChildrenProps) {
   return (
     <html lang={locale} suppressHydrationWarning className="overflow-x-hidden">
       <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased overflow-x-hidden`}
+        className={`${fonts.helvetica} font-sans antialiased overflow-x-hidden`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
