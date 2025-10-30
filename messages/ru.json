@@ -1,9 +1,4 @@
 {
-  "navigation": {
-    "posts": "Посты",
-    "home": "Главная",
-    "github": "GitHub"
-  },
   "common": {
     "loading": "Загрузка...",
     "error": "Ошибка",
@@ -11,6 +6,19 @@
     "goBack": "Назад",
     "readMore": "Читать далее",
     "language": "Язык"
+  },
+  "navigation": {
+    "features": "Возможности",
+    "howItWorks": "Как это работает",
+    "contactUs": "Связаться с нами",
+    "faqs": "Частые вопросы",
+    "settings": "Настройки"
+  },
+  "footer": {
+    "privacyPolicy": "Политика конфиденциальности",
+    "termsOfService": "Условия использования",
+    "cookiesSettings": "Настройки cookies",
+    "allRightsReserved": "Все права защищены"
   },
   "posts": {
     "title": "Блог-посты",
