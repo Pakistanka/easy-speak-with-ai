@@ -1,0 +1,7 @@
+{
+  "mongoURI": "mongodb+srv://demianbondarenko_db_user:IAtmj4CtUKm8dXsm@easyspeakcluster.tpmsxf4.mongodb.net/es_db?appName=EasySpeakCluster",
+  "jwtSecret": "mysecretlife",
+  "githubClientId": "831d360333182a7a20d8",
+  "githubSecret": "5a8d433da0c5d70bff25c0a0123643f5cf6c3744",
+  "githubToken": " c72bd9ddd33234bb3ce1525c4196077209c01b55"
+}
