@@ -25,6 +25,27 @@
     "cookiesSettings": "Cookies Settings",
     "allRightsReserved": "All rights reserved"
   },
+  "welcome": {
+    "first": {
+      "title": "Welcome to EasySpeak!",
+      "subtitle": "Let's get started on your language-learning journey. Are you here to learn or teach?",
+      "learnOption": {
+        "title": "I'm here to learn",
+        "description": "Explore lessons, book tutors, and enhance your language skills with personalized learning plans."
+      },
+      "teachOption": {
+        "title": "I'm here to teach", 
+        "description": "Share your expertise, connect with students, and guide them on their language-learning adventures."
+      },
+      "choose": "Choose"
+    },
+    "second": {
+      "title": "Learning everywhere",
+      "mobileDescription": "Experience joyful learning with us, no matter where you are!",
+      "desktopDescription": "Experience joyful learning with us, no matter where you are! Discover the freedom to learn on the go. With EasySpeak, dive into a world of knowledge anytime, anywhere. Join us in embracing learning beyond boundaries.",
+      "getStarted": "Get started"
+    }
+  },
   "posts": {
     "title": "Blog Posts",
     "description": "Discover our latest articles and insights",
