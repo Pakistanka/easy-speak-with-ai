@@ -3,6 +3,7 @@
 
 'use client';
 
+import { PreviewMain } from '@/widgets/PreviewMain';
 import { motion } from 'framer-motion';
 import { ArrowRight, Code, Rocket, ShieldCheck, Zap } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -21,6 +22,7 @@ export default function Home() {
   };
 
   return (
+    
     <div className="flex flex-col items-center w-full overflow-hidden">
       {/* Hero Section */}
       <motion.section
@@ -53,6 +55,8 @@ export default function Home() {
           </motion.div>
         </div>
       </motion.section>
+
+      <PreviewMain/>
 
       {/* Features Section */}
       <motion.section
