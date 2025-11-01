@@ -1,23 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '../button';
+import { Button } from './button';
 import React from 'react';
 
 const meta: Meta<typeof Button> = {
   title: 'UI/Button',
   component: Button,
-  args: {
-    children: 'Button',
-  },
-  argTypes: {
-    variant: {
-      control: 'select',
-      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],
+  parameters: {
+    layout: 'centered',
+    backgrounds: {
+      default: 'gray',
+      values: [
+        { name: 'gray', value: '#F5F5F7' },
+        { name: 'dark', value: '#1E1E1E' },
+      ],
     },
-    size: {
-      control: 'select',
-      options: ['default', 'sm', 'lg', 'icon'],
-    },
-    withAnimation: { control: 'boolean' },
   },
 };
 
@@ -25,13 +21,72 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Default: Story = {};
-export const Secondary: Story = {
-  args: { variant: 'secondary' },
+export const FigmaPrimary: Story = {
+  args: {
+    variant: 'primary',
+    size: 'figma_lg',
+    children: 'Button',
+  },
 };
-export const Small: Story = {
-  args: { size: 'sm' },
+
+export const FigmaSecondary: Story = {
+  args: {
+    variant: 'secondary', 
+    size: 'figma_lg',
+    children: 'Button',
+  },
 };
-export const WithAnimation: Story = {
-  args: { withAnimation: true },
+
+export const FigmaDark: Story = {
+  args: {
+    variant: 'dark',
+    size: 'figma_lg', 
+    children: 'Button',
+  },
+};
+
+export const FigmaLight: Story = {
+  args: {
+    variant: 'light',
+    size: 'figma_lg',
+    children: 'Button',
+  },
+};
+
+export const FigmaPrimaryMedium: Story = {
+  args: {
+    variant: 'primary',
+    size: 'figma_md',
+    children: 'Button', 
+  },
+};
+
+export const FigmaSecondaryMedium: Story = {
+  args: {
+    variant: 'secondary',
+    size: 'figma_md',
+    children: 'Button',
+  },
+};
+
+export const FigmaShowcase: Story = {
+  render: () => (
+    <div className="space-y-6 p-8 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl">
+      {/* Large Buttons Row */}
+      <div className="flex gap-6 items-center">
+        <Button variant="primary" size="figma_lg">Button</Button>
+        <Button variant="secondary" size="figma_lg">Button</Button>
+        <Button variant="dark" size="figma_lg">Button</Button>
+        <Button variant="light" size="figma_lg">Button</Button>
+      </div>
+      
+      {/* Medium Buttons Row */}
+      <div className="flex gap-6 items-center">
+        <Button variant="primary" size="figma_md">Button</Button>
+        <Button variant="secondary" size="figma_md">Button</Button>
+        <Button variant="dark" size="figma_md">Button</Button>
+        <Button variant="light" size="figma_md">Button</Button>
+      </div>
+    </div>
+  ),
 };
