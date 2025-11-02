@@ -4,18 +4,7 @@ module.exports = {
     es2020: true,
     node: true,
   },
-  extends: [
-    'airbnb',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript',
-    'plugin:jsx-a11y/recommended',
-    'plugin:@next/next/recommended',
-    'prettier',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['airbnb', 'plugin:@typescript-eslint/eslint-recommended', 'plugin:@typescript-eslint/recommended', 'plugin:import/errors', 'plugin:import/warnings', 'plugin:import/typescript', 'plugin:jsx-a11y/recommended', 'plugin:@next/next/recommended', 'prettier', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {

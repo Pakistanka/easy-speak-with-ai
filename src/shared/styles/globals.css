@@ -1,12 +1,15 @@
+@import './typography.css';
 @import 'tailwindcss';
 
 @theme {
   --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-family-poppins: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  
 
   --container-padding: 2rem;
   --container-max-width-2xl: 1400px;
 
+  /* Стандарт */
   --color-border: oklch(88% 0.03 260);
   --color-input: oklch(88% 0.03 260);
   --color-ring: oklch(65% 0.2 270);
@@ -22,6 +25,26 @@
   --color-muted-foreground: oklch(60% 0.05 260);
   --color-card: oklch(98% 0.01 260);
   --color-card-foreground: oklch(25% 0.15 260);
+
+  /* из макета Easy Speak */
+  --color-black: #161618;
+  --color-white: #FAFAFA;
+  --color-dark-grey: #797979;
+  --color-grey: #CACACA;
+  --color-light-grey: #E8E6B9;
+  --color-midnight-blue: #2F2E41;
+  --color-dark-blue: #3F3D56;
+  --color-blue: #5666ED;
+  --color-light-blue: #BCB7FA;
+  --color-pastel-blue: #DED7FF;
+  --color-yellow: #FCA345;
+  --color-brilge: #FFFFEB;
+  --color-pink: #E466A8;
+  --color-light-pink: #FFBBBB;
+  --color-success: #107832;
+  --color-failure: #E3423C;
+  --color-theme-bg: #BBC2FA;
+  --color-theme-active: #E0E3FF;
 }
 
 @layer base {
@@ -77,5 +100,24 @@
   }
   html {
     @apply overflow-x-hidden max-w-full;
+  }
+}
+
+/* Градиенты для использования в классах */
+@layer utilities {
+  .gradient-pink-blue {
+    background: linear-gradient(135deg, #E466A8 0%, #BCB7FA 25%, #5666ED 50%, #3F3D56 100%);
+  }
+  
+  .gradient-pink-yellow {
+    background: linear-gradient(135deg, #E466A8 0%, #FFBBBB 25%, #FCA345 50%, #FFFFEB 100%);
+  }
+  
+  .gradient-blue {
+    background: linear-gradient(135deg, #5666ED 0%, #3F3D56 100%);
+  }
+  
+  .gradient-pink {
+    background: linear-gradient(135deg, #E466A8 0%, #FFBBBB 100%);
   }
 }

@@ -1,0 +1,360 @@
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tsconfig.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'yarn.lock', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/.eslintrc.js b/.eslintrc.js[m
+[1mindex 046a51f..1337259 100644[m
+[1m--- a/.eslintrc.js[m
+[1m+++ b/.eslintrc.js[m
+[36m@@ -4,18 +4,7 @@[m [mmodule.exports = {[m
+     es2020: true,[m
+     node: true,[m
+   },[m
+[31m-  extends: [[m
+[31m-    'airbnb',[m
+[31m-    'plugin:@typescript-eslint/eslint-recommended',[m
+[31m-    'plugin:@typescript-eslint/recommended',[m
+[31m-    'plugin:import/errors',[m
+[31m-    'plugin:import/warnings',[m
+[31m-    'plugin:import/typescript',[m
+[31m-    'plugin:jsx-a11y/recommended',[m
+[31m-    'plugin:@next/next/recommended',[m
+[31m-    'prettier',[m
+[31m-    'plugin:prettier/recommended',[m
+[31m-  ],[m
+[32m+[m[32m  extends: ['airbnb', 'plugin:@typescript-eslint/eslint-recommended', 'plugin:@typescript-eslint/recommended', 'plugin:import/errors', 'plugin:import/warnings', 'plugin:import/typescript', 'plugin:jsx-a11y/recommended', 'plugin:@next/next/recommended', 'prettier', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],[m
+   parser: '@typescript-eslint/parser',[m
+   parserOptions: {[m
+     ecmaFeatures: {[m
+[1mdiff --git a/.storybook/main.ts b/.storybook/main.ts[m
+[1mindex e15ecd5..dd5e852 100644[m
+[1m--- a/.storybook/main.ts[m
+[1m+++ b/.storybook/main.ts[m
+[36m@@ -1,15 +1,29 @@[m
+ import type { StorybookConfig } from '@storybook/nextjs';[m
+[32m+[m[32mimport path from 'path';[m
+ [m
+ const config: StorybookConfig = {[m
+   stories: ['../src/**/*.stories.@(ts|tsx)'],[m
+   addons: [[m
+[31m-    '@storybook/addon-essentials',[m
+[32m+[m[32m    '@storybook/addon-docs',[m
+[32m+[m[32m    '@storybook/addon-essentials', // важные аддоны[m
+[32m+[m[32m    '@storybook/addon-onboarding',[m
+[32m+[m[32m    '@storybook/addon-links',[m
+[32m+[m[32m    '@chromatic-com/storybook',[m
+     '@storybook/addon-interactions',[m
+   ],[m
+[31m-  framework: '@storybook/nextjs',[m
+[31m-  docs: {[m
+[31m-    autodocs: 'tag',[m
+[32m+[m[32m  framework: {[m
+[32m+[m[32m    name: '@storybook/nextjs',[m
+[32m+[m[32m    options: {},[m
+[32m+[m[32m  },[m
+[32m+[m[32m  webpackFinal: async (config) => {[m
+[32m+[m[32m    if (config.resolve) {[m
+[32m+[m[32m      config.resolve.alias = {[m
+[32m+[m[32m        ...config.resolve.alias,[m
+[32m+[m[32m        '@': path.resolve(__dirname, '../src'), // это решит проблему с путями[m
+[32m+[m[32m      };[m
+[32m+[m[32m    }[m
+[32m+[m[32m    return config;[m
+   },[m
+ };[m
+ [m
+[31m-export default config;[m
+[32m+[m[32mexport default config;[m
+\ No newline at end of file[m
+[1mdiff --git a/.storybook/preview.ts b/.storybook/preview.ts[m
+[1mindex bdbe577..6a9750d 100644[m
+[1m--- a/.storybook/preview.ts[m
+[1m+++ b/.storybook/preview.ts[m
+[36m@@ -1,5 +1,5 @@[m
+ import type { Preview } from '@storybook/react';[m
+[31m-import '@/styles/globals.css';[m
+[32m+[m[32mimport '@/shared/styles/globals.css';[m
+ [m
+ const preview: Preview = {[m
+   parameters: {[m
+[1mdiff --git a/package.json b/package.json[m
+[1mindex 25feef7..5f21c66 100644[m
+[1m--- a/package.json[m
+[1m+++ b/package.json[m
+[36m@@ -38,59 +38,58 @@[m
+     "*.{js,jsx,ts,tsx}": "eslint --cache --fix --cache-location ./node_modules/.cache/.eslintcache"[m
+   },[m
+   "dependencies": {[m
+[31m-    "@next/bundle-analyzer": "^15.3.2",[m
+[31m-    "@tailwindcss/postcss": "^4.1.4",[m
+[31m-    "@tanstack/react-query": "^5.80.7",[m
+[31m-    "@tanstack/react-query-devtools": "^5.59.16",[m
+[31m-    "axios": "^1.8.2",[m
+[32m+[m[32m    "@next/bundle-analyzer": "^16.0.0",[m
+[32m+[m[32m    "@tailwindcss/postcss": "^4.1.16",[m
+[32m+[m[32m    "@tanstack/react-query": "^5.90.5",[m
+[32m+[m[32m    "@tanstack/react-query-devtools": "^5.90.2",[m
+[32m+[m[32m    "axios": "^1.13.0",[m
+     "class-variance-authority": "^0.7.1",[m
+     "clsx": "^2.1.1",[m
+     "date-fns": "^4.1.0",[m
+[31m-    "framer-motion": "^12.17.0",[m
+[31m-    "lucide-react": "^0.487.0",[m
+[31m-    "next": "^15.2.5",[m
+[31m-    "next-intl": "^3.20.0",[m
+[32m+[m[32m    "framer-motion": "^12.23.24",[m
+[32m+[m[32m    "lucide-react": "^0.548.0",[m
+[32m+[m[32m    "next": "^16.0.0",[m
+[32m+[m[32m    "next-intl": "^4.4.0",[m
+     "next-themes": "^0.4.6",[m
+[31m-    "postcss": "^8.5.3",[m
+[31m-    "react": "^19.0.0",[m
+[31m-    "react-dom": "^19.0.0",[m
+[31m-    "react-hook-form": "^7.53.1",[m
+[31m-    "react-hot-toast": "^2.4.1",[m
+[31m-    "react-icons": "^5.3.0",[m
+[31m-    "tailwind-merge": "^3.2.0",[m
+[31m-    "winston": "^3.14.1"[m
+[32m+[m[32m    "postcss": "^8.5.6",[m
+[32m+[m[32m    "react": "^19.2.0",[m
+[32m+[m[32m    "react-dom": "^19.2.0",[m
+[32m+[m[32m    "react-hook-form": "^7.65.0",[m
+[32m+[m[32m    "react-hot-toast": "^2.6.0",[m
+[32m+[m[32m    "react-icons": "^5.5.0",[m
+[32m+[m[32m    "tailwind-merge": "^3.3.1",[m
+[32m+[m[32m    "winston": "^3.18.3"[m
+   },[m
+   "devDependencies": {[m
+[31m-    "@commitlint/cli": "^19.5.0",[m
+[31m-    "@commitlint/config-conventional": "^19.5.0",[m
+[31m-    "@storybook/addon-essentials": "^8.6.14",[m
+[31m-    "@storybook/addon-interactions": "^8.6.14",[m
+[32m+[m[32m    "@commitlint/cli": "^20.1.0",[m
+[32m+[m[32m    "@commitlint/config-conventional": "^20.0.0",[m
+[32m+[m[32m    "@storybook/addon-docs": "^9.1.15",[m
+     "@storybook/nextjs": "^9.1.15",[m
+[31m-    "@tailwindcss/cli": "^4.1.4",[m
+[32m+[m[32m    "@tailwindcss/cli": "^4.1.16",[m
+     "@testing-library/jest-dom": "^6.9.1",[m
+     "@testing-library/react": "^16.3.0",[m
+     "@testing-library/user-event": "^14.6.1",[m
+     "@types/jest": "^30.0.0",[m
+[31m-    "@types/node": "^22.15.3",[m
+[32m+[m[32m    "@types/node": "^24.9.1",[m
+     "@types/react": "^19",[m
+     "@types/react-dom": "^19",[m
+[31m-    "@typescript-eslint/eslint-plugin": "^8.15.0",[m
+[31m-    "@typescript-eslint/parser": "^8.15.0",[m
+[31m-    "eslint": "^9.15.0",[m
+[31m-    "eslint-config-airbnb": "^19.0.4",[m
+[31m-    "eslint-config-next": "^15.2.5",[m
+[31m-    "eslint-config-prettier": "^9.1.0",[m
+[31m-    "eslint-plugin-prettier": "^5.1.3",[m
+[31m-    "eslint-plugin-simple-import-sort": "^12.0.0",[m
+[31m-    "husky": "^9.1.6",[m
+[32m+[m[32m    "@typescript-eslint/eslint-plugin": "^8.46.2",[m
+[32m+[m[32m    "@typescript-eslint/parser": "^8.46.2",[m
+[32m+[m[32m    "eslint": "^9.38.0",[m
+[32m+[m[32m    "eslint-config-next": "^16.0.0",[m
+[32m+[m[32m    "eslint-config-prettier": "^10.1.8",[m
+[32m+[m[32m    "eslint-plugin-prettier": "^5.5.4",[m
+[32m+[m[32m    "eslint-plugin-simple-import-sort": "^12.1.1",[m
+[32m+[m[32m    "eslint-plugin-storybook": "9.1.15",[m
+[32m+[m[32m    "husky": "^9.1.7",[m
+     "jest": "^30.2.0",[m
+     "jest-environment-jsdom": "^30.2.0",[m
+[31m-    "lint-staged": "^15.2.10",[m
+[31m-    "prettier": "^3.3.3",[m
+[32m+[m[32m    "lint-staged": "^16.2.6",[m
+[32m+[m[32m    "prettier": "^3.6.2",[m
+     "storybook": "^9.1.15",[m
+[31m-    "tailwindcss": "^4.1.4",[m
+[32m+[m[32m    "tailwindcss": "^4.1.16",[m
+     "ts-node": "^10.9.2",[m
+     "tslib": "^2.8.1",[m
+[31m-    "typescript": "^5.8.3"[m
+[32m+[m[32m    "typescript": "^5.9.3"[m
+   }[m
+ }[m
+[1mdiff --git a/src/shared/ui/ui/button/button.stories.tsx b/src/shared/ui/ui/button/button.stories.tsx[m
+[1mindex 9715833..7081652 100644[m
+[1m--- a/src/shared/ui/ui/button/button.stories.tsx[m
+[1m+++ b/src/shared/ui/ui/button/button.stories.tsx[m
+[36m@@ -1,23 +1,19 @@[m
+ import type { Meta, StoryObj } from '@storybook/react';[m
+[31m-import { Button } from '../button';[m
+[32m+[m[32mimport { Button } from './button';[m
+ import React from 'react';[m
+ [m
+ const meta: Meta<typeof Button> = {[m
+   title: 'UI/Button',[m
+   component: Button,[m
+[31m-  args: {[m
+[31m-    children: 'Button',[m
+[31m-  },[m
+[31m-  argTypes: {[m
+[31m-    variant: {[m
+[31m-      control: 'select',[m
+[31m-      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],[m
+[31m-    },[m
+[31m-    size: {[m
+[31m-      control: 'select',[m
+[31m-      options: ['default', 'sm', 'lg', 'icon'],[m
+[32m+[m[32m  parameters: {[m
+[32m+[m[32m    layout: 'centered',[m
+[32m+[m[32m    backgrounds: {[m
+[32m+[m[32m      default: 'gray',[m
+[32m+[m[32m      values: [[m
+[32m+[m[32m        { name: 'gray', value: '#F5F5F7' },[m
+[32m+[m[32m        { name: 'dark', value: '#1E1E1E' },[m
+[32m+[m[32m      ],[m
+     },[m
+[31m-    withAnimation: { control: 'boolean' },[m
+   },[m
+ };[m
+ [m
+[36m@@ -25,13 +21,72 @@[m [mexport default meta;[m
+ [m
+ type Story = StoryObj<typeof Button>;[m
+ [m
+[31m-export const Default: Story = {};[m
+[31m-export const Secondary: Story = {[m
+[31m-  args: { variant: 'secondary' },[m
+[32m+[m[32mexport const FigmaPrimary: Story = {[m
+[32m+[m[32m  args: {[m
+[32m+[m[32m    variant: 'primary',[m
+[32m+[m[32m    size: 'figma_lg',[m
+[32m+[m[32m    children: 'Button',[m
+[32m+[m[32m  },[m
+[32m+[m[32m};[m
+[32m+[m
+[32m+[m[32mexport const FigmaSecondary: Story = {[m
+[32m+[m[32m  args: {[m
+[32m+[m[32m    variant: 'secondary',[m[41m [m
+[32m+[m[32m    size: 'figma_lg',[m
+[32m+[m[32m    children: 'Button',[m
+[32m+[m[32m  },[m
+[32m+[m[32m};[m
+[32m+[m
+[32m+[m[32mexport const FigmaDark: Story = {[m
+[32m+[m[32m  args: {[m
+[32m+[m[32m    variant: 'dark',[m
+[32m+[m[32m    size: 'figma_lg',[m[41m [m
+[32m+[m[32m    children: 'Button',[m
+[32m+[m[32m  },[m
+[32m+[m[32m};[m
+[32m+[m
+[32m+[m[32mexport const FigmaLight: Story = {[m
+[32m+[m[32m  args: {[m
+[32m+[m[32m    variant: 'light',[m
+[32m+[m[32m    size: 'figma_lg',[m
+[32m+[m[32m    children: 'Button',[m
+[32m+[m[32m  },[m
+ };[m
+[31m-export const Small: Story = {[m
+[31m-  args: { size: 'sm' },[m
+[32m+[m
+[32m+[m[32mexport const FigmaPrimaryMedium: Story = {[m
+[32m+[m[32m  args: {[m
+[32m+[m[32m    variant: 'primary',[m
+[32m+[m[32m    size: 'figma_md',[m
+[32m+[m[32m    children: 'Button',[m[41m [m
+[32m+[m[32m  },[m
+ };[m
+[31m-export const WithAnimation: Story = {[m
+[31m-  args: { withAnimation: true },[m
+[32m+[m
+[32m+[m[32mexport const FigmaSecondaryMedium: Story = {[m
+[32m+[m[32m  args: {[m
+[32m+[m[32m    variant: 'secondary',[m
+[32m+[m[32m    size: 'figma_md',[m
+[32m+[m[32m    children: 'Button',[m
+[32m+[m[32m  },[m
+ };[m
+[32m+[m
+[32m+[m[32mexport const FigmaShowcase: Story = {[m
+[32m+[m[32m  render: () => ([m
+[32m+[m[32m    <div className="space-y-6 p-8 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl">[m
+[32m+[m[32m      {/* Large Buttons Row */}[m
+[32m+[m[32m      <div className="flex gap-6 items-center">[m
+[32m+[m[32m        <Button variant="primary" size="figma_lg">Button</Button>[m
+[32m+[m[32m        <Button variant="secondary" size="figma_lg">Button</Button>[m
+[32m+[m[32m        <Button variant="dark" size="figma_lg">Button</Button>[m
+[32m+[m[32m        <Button variant="light" size="figma_lg">Button</Button>[m
+[32m+[m[32m      </div>[m
+[32m+[m[41m      [m
+[32m+[m[32m      {/* Medium Buttons Row */}[m
+[32m+[m[32m      <div className="flex gap-6 items-center">[m
+[32m+[m[32m        <Button variant="primary" size="figma_md">Button</Button>[m
+[32m+[m[32m        <Button variant="secondary" size="figma_md">Button</Button>[m
+[32m+[m[32m        <Button variant="dark" size="figma_md">Button</Button>[m
+[32m+[m[32m        <Button variant="light" size="figma_md">Button</Button>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m  ),[m
+[32m+[m[32m};[m
+\ No newline at end of file[m
+[1mdiff --git a/src/shared/ui/ui/button/button.test.tsx b/src/shared/ui/ui/button/button.test.tsx[m
+[1mindex fba16e5..aaa6bef 100644[m
+[1m--- a/src/shared/ui/ui/button/button.test.tsx[m
+[1m+++ b/src/shared/ui/ui/button/button.test.tsx[m
+[36m@@ -1,5 +1,5 @@[m
+ import { render, screen } from '@testing-library/react';[m
+[31m-import { Button } from '../button';[m
+[32m+[m[32mimport { Button } from './button';[m
+ import React from 'react';[m
+ [m
+ describe('Button', () => {[m
+[1mdiff --git a/src/shared/ui/ui/button/button.tsx b/src/shared/ui/ui/button/button.tsx[m
+[1mindex b4b2910..4156631 100644[m
+[1m--- a/src/shared/ui/ui/button/button.tsx[m
+[1m+++ b/src/shared/ui/ui/button/button.tsx[m
+[36m@@ -4,30 +4,60 @@[m [mimport { motion } from 'framer-motion';[m
+ import * as React from 'react';[m
+ [m
+ const buttonVariants = cva([m
+[31m-  'inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',[m
+[32m+[m[32m  'inline-flex items-center justify-center font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',[m
+   {[m
+     variants: {[m
+       variant: {[m
+[32m+[m[32m        primary: [[m
+[32m+[m[32m          'bg-gradient-to-b from-[#5666ED] to-[#3A4ADC]',[m[41m [m
+[32m+[m[32m          'text-white',[m
+[32m+[m[32m          'shadow-[0px_4px_8px_0px_rgba(86,102,237,0.3),0px_2px_4px_0px_rgba(255,255,255,0.25)_inset]',[m
+[32m+[m[32m          'hover:shadow-[0px_6px_12px_0px_rgba(86,102,237,0.4),0px_2px_4px_0px_rgba(255,255,255,0.3)_inset]',[m
+[32m+[m[32m          'active:shadow-[0px_2px_4px_0px_rgba(86,102,237,0.5),0px_1px_2px_0px_rgba(255,255,255,0.4)_inset]',[m
+[32m+[m[32m          'border border-[#6A7AEF]'[m
+[32m+[m[32m        ].join(' '),[m
+[32m+[m[32m        secondary: [[m
+[32m+[m[32m          'bg-gradient-to-b from-[#3F3D56] to-[#2A2940]',[m
+[32m+[m[32m          'text-white',[m[41m [m
+[32m+[m[32m          'shadow-[0px_4px_8px_0px_rgba(63,61,86,0.3),0px_2px_4px_0px_rgba(255,255,255,0.15)_inset]',[m
+[32m+[m[32m          'hover:shadow-[0px_6px_12px_0px_rgba(63,61,86,0.4),0px_2px_4px_0px_rgba(255,255,255,0.2)_inset]',[m
+[32m+[m[32m          'active:shadow-[0px_2px_4px_0px_rgba(63,61,86,0.5),0px_1px_2px_0px_rgba(255,255,255,0.25)_inset]',[m
+[32m+[m[32m          'border border-[#4F4D6A]'[m
+[32m+[m[32m        ].join(' '),[m
+[32m+[m[32m        dark: [[m
+[32m+[m[32m          'bg-gradient-to-b from-[#2F2E41] to-[#1E1D2E]',[m
+[32m+[m[32m          'text-white',[m
+[32m+[m[32m          'shadow-[0px_4px_8px_0px_rgba(47,46,65,0.3),0px_2px_4px_0px_rgba(255,255,255,0.1)_inset]',[m
+[32m+[m[32m          'hover:shadow-[0px_6px_12px_0px_rgba(47,46,65,0.4),0px_2px_4px_0px_rgba(255,255,255,0.15)_inset]',[m
+[32m+[m[32m          'active:shadow-[0px_2px_4px_0px_rgba(47,46,65,0.5),0px_1px_2px_0px_rgba(255,255,255,0.2)_inset]',[m
+[32m+[m[32m          'border border-[#3A3950]'[m
+[32m+[m[32m        ].join(' '),[m
+[32m+[m[32m        light: [[m
+[32m+[m[32m          'bg-gradient-to-b from-[#F0F0F0] to-[#E0E0E0]',[m
+[32m+[m[32m          'text-gray-800',[m
+[32m+[m[32m          'shadow-[0px_4px_8px_0px_rgba(202,202,202,0.3),0px_2px_4px_0px_rgba(255,255,255,0.5)_inset]',[m
+[32m+[m[32m          'hover:shadow-[0px_6px_12px_0px_rgba(202,202,202,0.4),0px_2px_4px_0px_rgba(255,255,255,0.6)_inset]',[m
+[32m+[m[32m          'active:shadow-[0px_2px_4px_0px_rgba(202,202,202,0.5),0px_1px_2px_0px_rgba(255,255,255,0.7)_inset]',[m
+[32m+[m[32m          'border border-[#D0D0D0]'[m
+[32m+[m[32m        ].join(' '),[m
+         default: 'bg-primary text-primary-foreground hover:bg-primary/90',[m
+[31m-        destructive:[m
+[31m-          'bg-destructive text-destructive-foreground hover:bg-destructive/90',[m
+[31m-        outline:[m
+[31m-          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',[m
+[31m-        secondary:[m
+[31m-          'bg-secondary text-secondary-foreground hover:bg-secondary/80',[m
+[32m+[m[32m        destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',[m
+[32m+[m[32m        outline: 'border border-inp

@@ -1,0 +1,136 @@
+@layer utilities {
+  /* Title */
+  .text-title {
+    font-size: 80px;
+    line-height: 150%;
+    font-weight: 400;
+    letter-spacing: 0%;
+  }
+  
+  .text-title-bold {
+    font-size: 80px;
+    line-height: 150%;
+    font-weight: 700;
+    letter-spacing: 0%;
+  }
+
+  /* Heading1 */
+  .text-heading1 {
+    font-size: 61px;
+    line-height: 150%;
+    font-weight: 400;
+    letter-spacing: 0%;
+  }
+  
+  .text-heading1-bold {
+    font-size: 61px;
+    line-height: 150%;
+    font-weight: 700;
+    letter-spacing: 0%;
+  }
+
+  /* Heading2 */
+  .text-heading2 {
+    font-size: 47px;
+    line-height: 150%;
+    font-weight: 400;
+    letter-spacing: 0%;
+  }
+  
+  .text-heading2-bold {
+    font-size: 47px;
+    line-height: 150%;
+    font-weight: 700;
+    letter-spacing: 0%;
+  }
+
+  /* Heading3 */
+  .text-heading3 {
+    font-size: 36px;
+    line-height: 150%;
+    font-weight: 400;
+    letter-spacing: 0%;
+  }
+  
+  .text-heading3-bold {
+    font-size: 36px;
+    line-height: 150%;
+    font-weight: 700;
+    letter-spacing: 0%;
+  }
+
+  /* Heading4 */
+  .text-heading4 {
+    font-size: 27px;
+    line-height: 150%;
+    font-weight: 400;
+    letter-spacing: 0%;
+  }
+  
+  .text-heading4-bold {
+    font-size: 27px;
+    line-height: 150%;
+    font-weight: 700;
+    letter-spacing: 0%;
+  }
+
+  /* Body */
+  .text-body {
+    font-size: 21px;
+    line-height: 150%;
+    font-weight: 400;
+    letter-spacing: 0%;
+  }
+  
+  .text-body-bold {
+    font-size: 21px;
+    line-height: 150%;
+    font-weight: 700;
+    letter-spacing: 0%;
+  }
+
+  /* Body Small */
+  .text-body-small {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+    letter-spacing: 0%;
+  }
+  
+  .text-body-small-bold {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 700;
+    letter-spacing: 0%;
+  }
+
+  /* Description */
+  .text-description {
+    font-size: 12px;
+    line-height: 150%;
+    font-weight: 400;
+    letter-spacing: 0%;
+  }
+  
+  .text-description-bold {
+    font-size: 12px;
+    line-height: 150%;
+    font-weight: 700;
+    letter-spacing: 0%;
+  }
+
+  /* Description Small */
+  .text-description-small {
+    font-size: 9px;
+    line-height: 150%;
+    font-weight: 400;
+    letter-spacing: 0%;
+  }
+  
+  .text-description-small-bold {
+    font-size: 9px;
+    line-height: 150%;
+    font-weight: 700;
+    letter-spacing: 0%;
+  }
+}
