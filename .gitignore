@@ -41,3 +41,6 @@ next-env.d.ts
 .vscode
 
 package-lock.json
+
+backend/config/default.json
+backend/config/production.json
