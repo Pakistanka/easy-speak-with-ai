@@ -1,5 +1,7 @@
 'use client';
 
+import { Button } from '@/shared';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
@@ -12,7 +14,12 @@ export default function SecondWelcomePage() {
   };
 
   return (
-    <div className="font-sans h-full lg:h-fit max-w-[1512px] pt-6 px-[19px] pb-10 lg:px-[105] lg:py-[0] grid grid-rows-[1fr_auto] lg:grid-rows-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center z-10">
+    <motion.div 
+      className="font-sans text-(--text-color) h-full lg:h-fit max-w-[1512px] pt-6 px-[19px] pb-10 lg:px-[105] lg:py-[0] grid grid-rows-[1fr_auto] lg:grid-rows-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center z-10"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="relative w-full flex items-center justify-center lg:max-w-[631px] order-1 lg:order-2 object-contain">
         <div 
           className="absolute 
@@ -56,11 +63,12 @@ export default function SecondWelcomePage() {
         />
         <Image
           src="/images/learning-everywhere.svg"
-          alt="Learning everywhere illustration"
+          alt={t('imageAlt')}
           width={631}
           height={470}
           className="w-full h-auto z-3"
-          priority
+          priority={false} 
+          loading="lazy"
         />
       </div>
       
@@ -79,13 +87,13 @@ export default function SecondWelcomePage() {
           </p>
         </div>
 
-        <button
+        <button 
           onClick={handleGetStarted}
-          className="w-full lg:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
+          className="w-full lg:w-auto lg:m-auto bg-[#5666ED] text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
         >
           {t('getStarted')}
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { RadioButtonGroup, RadioButton } from '@/shared/ui/RadioButtonGroup';
+import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
@@ -14,8 +15,54 @@ export default function FirstWelcomePage() {
   };
 
   return (
-    <div className="font-sans max-w-[632px] pt-6 px-[19px] pb-10 lg:p-[0] flex gap-10 flex-col justify-between lg:justify-normal h-full lg:h-fit">
-      <div className="space-y-[40px]">
+    <motion.div 
+      className="relative text-(--text-color) font-sans max-w-[632px] pt-6 px-[19px] pb-10 lg:p-[0] flex gap-10 flex-col justify-between lg:justify-normal h-full lg:h-fit"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div 
+        className="absolute 
+        blur-[var(--first-accent-light-blur)] 
+        w-[var(--first-accent-light-w)] 
+        h-[var(--first-accent-light-h)] 
+        top-[var(--first-accent-light-top)] 
+        left-[var(--first-accent-light-left)] 
+        bg-[var(--first-accent-light-color)] 
+        rotate-[var(--first-accent-light-rotate)] 
+        lg:blur-[var(--first-accent-light-lg-blur)]
+        lg:w-[var(--first-accent-light-lg-w)] 
+        lg:h-[var(--first-accent-light-lg-h)] 
+        lg:top-[var(--first-accent-light-lg-top)] 
+        lg:left-[var(--first-accent-light-lg-left)] 
+        lg:bg-[var(--first-accent-light-lg-color)] 
+        lg:rotate-[var(--first-accent-light-lg-rotate)] 
+        rounded-[30%]
+        z-2
+        opacity-100"
+      />
+      
+      <div 
+        className="absolute 
+        blur-[var(--first-primary-light-blur)] 
+        w-[var(--first-primary-light-w)] 
+        h-[var(--first-primary-light-h)] 
+        top-[var(--first-primary-light-top)] 
+        left-[var(--first-primary-light-left)] 
+        bg-[var(--first-primary-light-color)] 
+        rotate-[var(--first-primary-light-rotate)] 
+        lg:blur-[var(--first-primary-light-lg-blur)]
+        lg:w-[var(--first-primary-light-lg-w)] 
+        lg:h-[var(--first-primary-light-lg-h)] 
+        lg:top-[var(--first-primary-light-lg-top)] 
+        lg:left-[var(--first-primary-light-lg-left)] 
+        lg:bg-[var(--first-primary-light-lg-color)] 
+        lg:rotate-[var(--first-primary-light-lg-rotate)] 
+        rounded-[30%]
+        z-1"
+      />
+
+      <div className="space-y-[40px] z-3">
         <div className="space-y-2 lg:text-center">
           <h1 className="text-[27px] lg:text-4xl font-bold">
             {t('title')}
@@ -49,10 +96,10 @@ export default function FirstWelcomePage() {
       <button 
         disabled={!selectedValue} 
         onClick={handleChooseClick}
-        className="w-full lg:w-auto lg:m-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
+        className="z-3 w-full lg:w-auto lg:m-auto bg-[#5666ED] text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
       >
         {t('choose')}
       </button>
-    </div>
+    </motion.div>
   );
 }

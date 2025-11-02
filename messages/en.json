@@ -43,7 +43,8 @@
       "title": "Learning everywhere",
       "mobileDescription": "Experience joyful learning with us, no matter where you are!",
       "desktopDescription": "Experience joyful learning with us, no matter where you are! Discover the freedom to learn on the go. With EasySpeak, dive into a world of knowledge anytime, anywhere. Join us in embracing learning beyond boundaries.",
-      "getStarted": "Get started"
+      "getStarted": "Get started",
+      "imageAlt": "Learning everywhere illustration"
     }
   },
   "posts": {
