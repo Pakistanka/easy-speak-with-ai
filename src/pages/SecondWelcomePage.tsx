@@ -87,12 +87,12 @@ export default function SecondWelcomePage() {
           </p>
         </div>
 
-        <button 
+        <Button
           onClick={handleGetStarted}
-          className="w-full lg:w-auto lg:m-auto bg-[#5666ED] text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
+          className="z-3"
         >
           {t('getStarted')}
-        </button>
+        </Button>
       </div>
     </motion.div>
   );

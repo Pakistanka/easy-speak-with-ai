@@ -105,6 +105,7 @@ export default function FirstWelcomePage() {
       <Button
         disabled={!selectedValue}
         onClick={handleChooseClick}
+        className='z-3'
       >
          {t('choose')}
       </Button>
