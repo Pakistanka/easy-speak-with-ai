@@ -115,21 +115,22 @@
   .dark {
     --background: rgba(47, 46, 65, 1);
     --foreground: oklch(90% 0.02 260);
-    --card: rgba(47, 46, 65, 1);
+    --card: oklch(20% 0.05 260);
     --card-foreground: oklch(90% 0.02 260);
-    --popover: rgba(47, 46, 65, 1);
+    --popover: oklch(20% 0.05 260);
     --popover-foreground: oklch(90% 0.02 260);
-    --primary: rgba(47, 46, 65, 1);
+    --primary: oklch(100% 0.00011 271.152);
     --primary-foreground: oklch(90% 0.02 260);
     --secondary: oklch(40% 0.06 260);
     --secondary-foreground: oklch(90% 0.02 260);
-    --muted: rgba(47, 46, 65, 1);
+    --muted: rgb(57, 57, 67);
     --muted-foreground: oklch(65% 0.05 260);
     --accent: oklch(75% 0.15 60);
     --accent-foreground: oklch(90% 0.02 260);
     --border: oklch(30% 0.04 260);
     --input: oklch(30% 0.04 260);
     --ring: oklch(30% 0.05 260);
+
 
     
     --text-color: rgba(250, 250, 250, 1);
