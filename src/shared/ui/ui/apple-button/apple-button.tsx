@@ -1,5 +1,4 @@
 import { cn } from '@/shared/lib/utils';
-import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
 const AppleIcon = () => (
@@ -9,93 +8,45 @@ const AppleIcon = () => (
   </svg>
 );
 
-const appleButtonVariants = cva(
-  'inline-flex items-center justify-center font-normal transition-all duration-200 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
-  {
-    variants: {
-      variant: {
-        // Border варианты с неоморфизмом
-        blueBorder: [
-          'border border-[#5666ED] bg-[#FAFAFA] text-[#161616]',
-          'shadow-[0px_4px_8px_0px_rgba(86,102,237,0.1),0px_2px_4px_0px_rgba(255,255,255,0.5)_inset]',
-          'hover:shadow-[0px_6px_12px_0px_rgba(86,102,237,0.15),0px_2px_4px_0px_rgba(255,255,255,0.6)_inset]',
-          'active:shadow-[0px_2px_4px_0px_rgba(86,102,237,0.2),0px_1px_2px_0px_rgba(255,255,255,0.7)_inset]'
-        ].join(' '),
-        
-        purpleBorder: [
-          'border border-[#3F3D56] bg-[#FAFAFA] text-[#161616]',
-          'shadow-[0px_4px_8px_0px_rgba(63,61,86,0.1),0px_2px_4px_0px_rgba(255,255,255,0.5)_inset]',
-          'hover:shadow-[0px_6px_12px_0px_rgba(63,61,86,0.15),0px_2px_4px_0px_rgba(255,255,255,0.6)_inset]',
-          'active:shadow-[0px_2px_4px_0px_rgba(63,61,86,0.2),0px_1px_2px_0px_rgba(255,255,255,0.7)_inset]'
-        ].join(' '),
-        
-        darkBorder: [
-          'border border-[#2F2E41] bg-[#FAFAFA] text-[#161616]',
-          'shadow-[0px_4px_8px_0px_rgba(47,46,65,0.1),0px_2px_4px_0px_rgba(255,255,255,0.5)_inset]',
-          'hover:shadow-[0px_6px_12px_0px_rgba(47,46,65,0.15),0px_2px_4px_0px_rgba(255,255,255,0.6)_inset]',
-          'active:shadow-[0px_2px_4px_0px_rgba(47,46,65,0.2),0px_1px_2px_0px_rgba(255,255,255,0.7)_inset]'
-        ].join(' '),
-        
-        grayBorder: [
-          'border border-[#CACACA] bg-[#FAFAFA] text-[#161616]',
-          'shadow-[0px_4px_8px_0px_rgba(202,202,202,0.1),0px_2px_4px_0px_rgba(255,255,255,0.5)_inset]',
-          'hover:shadow-[0px_6px_12px_0px_rgba(202,202,202,0.15),0px_2px_4px_0px_rgba(255,255,255,0.6)_inset]',
-          'active:shadow-[0px_2px_4px_0px_rgba(202,202,202,0.2),0px_1px_2px_0px_rgba(255,255,255,0.7)_inset]'
-        ].join(' '),
+const appleButtonStyles = {
+  base: 'inline-flex items-center justify-center font-normal transition-all duration-200 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
+  
+  variant: {
+    // Border варианты с неоморфизмом
+    blueBorder: 'border border-[#5666ED] bg-[#FAFAFA] text-[#161616] shadow-[0px_4px_8px_0px_rgba(86,102,237,0.1),0px_2px_4px_0px_rgba(255,255,255,0.5)_inset]',
+    purpleBorder: 'border border-[#3F3D56] bg-[#FAFAFA] text-[#161616] shadow-[0px_4px_8px_0px_rgba(63,61,86,0.1),0px_2px_4px_0px_rgba(255,255,255,0.5)_inset]',
+    darkBorder: 'border border-[#2F2E41] bg-[#FAFAFA] text-[#161616] shadow-[0px_4px_8px_0px_rgba(47,46,65,0.1),0px_2px_4px_0px_rgba(255,255,255,0.5)_inset]',
+    grayBorder: 'border border-[#CACACA] bg-[#FAFAFA] text-[#161616] shadow-[0px_4px_8px_0px_rgba(202,202,202,0.1),0px_2px_4px_0px_rgba(255,255,255,0.5)_inset]',
 
-        // Background варианты с неоморфизмом  
-        blueBg: [
-          'border-0 bg-[#5666ED] text-white',
-          'shadow-[0px_4px_8px_0px_rgba(86,102,237,0.3),0px_2px_4px_0px_rgba(255,255,255,0.25)_inset]',
-          'hover:shadow-[0px_6px_12px_0px_rgba(86,102,237,0.4),0px_2px_4px_0px_rgba(255,255,255,0.3)_inset]',
-          'active:shadow-[0px_2px_4px_0px_rgba(86,102,237,0.5),0px_1px_2px_0px_rgba(255,255,255,0.4)_inset]'
-        ].join(' '),
-        
-        purpleBg: [
-          'border-0 bg-[#3F3D56] text-white',
-          'shadow-[0px_4px_8px_0px_rgba(63,61,86,0.3),0px_2px_4px_0px_rgba(255,255,255,0.15)_inset]',
-          'hover:shadow-[0px_6px_12px_0px_rgba(63,61,86,0.4),0px_2px_4px_0px_rgba(255,255,255,0.2)_inset]',
-          'active:shadow-[0px_2px_4px_0px_rgba(63,61,86,0.5),0px_1px_2px_0px_rgba(255,255,255,0.25)_inset]'
-        ].join(' '),
-        
-        darkBg: [
-          'border-0 bg-[#2F2E41] text-white',
-          'shadow-[0px_4px_8px_0px_rgba(47,46,65,0.3),0px_2px_4px_0px_rgba(255,255,255,0.1)_inset]',
-          'hover:shadow-[0px_6px_12px_0px_rgba(47,46,65,0.4),0px_2px_4px_0px_rgba(255,255,255,0.15)_inset]',
-          'active:shadow-[0px_2px_4px_0px_rgba(47,46,65,0.5),0px_1px_2px_0px_rgba(255,255,255,0.2)_inset]'
-        ].join(' '),
-        
-        grayBg: [
-          'border-0 bg-[#CACACA] text-[#161616]',
-          'shadow-[0px_4px_8px_0px_rgba(202,202,202,0.3),0px_2px_4px_0px_rgba(255,255,255,0.5)_inset]',
-          'hover:shadow-[0px_6px_12px_0px_rgba(202,202,202,0.4),0px_2px_4px_0px_rgba(255,255,255,0.6)_inset]',
-          'active:shadow-[0px_2px_4px_0px_rgba(202,202,202,0.5),0px_1px_2px_0px_rgba(255,255,255,0.7)_inset]'
-        ].join(' '),
-      },
-      size: {
-        lg: 'w-[205px] h-[56px] px-[56px] py-[16px] rounded-[32px] text-[21px] leading-[150%] gap-3',
-        md: 'w-[127px] h-[40px] px-[24px] py-[8px] rounded-[32px] text-[16px] leading-[150%] gap-2',
-      },
-    },
-    defaultVariants: {
-      variant: 'blueBorder',
-      size: 'lg',
-    },
+    // Background варианты с неоморфизмом  
+    blueBg: 'border-0 bg-[#5666ED] text-white shadow-[0px_4px_8px_0px_rgba(86,102,237,0.3),0px_2px_4px_0px_rgba(255,255,255,0.25)_inset]',
+    purpleBg: 'border-0 bg-[#3F3D56] text-white shadow-[0px_4px_8px_0px_rgba(63,61,86,0.3),0px_2px_4px_0px_rgba(255,255,255,0.15)_inset]',
+    darkBg: 'border-0 bg-[#2F2E41] text-white shadow-[0px_4px_8px_0px_rgba(47,46,65,0.3),0px_2px_4px_0px_rgba(255,255,255,0.1)_inset]',
+    grayBg: 'border-0 bg-[#CACACA] text-[#161616] shadow-[0px_4px_8px_0px_rgba(202,202,202,0.3),0px_2px_4px_0px_rgba(255,255,255,0.5)_inset]',
+  },
+  
+  size: {
+    lg: 'apple-btn-lg',
+    md: 'apple-btn-md',
   }
-);
+};
 
-export interface AppleButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof appleButtonVariants> {}
+export interface AppleButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'blueBorder' | 'purpleBorder' | 'darkBorder' | 'grayBorder' | 'blueBg' | 'purpleBg' | 'darkBg' | 'grayBg';
+  size?: 'lg' | 'md';
+}
 
 const AppleButton = React.forwardRef<HTMLButtonElement, AppleButtonProps>(
-  ({ className, variant, size, children, ...props }, ref) => {
+  ({ className, variant = 'blueBorder', size = 'lg', children, ...props }, ref) => {
+    const buttonClasses = cn(
+      appleButtonStyles.base,
+      appleButtonStyles.variant[variant],
+      appleButtonStyles.size[size],
+      className
+    );
+
     return (
-      <button
-        className={cn(appleButtonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      >
+      <button className={buttonClasses} ref={ref} {...props}>
         <AppleIcon />
         <span>{children}</span>
       </button>
@@ -105,4 +56,4 @@ const AppleButton = React.forwardRef<HTMLButtonElement, AppleButtonProps>(
 
 AppleButton.displayName = 'AppleButton';
 
-export { AppleButton, appleButtonVariants };
+export { AppleButton };

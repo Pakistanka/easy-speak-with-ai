@@ -1,6 +1,41 @@
 @import './typography.css';
-@import 'tailwindcss';
-
+@import "tailwindcss";
+@layer components {
+  .btn-figma-lg {
+    height: 56px;
+    padding: 12px 56px;
+    border-radius: 24px;
+    font-size: 18px;
+    line-height: 150%;
+  }
+  .btn-figma-md {
+    height: 40px;
+    padding: 8px 24px;
+    border-radius: 24px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
+@layer components {
+  .apple-btn-lg {
+    width: 205px;
+    height: 56px;
+    padding: 16px 56px;
+    border-radius: 32px;
+    font-size: 21px;
+    line-height: 150%;
+    gap: 12px;
+  }
+  .apple-btn-md {
+    width: 127px;
+    height: 40px;
+    padding: 8px 24px;
+    border-radius: 32px;
+    font-size: 16px;
+    line-height: 150%;
+    gap: 8px;
+  }
+}
 @theme {
   --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-family-poppins: 'Poppins', ui-sans-serif, system-ui, sans-serif;
