@@ -1,7 +1,7 @@
 export const LandingPage = () => {
   return (
 
-    <div className="min-h-screen flex items-center justify-center flex-wrap py-25 px-26">
+    <div className="min-h-screen flex items-center justify-center flex-wrap sm:py-8 sm:px-8 py-6 px-6">
       {/* Общий контейнер */}
       <section className="flex flex-col w-full justify-baseline md:flex-row">
         {/* Картинка */}
@@ -13,7 +13,7 @@ export const LandingPage = () => {
           />
         </div>
         {/* Форма */}
-        <div className="w-full bg-white flex flex-col md:h-181 md:w-158">
+        <div className="w-full bg-[var(--background)] flex flex-col md:h-181 md:w-158">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">Get in touch!</h2>
           <p className="text-gray-600 mb-10 text-sm sm:text-base">
             Have a question or need support? Contact us!
