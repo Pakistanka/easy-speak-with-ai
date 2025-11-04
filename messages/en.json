@@ -12,12 +12,20 @@
     "readMore": "Read more",
     "language": "Language"
   },
-  "navigation": {
-    "features": "Features",
-    "howItWorks": "How it works",
-    "contactUs": "Contact us",
-    "faqs": "FAQs",
-    "settings": "Settings"
+  "header": {
+    "navigation": {
+      "features": "Features",
+      "howItWorks": "How it works", 
+      "contactUs": "Contact us",
+      "faqs": "FAQs",
+      "settings": "Settings"
+    },
+    "wallet": "Crypto wallet",
+    "buttons": {
+      "signUp": "Sign up",
+      "logIn": "Log in", 
+      "logOut": "Log out"
+    }
   },
   "footer": {
     "privacyPolicy": "Privacy Policy",

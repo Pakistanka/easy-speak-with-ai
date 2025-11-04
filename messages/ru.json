@@ -12,12 +12,20 @@
     "readMore": "Читать далее",
     "language": "Язык"
   },
-  "navigation": {
-    "features": "Возможности",
-    "howItWorks": "Как это работает",
-    "contactUs": "Связаться с нами",
-    "faqs": "Частые вопросы",
-    "settings": "Настройки"
+  "header": {
+    "navigation": {
+      "features": "Возможности",
+      "howItWorks": "Как это работает", 
+      "contactUs": "Свяжитесь с нами",
+      "faqs": "Частые вопросы",
+      "settings": "Настройки"
+    },
+    "wallet": "Крипто кошелек",
+    "buttons": {
+      "signUp": "Регистрация",
+      "logIn": "Войти", 
+      "logOut": "Выйти"
+    }
   },
   "footer": {
     "privacyPolicy": "Политика конфиденциальности",
