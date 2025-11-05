@@ -1,6 +1,7 @@
 'use client';
 
 import FirstWelcomePage from '@/pages/FirstWelcomePage';
+import SecondWelcomePage from '@/pages/SecondWelcomePage';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 
@@ -17,7 +18,7 @@ export default function Home() {
 
   return (
     <div className="flex items-center justify-center w-full h-full">
-      <FirstWelcomePage />
+      <SecondWelcomePage />
     </div>
   );
 }
