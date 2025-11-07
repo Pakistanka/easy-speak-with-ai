@@ -51,6 +51,13 @@
     --option-border-color: rgba(233, 233, 233, 1);
     --option-shadow: 0px 4px 8px 0px rgba(71, 70, 116, 0.3);
 
+    --input-placeholder: rgba(121, 121, 121, 1);
+    --input-bg: transparent;
+    --input-bg-autofill: rgba(86, 102, 237, 0.2);
+    --input-border-color: rgba(187, 194, 250, 1);
+    --input-border-focus: rgba(86, 102, 237, 1);
+    --input-error-color: rgba(231, 76, 60, 1);
+
     --first-primary-light-lg-w: 40%;
     --first-primary-light-lg-h: 100%;
     --first-primary-light-lg-left: 15%;
@@ -140,6 +147,13 @@
     --option-border-color: rgba(187, 194, 250, 1);
     --option-shadow: 0px 4px 11.3px 0px rgba(71, 70, 116, 0.6);
 
+    --input-placeholder: rgba(202, 202, 202, 1);
+    --input-bg: rgba(63, 61, 86, 1);
+    --input-bg-autofill: rgba(86, 102, 237, 0.2);
+    --input-border-color: rgba(187, 194, 250, 1);
+    --input-border-focus: rgba(86, 102, 237, 1);
+    --input-border-error: rgba(231, 76, 60, 1);
+
     --first-primary-light-lg-w: 90%;
     --first-primary-light-lg-h: 200%;
     --first-primary-light-lg-left: -15%;
@@ -213,5 +227,37 @@
   }
   html {
     @apply overflow-x-hidden max-w-full;
+  }
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+/* Стили для автозаполнения в WebKit браузерах (Chrome, Safari, Edge) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--input-bg-autofill) inset !important;
+  border-color: var(--input-border-focus) !important;
+  background-color: var(--input-bg-autofill) !important;
+}
+
+/* Для Firefox */
+input:-moz-autofill,
+input:-moz-autofill:hover,
+input:-moz-autofill:focus,
+input:-moz-autofill:active {
+  background-color: var(--input-bg-autofill) !important;
+  box-shadow: 0 0 0 1000px var(--input-bg-autofill) inset !important;
+  border-color: var(--input-border-color) !important;
+}
+
+/* Современный подход с @supports */
+@supports (-webkit-touch-callout: none) {
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--input-bg-autofill) inset !important;
   }
 }

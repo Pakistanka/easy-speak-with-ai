@@ -47,6 +47,21 @@
       "imageAlt": "Learning everywhere illustration"
     }
   },
+  "auth": {
+    "email": "Email",
+    "emailPlaceholder": "email@gmail.com",
+    "password": "Password",
+    "passwordPlaceholder": "Password",
+    "keepLoggedIn": "Keep me logged in",
+    "login": "Log In",
+    "loggingIn": "Logging in...",
+    "loginFailed": "Login failed. Please try again.",
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email must be in the format example@mail.com",
+      "passwordMinLength": "Password must be at least 8 characters"
+    }
+  },
   "posts": {
     "title": "Blog Posts",
     "description": "Discover our latest articles and insights",

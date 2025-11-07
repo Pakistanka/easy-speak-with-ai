@@ -47,6 +47,21 @@
       "imageAlt": "Обучайтесь повсюду изображение"
     }
   },
+  "auth": {
+    "email": "Email",
+    "emailPlaceholder": "email@gmail.com",
+    "password": "Пароль",
+    "passwordPlaceholder": "Пароль",
+    "keepLoggedIn": "Запомнить меня",
+    "login": "Войти",
+    "loggingIn": "Вход ...",
+    "loginFailed": "Ошибка входа. Попробуйте еще раз.",
+    "validation": {
+      "emailRequired": "Email обязателен",
+      "emailInvalid": "Email должен быть в формате example@mail.com",
+      "passwordMinLength": "Пароль должен быть не менее 8 символов"
+    }
+  },
   "posts": {
     "title": "Блог-посты",
     "description": "Откройте для себя наши последние статьи и идеи",
