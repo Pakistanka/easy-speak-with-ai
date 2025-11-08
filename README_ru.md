@@ -73,7 +73,7 @@ src/
 
 ### Требования
 - Node.js >= 20.0.0
-- Yarn или npm
+- Yarn
 
 ### Установка
 
@@ -86,8 +86,6 @@ cd easy-speak-2
 2. **Установить зависимости**
 ```bash
 yarn install
-# или
-npm install
 ```
 
 3. **Настроить переменные окружения**
@@ -98,8 +96,6 @@ cp .env.example .env.local
 4. **Запустить сервер разработки**
 ```bash
 yarn dev
-# или
-npm run dev
 ```
 
 Откройте [http://localhost:3000](http://localhost:3000) в браузере.

@@ -6,11 +6,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-import LangSwitcher from '../../widgets/LangSwitcher';
-import ThemeToggle from '../../widgets/ThemeToggle';
+import LangSwitcher from './LangSwitcher';
+import ThemeToggle from './ThemeToggle';
 
 export default function MainNavbar() {
-  const t = useTranslations('navigation');
+  const t = useTranslations('posts');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -35,7 +35,7 @@ export default function MainNavbar() {
             href={`/${currentLocale}/posts`}
             className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
           >
-            {t('posts')}
+            {t('title')}
           </Link>
           <LangSwitcher />
           <ThemeToggle />
@@ -61,7 +61,7 @@ export default function MainNavbar() {
                 className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--primary)] transition-colors duration-200"
                 onClick={handleToggle}
               >
-                {t('posts')}
+                {t('title')}
               </Link>
               <div className="flex items-center justify-between">
                 <LangSwitcher />
