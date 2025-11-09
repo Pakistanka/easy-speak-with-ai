@@ -3,7 +3,7 @@
 
 'use client';
 
-import { LandingPage } from '@/widgets/LandingPage/ui/LandingPage';
+import { LandingPage } from '@/widgets/landingPage/ui/LandingPage';
 import { motion } from 'framer-motion';
 import { ArrowRight, Code, Rocket, ShieldCheck, Zap } from 'lucide-react';
 import { useTranslations } from 'next-intl';

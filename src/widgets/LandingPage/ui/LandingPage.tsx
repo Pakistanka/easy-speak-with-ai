@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const LandingPage = () => {
   return (
 
@@ -5,11 +7,13 @@ export const LandingPage = () => {
       {/* Общий контейнер */}
       <section className="flex flex-col w-full justify-baseline md:flex-row">
         {/* Картинка */}
-        <div className="flex  xs:justify-start  md:justify-end xs:order-1 md:order-2">
-          <img
+        <div className="flex xs:justify-start  md:justify-end xs:order-1 md:order-2">
+          <Image
             src="/images/illustration.svg"
             alt="Contact"
-            className="w-28 h-auto md:w-158"
+            width={158}
+            height={181}
+            className="h-auto md:w-158"
           />
         </div>
         {/* Форма */}
@@ -91,9 +95,9 @@ export const LandingPage = () => {
           <details open className="py-3 group mb-10">
             <summary className="cursor-pointer text-base md:text-lg font-semibold flex justify-between items-center">
               How does it work?
-              <span className="ml-2 group-open:rotate-180 transition-transform rotate-0">
-                <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 9l3-3 3 3" />
+              <span className="ml-2 group-open:rotate-360 transition-transform rotate-180">
+                <svg width="25" height="14" viewBox="0 0 25 14" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M23.5 12.25L12.25 1L1 12.25" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </span>
             </summary>
@@ -105,9 +109,9 @@ export const LandingPage = () => {
           <details open className="py-3 group mb-10">
             <summary className="cursor-pointer text-base md:text-lg font-semibold flex justify-between items-center">
               Is it anonymous?
-              <span className="ml-2 group-open:rotate-180 transition-transform rotate-0">
-                <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 9l3-3 3 3" />
+              <span className="ml-2 group-open:rotate-360 transition-transform rotate-180">
+                <svg width="25" height="14" viewBox="0 0 25 14" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M23.5 12.25L12.25 1L1 12.25" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </span>
             </summary>
@@ -119,9 +123,9 @@ export const LandingPage = () => {
           <details className="py-3 group mb-10">
             <summary className="cursor-pointer text-base md:text-lg font-semibold flex justify-between items-center">
               How to make payments?
-              <span className="ml-2 group-open:rotate-180 transition-transform rotate-0">
-                <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 9l3-3 3 3" />
+              <span className="ml-2 group-open:rotate-360 transition-transform rotate-180">
+                <svg width="25" height="14" viewBox="0 0 25 14" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M23.5 12.25L12.25 1L1 12.25" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </span>
             </summary>
@@ -133,9 +137,9 @@ export const LandingPage = () => {
           <details className="py-3 group mb-10">
             <summary className="cursor-pointer text-base md:text-lg font-semibold flex justify-between items-center">
               Can I trust the platform?
-              <span className="ml-2 group-open:rotate-180 transition-transform rotate-0">
-                <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 9l3-3 3 3" />
+              <span className="ml-2 group-open:rotate-360 transition-transform rotate-180">
+                <svg width="25" height="14" viewBox="0 0 25 14" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M23.5 12.25L12.25 1L1 12.25" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </span>
             </summary>
@@ -147,9 +151,9 @@ export const LandingPage = () => {
           <details className="py-3 group">
             <summary className="cursor-pointer text-base md:text-lg font-semibold flex justify-between items-center">
               How to get started?
-              <span className="ml-2 group-open:rotate-180 transition-transform rotate-0">
-                <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 9l3-3 3 3" />
+              <span className="ml-2 group-open:rotate-360 transition-transform rotate-180">
+                <svg width="25" height="14" viewBox="0 0 25 14" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M23.5 12.25L12.25 1L1 12.25" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
               </span>
             </summary>
@@ -164,7 +168,7 @@ export const LandingPage = () => {
 
       <section className="w-full bg-slate-900 rounded-3xl p-8 md:p-12 flex flex-col items-center justify-center relative overflow-hidden" style={{ maxWidth: '1304px', margin: '0 auto' }}>
         <div className="absolute bottom-0 left-0 z-10 opacity-70 pointer-events-none select-none w-1/5 max-w-[320px] max-h-[187px] md:max-w-[430px] md:max-h-[251px]">
-          <img src="/images/earth.svg" alt="[translate:Earth]" className="w-full h-full object-contain" />
+          <img src="/images/earth.svg" alt="Earth" className="w-full h-full object-contain" />
         </div>
         <div className="text-center mx-auto text-white max-w-xl z-20 flex flex-col justify-center items-center h-[287px]">
           <h2 className="text-xl md:text-3xl font-bold mb-3 leading-tight">
@@ -182,34 +186,11 @@ export const LandingPage = () => {
       </section>
 
 
-
-
-      {/* <div className=" mx-auto bg-indigo-900 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row gap-6 relative text-white">
-        <div className="flex-1 flex items-center justify-center">
-          <img src="/images/earth.svg" alt="Globe illustration" className="w-3/4 md:w-full" />
-        </div>
-
-        <div className="flex-1">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center md:text-left">
-            Lean a new language today
-          </h2>
-          <p className="text-sm md:text-base mb-6 text-center md:text-left">
-            Discover the power of EasySpeak and unlock your potential to speak confidently and fluently in a short amount of time. Join our community and start your journey to improved speaking skills today!
-          </p>
-          <div className="text-center md:text-left">
-            <button className="bg-indigo-600 hover:bg-indigo-700 transition text-white font-semibold py-3 px-6 rounded-lg text-sm">
-              Get started
-            </button>
-          </div>
-        </div>
-
-      </div> */}
-
-
-
-
-
     </div>
+
+
+
+
 
   )
 }
