@@ -1,6 +1,9 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export const LandingPage = () => {
+  const t = useTranslations();
+
   return (
 
     <div className="min-h-screen flex items-center justify-center flex-wrap sm:py-8 sm:px-8 py-6 px-6">
@@ -18,15 +21,23 @@ export const LandingPage = () => {
         </div>
         {/* Форма */}
         <div className="w-full bg-[var(--background)] flex flex-col md:h-181 md:w-158">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Get in touch!</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+
+            {t('getInTouch')}
+            
+          </h2>
           <p className="text-gray-600 mb-10 text-sm sm:text-base">
-            Have a question or need support? Contact us!
+
+            {t('contactSupport')}
+
           </p>
           <form className="flex flex-col gap-6" noValidate>
             <div className="flex flex-col sm:flex-row gap-8 mb-6">
               <div className="flex flex-col w-full sm:w-1/4">
                 <label htmlFor="firstName" className="mb-1 text-xs font-semibold text-gray-700">
-                  First Name
+
+                  {t('firstName')}
+
                 </label>
                 <input
                   type="text"

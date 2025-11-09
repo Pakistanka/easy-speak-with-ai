@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-import LangSwitcher from '../../widgets/LangSwitcher';
-import ThemeToggle from '../../widgets/ThemeToggle';
+import LangSwitcher from './LangSwitcher';
+import ThemeToggle from './ThemeToggle';
 
 export default function MainNavbar() {
   const t = useTranslations('posts');

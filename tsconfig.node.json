@@ -11,5 +11,4 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["prisma/**/*.ts"]
 }

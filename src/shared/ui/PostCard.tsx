@@ -1,4 +1,4 @@
-import { Badge } from '@/shared/ui/ui/badge';
+import { Badge } from '@/shared/ui/badge/badge';
 import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 import { CalendarIcon, Eye, MessageSquare } from 'lucide-react';

@@ -1,13 +1,7 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable import/no-extraneous-dependencies */
-
 'use client';
 
-import { LandingPage } from '@/widgets/landingPage/ui/LandingPage';
-import { motion } from 'framer-motion';
-import { ArrowRight, Code, Rocket, ShieldCheck, Zap } from 'lucide-react';
+import FirstWelcomePage from '@/pages/FirstWelcomePage';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Home() {
@@ -22,10 +16,8 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center w-full overflow-hidden">
-      
-    <LandingPage/>
-
+    <div className="flex items-center justify-center w-full h-full">
+      <FirstWelcomePage />
     </div>
   );
 }
