@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation';
-
 import { locales } from '@/i18n';
 
 type Props = {
