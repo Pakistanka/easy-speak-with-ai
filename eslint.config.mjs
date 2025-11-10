@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
