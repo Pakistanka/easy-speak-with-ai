@@ -24,8 +24,10 @@ export default function Home() {
   return (
     
     <div className="flex flex-col items-center w-full overflow-hidden">
+      <PreviewMain/>
+      
       {/* Hero Section */}
-      <motion.section
+      {/* <motion.section
         className="w-full py-12 sm:py-16 md:py-24 lg:py-32 bg-[var(--background)] relative overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -54,12 +56,12 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
-      <PreviewMain/>
+      
 
       {/* Features Section */}
-      <motion.section
+      {/* <motion.section
         className="w-full py-12 sm:py-16 md:py-24 bg-[var(--card)]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -120,7 +122,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
     </div>
   );
 }
