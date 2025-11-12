@@ -71,5 +71,31 @@
     "description": "Start building amazing web applications with our production-ready boilerplate featuring the latest technologies and best practices.",
     "getStarted": "Get Started",
     "learnMore": "Learn More"
+  },
+  "homePage": {
+    "titleSection1_part1": "Learn languages easily with",
+    "titleSection1_letterE": "E",
+    "titleSection1_middle": "asy",
+    "titleSection1_letterS": "S",
+    "titleSection1_part2": "peak - start your journey today",
+    "descriptionSection1": "Our language learning application offers an anonymous and secure environment for teachers and students. With crypto payments, you can enjoy the benefits of a decentralized currency without the need for traditional banking information.",
+    "buttongetStarted": "Get started",
+    "blockPayTitle": "Pay with cryptocurrency",
+    "blockPayDescription": "Effortless transactions: embrace the future of payment",
+    "blockLearnTitle": "Learn languages anonymously",
+    "blockLearnDescription": "Experience the benefits of anonymous language learning",
+    "blockDiscoverTitle": "Discover the power of our app",
+    "blockDiscoverDescription": "Learn at your own pace with our easy-to-use interface",
+    "blockDiscoverBegin": "Begin your language journey today!",
+    "titleSection3": "Discover our innovative Language Learning App",
+    "descriptionSection3": "Our application offers a range of benefits for both teachers and students. Teachers can easily create and manage their language courses, while students can enjoy a seamless learning experience with speaking lessons and personalized feedback.",
+    "titleSection4": "Get started in 3 simple steps",
+    "blockStep1Title": "Join our language learning community today!",
+    "blockStep1Description": "Signing up is quick and easy. Begin your journey by creating a profile. The app helps students explore lessons and  teachers showcase their expertise.",
+    "blockStep2Title": "Explore lessons and connect with the right match",
+    "blockStep2Description": "Discover a diverse range of lessons. For students, find the perfect teacher, and for teachers, showcase your lessons to connect with eager learners.",
+    "blockStep3Title": "Start your journey to learn a new language",
+    "blockStep3Description": "Finalize your connection by booking lessons (for students) or getting booked (for teachers). Pay with crypto and start the learning journey!"
   }
+
 }
