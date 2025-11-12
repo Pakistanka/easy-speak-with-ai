@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { Button } from '@/shared';
+
 
 export const LandingPage = () => {
   const t = useTranslations("landingPage");
@@ -80,12 +82,7 @@ export const LandingPage = () => {
               <a href="#" className="underline text-indigo-700">{t('termsAgreementLink')}</a>
               {t('termsAgreementAfter')}
             </label>
-            <button
-              type="submit"
-              className="mt-2 sm:w-1/4 bg-indigo-600 hover:bg-indigo-700 transition text-white font-medium py-3 rounded-2xl text-sm"
-            >
-              {t('send')}
-            </button>
+            <Button variant="primary" size="figma_lg">{t('send')}</Button>
           </form>
         </div>
       </section>
@@ -174,9 +171,17 @@ export const LandingPage = () => {
 
       {/* Баннер */}
       <section className="w-full bg-slate-900 rounded-3xl p-8 md:p-12 flex flex-col items-center justify-center relative overflow-hidden" style={{ maxWidth: '1304px', margin: '0 auto' }}>
-        <div className="absolute bottom-0 left-0 z-10 opacity-70 pointer-events-none select-none w-1/5 max-w-[320px] max-h-[187px] md:max-w-[430px] md:max-h-[251px]">
-          <img src="/images/earth.svg" alt="Earth" className="w-full h-full object-contain" />
+        <div className="absolute bottom-0 left-0 z-10 opacity-70 pointer-events-none select-none w-2/5 max-w-[320px] max-h-[187px] md:w-1/5 md:max-w-[430px] md:max-h-[251px]">
+          <Image
+            src="/images/earth.svg"
+            alt="Earth"
+            layout="responsive"
+            width={430}
+            height={251}
+            className="object-contain"
+          />
         </div>
+
         <div className="text-center mx-auto text-white max-w-xl z-20 flex flex-col justify-center items-center h-[287px]">
           <h2 className="text-xl md:text-3xl font-bold mb-3 leading-tight">
             {t('learnLanguageToday')}
@@ -184,9 +189,7 @@ export const LandingPage = () => {
           <p className="text-xs md:text-sm mb-6 leading-relaxed">
             {t('easySpeakDesc1')}
           </p>
-          <a href="#" className="inline-block bg-indigo-500 hover:bg-indigo-600 py-2 px-8 rounded-full text-white font-semibold transition text-sm md:text-base shadow-md">
-            {t('getStarted')}
-          </a>
+          <Button variant="primary" size="figma_lg">{t('getStarted')}</Button>
         </div>
       </section>
 
