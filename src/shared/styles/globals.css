@@ -21,13 +21,12 @@
   --color-muted-foreground: oklch(60% 0.05 260);
   --color-card: oklch(98% 0.01 260);
   --color-card-foreground: oklch(25% 0.15 260);
-  
 }
 
 @layer base {
   :root {
     --background: oklch(100% 0 0);
-    --foreground: rgba(22, 22, 22, 1);
+    --foreground: oklch(25% 0.15 260);
     --card: oklch(98% 0.01 260);
     --card-foreground: oklch(25% 0.15 260);
     --popover: oklch(98% 0.01 260);
@@ -43,8 +42,8 @@
     --border: oklch(88% 0.03 260);
     --input: oklch(88% 0.03 260);
     --ring: oklch(65% 0.2 270);
-    --color-span-e:rgba(86, 102, 237, 1);
-    --color-span-s:rgba(225, 182, 182, 1);
+
+    
     --text-color: rgba(22, 22, 22, 1);
     --button-outline: rgba(86,102,237,1);
     
@@ -116,18 +115,11 @@
     --second-accent-light-rotate: 150deg;
     --second-accent-light-blur: 50px;
     --second-accent-light-color: rgba(254, 246, 235, 1);
-
-    /* color-home */
-    --block-learn-background: rgba(47, 46, 65, 1);
-    --block-pay-background:rgb(255, 255, 255);
-    --block-pay-text:rgba(22, 22, 22, 1);
-    --home-4-stepNumber-color:rgba(47, 46, 65, 1);
-    --color-number-stepNumber:rgba(250, 250, 250, 1);
   }
 
   .dark {
     --background: rgba(47, 46, 65, 1);
-    --foreground: rgb(250, 250, 250);;
+    --foreground: oklch(90% 0.02 260);
     --card: oklch(20% 0.05 260);
     --card-foreground: oklch(90% 0.02 260);
     --popover: oklch(20% 0.05 260);
@@ -143,6 +135,9 @@
     --border: oklch(30% 0.04 260);
     --input: oklch(30% 0.04 260);
     --ring: oklch(30% 0.05 260);
+
+
+    
     --text-color: rgba(250, 250, 250, 1);
     --button-outline: rgba(255, 182, 182, 1);
 
@@ -214,23 +209,14 @@
     --second-accent-light-rotate: 90deg;
     --second-accent-light-blur: 75px;
     --second-accent-light-color: rgba(254, 246, 235, 1);
-
-    /* color-home */
-    --block-learn-background: #5666ED33;
-    --block-pay-background:rgba(255, 255, 255);
-    --block-pay-text:rgba(22, 22, 22, 1);
-    --home-4-stepNumber-color:rgba(255, 255, 255);
-    --color-number-stepNumber:rgba(22, 22, 22, 1);
   }
 }
 
 @layer base {
   * {
     border-color: var(--border);
-    font-family:  Helvetica;
   }
   body {
-    
     background-color: var(--background);
     color: var(--foreground);
     @apply overflow-x-hidden max-w-full;
