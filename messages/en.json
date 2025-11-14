@@ -12,12 +12,24 @@
     "readMore": "Read more",
     "language": "Language"
   },
+  "header": {
+    "settings": "Settings",
+    "wallet": "Crypto wallet",
+    "buttons": {
+      "signUp": "Sign up",
+      "logIn": "Log in", 
+      "logOut": "Log out"
+    }
+  },
   "navigation": {
     "features": "Features",
-    "howItWorks": "How it works",
+    "howItWorks": "How it works", 
     "contactUs": "Contact us",
     "faqs": "FAQs",
-    "settings": "Settings"
+    "myProfile": "My profile",
+    "becomeAStudent": "Become a student", 
+    "becomeATeacher": "Become a teacher",
+    "support": "Support"
   },
   "footer": {
     "privacyPolicy": "Privacy Policy",
