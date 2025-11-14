@@ -1,0 +1,62 @@
+/* home-4 */
+
+.wrapp-stepNumber{
+  margin: auto;
+}
+
+.stepNumber::before {
+  content: '';
+  position: absolute;
+  width: 340px;
+  height: 1px;
+  left: 76px;
+  transform: translateY(-50%);
+  background-color: #6b7280; /* gray-500 */  
+}
+
+
+
+@media (max-width: 1023px) {
+ .stepNumber::before {
+    width: 112px;
+    left: -150px; /* Увеличил расстояние слева */
+  }
+  
+  .stepNumber::after {
+    content: '';
+    position: absolute;
+    width: 112px;
+    height: 1px;
+    right: -150px; /* Увеличил расстояние справа */
+    transform: translateY(-50%);
+    background-color: #6b7280;
+  }
+}
+@media(max-width: 640px) {
+    .stepNumber::before {
+        left: -137px;
+    }
+    .stepNumber::after {
+        right: -137px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .stepNumber::before {
+        width: 230px;
+    }
+}
+
+@media(min-width: 1280px) {
+    .stepNumber::before {
+        width: 245px;
+    }
+}
+
+@media (min-width: 1024px) {
+  .stepNumberThird::before {
+    display: none;
+  }
+
+}
+
