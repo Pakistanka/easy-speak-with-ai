@@ -81,17 +81,17 @@ export const PreviewMain=()=>{
                     <p>{t('titleSection4')}</p>
                 </div>
                 <div className="div grid grid-cols-1 gap-[40] sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
-                    <div className='div'>
+                    <div>
                         <div className={`${styles['wrapp-stepNumber']} ml-[150]  relative flex justify-center items-center w-[41px] md:w-[54px] h-[41px] md:h-[54px] text-(--color-number-stepNumber) font-normal text-[27px] md:text-[36px] rounded-full border-[1]border-(--home-4-stepNumber-color) bg-(--home-4-stepNumber-color) ${styles.stepNumber}`}>1</div>
                         <h3 className="text-[21px] md:text-[27px] font-bold pt-6 pb-4 md:pb-6">{t('blockStep1Title')}</h3>
                         <p className='text-[16px] md:text-[21px]'>{t('blockStep1Description')}</p>
                     </div>
-                    <div className="div">
+                    <div>
                         <div className={`${styles['wrapp-stepNumber']} ml-[150] lg:m-auto mb-6 relative flex justify-center items-center w-[41px] md:w-[54px] h-[41px] md:h-[54px] text-(--color-number-stepNumber) font-normal text-[27px] md:text-[36px] rounded-full border-[1]border-(--home-4-stepNumber-color) bg-(--home-4-stepNumber-color) ${styles.stepNumber}`}>2</div>
                         <h3 className="text-[21px] md:text-[27px] font-bold pt-6 pb-4 md:pb-6">{t('blockStep2Title')}</h3>
                         <p className='text-[16px] md:text-[21px]'>{t('blockStep2Description')}</p>
                     </div>
-                    <div className="div">
+                    <div>
                         <div className={`${styles['wrapp-stepNumber']} ml-[150] mb-6 relative flex justify-center items-center w-[41px] md:w-[54px] h-[41px] md:h-[54px] text-(--color-number-stepNumber) font-normal text-[27px] md:text-[36px] rounded-full border-[1] border-(--home-4-stepNumber-color) bg-(--home-4-stepNumber-color) ${styles.stepNumber} ${styles.stepNumberThird}`}>3</div>
                         <h3 className="text-[21px] md:text-[27px] font-bold pt-6 pb-4 md:pb-6">{t('blockStep3Title')}</h3>
                         <p className='text-[16px] md:text-[21px]'>{t('blockStep3Description')}</p>
