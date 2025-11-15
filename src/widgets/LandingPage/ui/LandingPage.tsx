@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/shared';
+import { Accordion } from './Accordion';
 
 
 export const LandingPage = () => {
@@ -88,7 +89,7 @@ export const LandingPage = () => {
       </section>
 
       {/* Аккордеон */}
-      <section className="py-12 grid grid-cols-1 md:grid-cols-2 gap-18 bg-[var(--background)]">
+      {/* <section className="py-12 grid grid-cols-1 md:grid-cols-2 gap-18 bg-[var(--background)]">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[var(--text-color)]">{t('anyQuestions')}</h2>
           <p className="text-[var(--text-color)] text-sm md:text-base">
@@ -99,7 +100,7 @@ export const LandingPage = () => {
           <details open className="py-3 group mb-10">
             <summary className="cursor-pointer text-base md:text-lg font-semibold flex justify-between items-center text-[var(--text-color)]">
               {t('howDoesItWork')}
-              <span className="ml-2 group-open:rotate-360 transition-transform rotate-180">
+              <span className="ml-2 group-open:rotate-360 transition-transform duration-500 ease-in-out rotate-180">
                 <svg className="stroke-current" width="25" height="14" viewBox="0 0 25 14" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M23.5 12.25L12.25 1L1 12.25" stroke-linecap="round" stroke-linejoin="round"></path>
                 </svg>
@@ -166,7 +167,9 @@ export const LandingPage = () => {
             </p>
           </details>
         </div>
-      </section>
+      </section> */}
+      
+      <Accordion t={t} />
 
       {/* Баннер */}
       <section className="w-full bg-[var(--color-dark-blue)] rounded-3xl p-8 md:p-12 flex flex-col items-center justify-center relative overflow-hidden" style={{ maxWidth: '1304px', margin: '0 auto' }}>
