@@ -11,7 +11,6 @@ import MainNavbar from '@/widgets/Navbar';
 import MainFooter from '@/widgets/Footer';
 import { BASE_URL, generateUniversalMetadata, TLocale } from '@/shared/lib/metadata';
 import Header from '@/widgets/Header';
-// import Header from '@/widgets/header';
 
 export async function generateMetadata({ params }: { params: { locale: TLocale } }) {
   const metadata = await generateUniversalMetadata({
