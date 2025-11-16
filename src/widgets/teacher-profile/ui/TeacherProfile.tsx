@@ -7,9 +7,9 @@ import { helvetica } from '@/shared/fonts';
 import { Button } from '@/shared';
 
 const TeacherProfile = () => {
-  const teacherId = '1'; // или получи из URL/параметров
+  const teacherId = '1';
 
-  const { profile, isLoading, error, refetch, formattedPrice, ratingStars } =
+  const { profile, isLoading, error, refetch, formattedPrice } =
     useTeacherProfile(teacherId);
 
   useEffect(() => {
@@ -18,22 +18,20 @@ const TeacherProfile = () => {
     }
   }, [teacherId]);
 
-  // Показываем заглушку во время загрузки
   if (isLoading) {
     return (
       <div className="relative min-h-screen bg-[#2f2e41] mb-8">
-        <div className="relative z-10 max-w-[800px] text-white">
+        <div className="relative z-10 max-w-[800px] mx-auto text-white pl-10 pb-10">
           <div className="animate-pulse">Loading...</div>
         </div>
       </div>
     );
   }
 
-  // Показываем ошибку
   if (error) {
     return (
       <div className="relative min-h-screen bg-[#2f2e41] mb-8">
-        <div className="relative z-10 max-w-[800px] text-white">
+        <div className="relative z-10 max-w-[800px] mx-auto text-white pl-10 pb-10">
           <div>Error: {error}</div>
           <button
             onClick={() => refetch()}
@@ -46,11 +44,10 @@ const TeacherProfile = () => {
     );
   }
 
-  // Если нет профиля
   if (!profile) {
     return (
       <div className="relative min-h-screen bg-[#2f2e41] mb-8">
-        <div className="relative z-10 max-w-[800px] text-white">
+        <div className="relative z-10 max-w-[800px] mx-auto text-white pl-10 pb-10">
           <div>Profile not found</div>
         </div>
       </div>
@@ -70,15 +67,12 @@ const TeacherProfile = () => {
         }}
       />
 
-      {/* Весь контент в одном столбце, сдвинутый вправо */}
-      <div className="relative z-10 max-w-[800px] mx-auto text-white space-y-[32px] pl-10 pb-10">
-        {' '}
-        {/* mx-auto (центрирование) и отступы pl-10 pb-10 меняем или убираем при использовании*/}
+      {/* Основной контент */}
+      <div className="relative z-10 max-w-[800px] mx-auto text-white space-y-8 pl-10 pb-10">
         {/* Аватарка, имя, профессия и языки */}
         <div className="flex gap-[34px] items-start">
           {/* Аватарка */}
           <div className="flex-shrink-0 mt-[6px]">
-            {' '}
             <div className="w-32 h-32 rounded-full bg-gray-600 flex items-center justify-center">
               <span className="text-4xl font-semibold text-gray-300">
                 {profile.name
@@ -91,7 +85,6 @@ const TeacherProfile = () => {
 
           {/* Текст */}
           <div className="space-y-2 mt-[6px]">
-            {' '}
             <div>
               <h2
                 className={`${helvetica.className} font-bold text-[21px] leading-[150%] text-[#fafafa]`}
@@ -124,10 +117,11 @@ const TeacherProfile = () => {
             </div>
           </div>
         </div>
+
         {/* About me */}
-        <div className="mb-8">
+        <div>
           <h3
-            className={`${helvetica.className} font-bold text-[21px] leading-[150%] mb-4 text-[#fafafa]`}
+            className={`${helvetica.className} font-bold text-[21px] leading-[150%] text-[#fafafa] mb-4`}
           >
             About me
           </h3>
@@ -137,28 +131,30 @@ const TeacherProfile = () => {
             {profile.about}
           </p>
         </div>
+
         {/* Interesting topics */}
         <div>
           <h3
-            className={`${helvetica.className} font-bold text-[21px] leading-[150%] mb-4 text-[#fafafa]`}
+            className={`${helvetica.className} font-bold text-[21px] leading-[150%] text-[#fafafa] mb-4`}
           >
             Interesting topics
           </h3>
-          <div className="flex gap-4">
+          <div className="flex gap-3">
             {profile.topics.map((topic, index) => (
               <span
                 key={index}
-                className="font-helvetica font-normal text-base leading-[150%] text-center text-[#fafafa] border border-[#bbc2fa] rounded-[16px] py-2 px-4 inline-block whitespace-nowrap"
+                className={`${helvetica.className} font-normal text-base leading-[150%] text-center text-[#fafafa] border border-[#bbc2fa] rounded-[16px] py-2 px-4 inline-block whitespace-nowrap`}
               >
                 {topic}
               </span>
             ))}
           </div>
         </div>
+
         {/* Timezone */}
         <div>
           <h3
-            className={`${helvetica.className} font-bold text-[21px] leading-[150%] mb-4 text-[#fafafa]`}
+            className={`${helvetica.className} font-bold text-[21px] leading-[150%] text-[#fafafa] mb-4`}
           >
             Timezone
           </h3>
@@ -168,47 +164,49 @@ const TeacherProfile = () => {
             {profile.timezone}
           </p>
         </div>
-        {/* Рейтинг и статистика с фоном */}
+
+        {/* Рейтинг и статистика - АДАПТИВНЫЙ */}
         <div
-          className="flex items-center justify-center gap-8 p-4 rounded-lg mb-[251px]"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 p-4 rounded-lg mb-16 sm:mb-[251px]"
           style={{ backgroundColor: 'rgba(86, 102, 237, 0.2)' }}
         >
           <div className="flex items-center gap-2">
-            <div className="text-yellow-400 text-[27px]">★</div>
+            <div className="text-yellow-400 text-2xl sm:text-[27px]">★</div>
             <span
-              className={`${helvetica.className} font-normal text-[27px] leading-[150%] text-[#fafafa]`}
+              className={`${helvetica.className} font-normal text-2xl sm:text-[27px] leading-[150%] text-[#fafafa]`}
             >
               {profile.rating.toFixed(1)}
             </span>
           </div>
           <div
-            className={`${helvetica.className} font-normal text-[27px] leading-[150%] text-[#fafafa]`}
+            className={`${helvetica.className} font-normal text-2xl sm:text-[27px] leading-[150%] text-[#fafafa]`}
           >
             {profile.lessonsCount.toLocaleString()} lessons
           </div>
           <div
-            className={`${helvetica.className} font-normal text-[27px] leading-[150%] text-[#fafafa]`}
+            className={`${helvetica.className} font-normal text-2xl sm:text-[27px] leading-[150%] text-[#fafafa]`}
           >
             {profile.studentsCount.toLocaleString()} students
           </div>
         </div>
-        {/* Цена и кнопка на БЕЛОМ фоне */}
-        <div className="bg-white rounded-lg p-6 flex items-center justify-between">
+
+        {/* Цена и кнопка - АДАПТИВНЫЙ */}
+        <div className="bg-white rounded-lg p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex justify-center items-center gap-2">
             <p
-              className={`${helvetica.className} font-bold text-[27px] leading-[150%] text-[#161616]`}
+              className={`${helvetica.className} font-bold text-2xl sm:text-[27px] leading-[150%] text-[#161616]`}
             >
               {formattedPrice}
             </p>
             <p
-              className={`${helvetica.className} font-normal text-[21px] leading-[150%] text-[#797979]`}
+              className={`${helvetica.className} font-normal text-lg sm:text-[21px] leading-[150%] text-[#797979]`}
             >
               /per lesson
             </p>
           </div>
-          <Button className="">
+          <Button className="w-full sm:w-auto">
             <p
-              className={`${helvetica.className} font-normal text-[21px] leading-[150%] text-[#fafafa]`}
+              className={`${helvetica.className} font-normal text-lg sm:text-[21px] leading-[150%] text-white`}
             >
               Book a lesson
             </p>
