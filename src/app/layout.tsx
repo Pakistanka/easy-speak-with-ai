@@ -10,7 +10,7 @@ import type { ChildrenProps } from '@/shared/types';
 import MainNavbar from '@/widgets/Navbar';
 import MainFooter from '@/widgets/Footer';
 import { BASE_URL, generateUniversalMetadata, TLocale } from '@/shared/lib/metadata';
-import Header from '@/widgets/header';
+import Header from '@/widgets/Header';
 
 export async function generateMetadata({ params }: { params: { locale: TLocale } }) {
   const metadata = await generateUniversalMetadata({
