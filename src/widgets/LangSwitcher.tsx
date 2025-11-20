@@ -18,9 +18,9 @@ export default function LangSwitcher() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Extract locale from pathname
-  const pathLocale = pathname.split('/')[1];
+  const pathLocale = pathname?.split('/')[1];
   const locale = locales.find(l => l.code === pathLocale)?.code || 'en';
-  
+
   const currentLocale = locales.find(l => l.code === locale) || locales[0];
 
   // Close dropdown when clicking outside or pressing Escape
@@ -40,7 +40,7 @@ export default function LangSwitcher() {
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
       document.addEventListener('keydown', handleKeyDown);
-      
+
       return () => {
         document.removeEventListener('mousedown', handleClickOutside);
         document.removeEventListener('keydown', handleKeyDown);
@@ -51,10 +51,10 @@ export default function LangSwitcher() {
   const handleLocaleChange = (newLocale: string) => {
     // Close dropdown first
     setIsOpen(false);
-    
+
     // Remove the current locale from the pathname
-    const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || '/';
-    
+    const pathWithoutLocale = pathname?.replace(/^\/[a-z]{2}/, '') || '/';
+
     // Navigate to the new locale using window.location for immediate update
     window.location.href = `/${newLocale}${pathWithoutLocale}`;
   };
@@ -82,8 +82,8 @@ export default function LangSwitcher() {
                 type="button"
                 onClick={() => handleLocaleChange(loc.code)}
                 className={`w-full flex items-center justify-between px-4 py-3 text-sm transition-colors duration-200 ${
-                  locale === loc.code 
-                    ? 'text-[var(--primary)] bg-[var(--primary)]/10 border-l-2 border-l-[var(--primary)]' 
+                  locale === loc.code
+                    ? 'text-[var(--primary)] bg-[var(--primary)]/10 border-l-2 border-l-[var(--primary)]'
                     : 'text-[var(--foreground)] hover:bg-[var(--muted)] hover:text-[var(--primary)]'
                 }`}
               >
