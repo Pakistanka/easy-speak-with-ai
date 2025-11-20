@@ -60,6 +60,14 @@
       "emailRequired": "Email обязателен",
       "emailInvalid": "Email должен быть в формате example@mail.com",
       "passwordMinLength": "Пароль должен быть не менее 8 символов"
+    },
+    "errors": {
+      "invalidCredentials": "Неверный email или пароль",
+      "networkError": "Ошибка сети. Проверьте подключение и попробуйте снова",
+      "serverError": "Ошибка сервера. Пожалуйста, попробуйте позже",
+      "tooManyRequests": "Слишком много запросов. Подождите перед повторной попыткой",
+      "somethingWentWrong": "Что-то пошло не так. Пожалуйста, попробуйте еще раз",
+      "accountLocked": "Ваш аккаунт заблокирован. Обратитесь в поддержку"
     }
   },
   "posts": {

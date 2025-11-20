@@ -5,6 +5,7 @@ import { CheckboxUI } from "@/shared/ui/Checkbox";
 import { InputUI } from "@/shared/ui/Input";
 import z from "zod";
 import { useTranslations } from 'next-intl';
+import { createLoginErrorHandlers } from "@/shared/lib/utils/authErrorUtil";
 
 // Схема валидации с переводимыми сообщениями
 const createLoginSchema = (t: (key: string) => string) => z.object({
@@ -37,12 +38,14 @@ export const LoginForm = ({ forgotPasswordButton }: LoginFormProps) => {
   
   const loginSchema = createLoginSchema(t);
 
+  const errorHandlers = createLoginErrorHandlers(t);
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
-    setServerError,
-    clearAllErrors,
+    formState: { errors, isSubmitting },
+    resetAllErrors,
+    serverError,
   } = useAdvancedForm<LoginFormData>({
     schema: loginSchema,
     defaultValues: {
@@ -53,21 +56,29 @@ export const LoginForm = ({ forgotPasswordButton }: LoginFormProps) => {
     options: {
       validationMode: 'onChange',
     },
+    errorHandlers, // Передаем обработчики ошибок
   });
 
-  const { mutateAsync, isPending } = useFormMutation({
+  const { submitForm } = useFormMutation({
     mutationFn: loginUser,
-    onError: (error) => {
-      setServerError(t('loginFailed'));
+    onSuccess: (data) => {
+      // Обработка успешного логина
+      console.log('Login successful:', data);
+      // Здесь можно сделать redirect и т.д.
     },
+    // onError больше не нужен здесь, т.к. ошибки обрабатываются через errorHandlers
   });
 
   const onSubmit = async (data: LoginFormData) => {
-    clearAllErrors();
+    resetAllErrors(); // Очищаем предыдущие ошибки
+    
     try {
-      await mutateAsync(data);
+      // Используем submitForm с formMethods для автоматической валидации
+      await submitForm(data);
     } catch (error) {
-      // Ошибка уже обработана в onError
+      // Ошибка автоматически обрабатывается через errorHandlers в useFormErrors
+      // Дополнительная обработка не требуется
+      console.error('Login error:', error);
     }
   };
 
@@ -107,10 +118,10 @@ export const LoginForm = ({ forgotPasswordButton }: LoginFormProps) => {
 
       <Button
         type="submit"
-        disabled={isPending}
+        disabled={isSubmitting || !!serverError}
         className="w-full"
       >
-        {isPending ? t('loggingIn') : t('login')}
+        {isSubmitting ? t('loggingIn') : (serverError ? serverError : t('login'))}
       </Button>
     </form>
   );

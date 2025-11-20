@@ -1,54 +1,43 @@
 import { DefaultValues, FieldValues, useForm, UseFormProps } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useErrorHandler } from './useErrorHandler';
-import { useFormTracking } from './useFormTracking';
-import { useFormStateManagement } from './useFormStateManagement'; // Переименованный хук
+import { useFormErrors, ErrorHandler } from './useFormErrors';
 
 interface UseAdvancedFormProps<T extends FieldValues> {
-  schema?: z.ZodSchema<T>;
+  schema?: z.ZodObject;
   defaultValues: DefaultValues<T>;
   options?: Omit<UseFormProps<T>, 'resolver' | 'defaultValues'> & {
     validationMode?: 'onChange' | 'onBlur' | 'onSubmit' | 'onTouched' | 'all';
   };
+  errorHandlers: ErrorHandler<T>[];
 }
 
 export const useAdvancedForm = <T extends FieldValues>({
   schema,
   defaultValues,
-  options = {}
+  options = {},
+  errorHandlers
 }: UseAdvancedFormProps<T>) => {
   const { validationMode = 'onChange', ...formOptions } = options;
 
   const formMethods = useForm<T>({
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ...(schema && { resolver: zodResolver(schema as any) }),
+    resolver: schema ? zodResolver(schema as any) : undefined,
     defaultValues,
     mode: validationMode,
     ...formOptions,
   });
 
-  const { watch, clearErrors, setError, formState: { errors } } = formMethods;
+  const { watch, clearErrors, setError } = formMethods;
   
-  const { serverError, setServerError, handleError, resetErrors } = useErrorHandler({ setError });
-  
-  // Используем переименованный хук
-  const { clearFieldError, clearAllErrors, setFieldError } = useFormStateManagement({
+  const formErrors = useFormErrors({
     setError,
     clearErrors,
-    setServerError
+    watch,
+    errorHandlers
   });
-
-  useFormTracking(watch, errors, clearErrors, setServerError);
 
   return {
     ...formMethods,
-    serverError,
-    setServerError,
-    handleError,
-    resetErrors,
-    clearFieldError,
-    clearAllErrors,
-    setFieldError,
+    ...formErrors,
   };
 };

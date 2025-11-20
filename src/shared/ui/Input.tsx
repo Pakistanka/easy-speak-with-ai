@@ -1,5 +1,3 @@
-'use client';
-
 import { FC, memo, useState, useCallback } from 'react';
 import { EyeSlashIcon } from './eyeSlashIcon';
 import { EyeIcon } from './eyeIcon';

@@ -60,6 +60,14 @@
       "emailRequired": "Email is required",
       "emailInvalid": "Email must be in the format example@mail.com",
       "passwordMinLength": "Password must be at least 8 characters"
+    },
+    "errors": {
+      "invalidCredentials": "Invalid email or password",
+      "networkError": "Network error. Please check your connection and try again",
+      "serverError": "Server error. Please try again later",
+      "tooManyRequests": "Too many requests. Please wait before trying again",
+      "somethingWentWrong": "Something went wrong. Please try again",
+      "accountLocked": "Your account has been locked. Please contact support"
     }
   },
   "posts": {
