@@ -2,10 +2,10 @@
 
 import { useMemo, useState } from 'react'
 import { Logo, UserRole, NavItem, Navigation, WalletButton, SettingsIcon, SupportIcon, BecomeIcon, ProfileIcon, NavButton} from '@/shared'
-import { AuthButtons } from './AuthButtons'
-import { MobileMenu } from './MobileMenu'
-import { MobileMenuButton } from './MobileMenuButton'
 import { useTranslations } from 'next-intl'
+import { AuthButtons } from './AuthButtons'
+import { MobileMenuButton } from './MobileMenuButton'
+import { MobileMenu } from './MobileMenu'
 
 interface HeaderProps {
   isLoggedIn?: boolean
