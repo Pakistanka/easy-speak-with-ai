@@ -1,34 +1,29 @@
-import { cn } from '@/shared/lib/utils';
-import { motion } from 'framer-motion';
-import * as React from 'react';
+import { FC, memo, useState, useCallback } from 'react';
 import { EyeSlashIcon } from './eyeSlashIcon';
 import { EyeIcon } from './eyeIcon';
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  withAnimation?: boolean;
+export type TInputUIProps = {
   validationMessage?: string;
-}
+} & React.ComponentPropsWithoutRef<'input'>;
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+export const Input: FC<TInputUIProps> = memo(
   ({ 
     title,
     placeholder,
     validationMessage,
     type = 'text',
-    withAnimation = false,
     ...props
-  }, ref) => {
-    const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
+  }) => {
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     const isPasswordField = type === 'password';
     const inputType = isPasswordField && isPasswordVisible ? 'text' : type;
 
-    const togglePasswordVisibility = React.useCallback(() => {
+    const togglePasswordVisibility = useCallback(() => {
       setIsPasswordVisible(prev => !prev);
     }, []);
-    
-    const inputElement = (
+
+    return (
       <div className="text-(--text-color)">
         <label 
           htmlFor={`${title}_input`} 
@@ -82,23 +77,5 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
       </div>
     );
-
-    if (withAnimation) {
-      return (
-        <motion.div
-          initial={{ opacity: 0, y: 5 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          whileFocus={{ scale: 1.02 }}
-        >
-          {inputElement}
-        </motion.div>
-      );
-    }
-
-    return inputElement;
   }
 );
-Input.displayName = 'Input';
-
-export { Input };

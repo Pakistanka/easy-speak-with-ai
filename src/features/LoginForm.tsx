@@ -2,7 +2,7 @@ import { Button } from "@/shared";
 import { useAdvancedForm } from "@/shared/lib/hooks/useAdvancedForm";
 import { useFormMutation } from "@/shared/lib/hooks/useFormMutation";
 import { CheckboxUI } from "@/shared/ui/Checkbox";
-import { InputUI } from "@/shared/ui/Input";
+import { Input } from "@/shared/ui/input";
 import z from "zod";
 import { useTranslations } from 'next-intl';
 import { createLoginErrorHandlers } from "@/shared/lib/utils/authErrorUtil";
@@ -53,9 +53,6 @@ export const LoginForm = ({ forgotPasswordButton }: LoginFormProps) => {
       password: '',
       keepLoggedIn: false,
     },
-    options: {
-      validationMode: 'onChange',
-    },
     errorHandlers, // Передаем обработчики ошибок
   });
 
@@ -87,7 +84,7 @@ export const LoginForm = ({ forgotPasswordButton }: LoginFormProps) => {
       onSubmit={handleSubmit(onSubmit)} 
       className="w-full h-full space-y-2"
     >
-      <InputUI
+      <Input
         title={t('email')}
         placeholder={t('emailPlaceholder')}
         type="email"
@@ -96,7 +93,7 @@ export const LoginForm = ({ forgotPasswordButton }: LoginFormProps) => {
         {...register('email')}
       />
 
-      <InputUI
+      <Input
         title={t('password')}
         placeholder={t('passwordPlaceholder')}
         type="password"

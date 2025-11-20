@@ -4,10 +4,11 @@ import { z } from 'zod';
 import { useFormErrors, ErrorHandler } from './useFormErrors';
 
 interface UseAdvancedFormProps<T extends FieldValues> {
-  schema?: z.ZodObject;
+  schema?: z.ZodSchema<T>;
   defaultValues: DefaultValues<T>;
   options?: Omit<UseFormProps<T>, 'resolver' | 'defaultValues'> & {
     validationMode?: 'onChange' | 'onBlur' | 'onSubmit' | 'onTouched' | 'all';
+    reValidateMode?: 'onChange' | 'onBlur' | 'onSubmit';
   };
   errorHandlers: ErrorHandler<T>[];
 }
@@ -18,12 +19,13 @@ export const useAdvancedForm = <T extends FieldValues>({
   options = {},
   errorHandlers
 }: UseAdvancedFormProps<T>) => {
-  const { validationMode = 'onChange', ...formOptions } = options;
+  const { validationMode = 'onBlur', reValidateMode = 'onChange', ...formOptions } = options;
 
   const formMethods = useForm<T>({
     resolver: schema ? zodResolver(schema as any) : undefined,
     defaultValues,
     mode: validationMode,
+    reValidateMode,
     ...formOptions,
   });
 

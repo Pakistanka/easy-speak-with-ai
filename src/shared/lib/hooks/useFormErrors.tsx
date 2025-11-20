@@ -23,7 +23,6 @@ interface FormErrorsContext<T extends FieldValues> {
   serverError: string | null;
   handleError: (error: unknown) => void;
   resetAllErrors: () => void;
-  clearFieldError: (fieldName: Path<T>) => void;
   setFieldError: (fieldName: Path<T>, message: string) => void;
   setServerError: (message: string) => void;
 }
@@ -37,9 +36,12 @@ export const useFormErrors = <T extends FieldValues>({
   const [serverError, setServerErrorState] = useState<string | null>(null);
 
   useEffect(() => {
-    const subscription = watch(() => {
-      clearErrors();
+    const subscription = watch((value, { name }) => {
       setServerErrorState(null);
+      
+      if (name) {
+        clearErrors(name);
+      }
     });
     
     return () => subscription.unsubscribe();
@@ -74,15 +76,10 @@ export const useFormErrors = <T extends FieldValues>({
     clearErrors();
   }, [clearErrors]);
 
-  const clearFieldError = useCallback((fieldName: Path<T>) => {
-    clearErrors(fieldName);
-  }, [clearErrors]);
-
   return {
     serverError,
     handleError,
     resetAllErrors,
-    clearFieldError,
     setFieldError,
     setServerError,
   };
