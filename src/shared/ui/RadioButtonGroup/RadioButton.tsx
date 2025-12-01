@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useContext } from 'react';
+
 import { RadioButtonGroupContext } from './RadioButtonGroup';
 
 interface RadioButtonProps {
@@ -10,13 +11,13 @@ interface RadioButtonProps {
   className?: string;
 }
 
-export const RadioButton: React.FC<RadioButtonProps> = ({ 
-  value, 
-  children, 
-  disabled = false
+export const RadioButton: React.FC<RadioButtonProps> = ({
+  value,
+  children,
+  disabled = false,
 }) => {
   const context = useContext(RadioButtonGroupContext);
-  
+
   if (!context) {
     throw new Error('RadioButton must be used within a RadioButtonGroup');
   }

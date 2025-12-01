@@ -7,7 +7,7 @@ import { useState, useEffect, useRef } from 'react';
 
 const locales = [
   { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' }
+  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
 ] as const;
 
 export default function LangSwitcher() {
@@ -26,7 +26,10 @@ export default function LangSwitcher() {
   // Close dropdown when clicking outside or pressing Escape
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -69,14 +72,16 @@ export default function LangSwitcher() {
       >
         <Globe className="h-4 w-4" />
         <span className="hidden sm:inline">{currentLocale.flag}</span>
-        <span className="hidden md:inline">{currentLocale.code.toUpperCase()}</span>
+        <span className="hidden md:inline">
+          {currentLocale.code.toUpperCase()}
+        </span>
       </button>
 
       {isOpen && (
         <>
           {/* Dropdown */}
           <div className="absolute right-0 top-full mt-2 w-48 bg-[var(--background)] border border-[var(--border)] rounded-md shadow-lg z-50 py-1">
-            {locales.map((loc) => (
+            {locales.map(loc => (
               <button
                 key={loc.code}
                 type="button"
@@ -89,9 +94,13 @@ export default function LangSwitcher() {
               >
                 <div className="flex items-center space-x-3">
                   <span className="text-lg">{loc.flag}</span>
-                  <span className={`font-medium ${
-                    locale === loc.code ? 'text-[var(--primary)]' : ''
-                  }`}>{loc.name}</span>
+                  <span
+                    className={`font-medium ${
+                      locale === loc.code ? 'text-[var(--primary)]' : ''
+                    }`}
+                  >
+                    {loc.name}
+                  </span>
                 </div>
                 {locale === loc.code && (
                   <div className="flex items-center space-x-1">

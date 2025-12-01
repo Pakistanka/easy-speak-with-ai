@@ -1,10 +1,11 @@
 'use client';
 
-import { Button } from '@/shared';
-import { RadioButtonGroup, RadioButton } from '@/shared/ui/RadioButtonGroup';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+
+import { RadioButtonGroup, RadioButton } from '@/shared/ui/RadioButtonGroup';
+import { Button } from '@/shared';
 
 export default function FirstWelcomePage() {
   const t = useTranslations('welcome.first');
@@ -65,12 +66,8 @@ export default function FirstWelcomePage() {
 
       <div className="space-y-[40px] z-3">
         <div className="space-y-2 lg:text-center">
-          <h1 className="text-[27px] lg:text-4xl font-bold">
-            {t('title')}
-          </h1>
-          <p className="text-[16px] lg:text-[21px]">
-            {t('subtitle')}
-          </p>
+          <h1 className="text-[27px] lg:text-4xl font-bold">{t('title')}</h1>
+          <p className="text-[16px] lg:text-[21px]">{t('subtitle')}</p>
         </div>
 
         <RadioButtonGroup
@@ -80,14 +77,18 @@ export default function FirstWelcomePage() {
         >
           <RadioButton value="wantToLearn">
             <div className="flex flex-col gap-2">
-              <span className="text-base font-bold">{t('learnOption.title')}</span>
+              <span className="text-base font-bold">
+                {t('learnOption.title')}
+              </span>
               <span className="text-base">{t('learnOption.description')}</span>
             </div>
           </RadioButton>
 
           <RadioButton value="wantToTeach">
             <div className="flex flex-col gap-2">
-              <span className="text-base font-bold">{t('teachOption.title')}</span>
+              <span className="text-base font-bold">
+                {t('teachOption.title')}
+              </span>
               <span className="text-base">{t('teachOption.description')}</span>
             </div>
           </RadioButton>
@@ -105,9 +106,9 @@ export default function FirstWelcomePage() {
       <Button
         disabled={!selectedValue}
         onClick={handleChooseClick}
-        className='z-3'
+        className="z-3"
       >
-         {t('choose')}
+        {t('choose')}
       </Button>
     </motion.div>
   );

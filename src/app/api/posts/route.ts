@@ -7,7 +7,8 @@ const mockPosts = [
     title: 'Getting Started with Next.js 15',
     excerpt: 'Learn how to build modern web applications with Next.js 15',
     content: 'Next.js 15 introduces many exciting features...',
-    coverImage: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800',
+    coverImage:
+      'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800',
     category: 'Technology',
     tags: ['Next.js', 'React', 'Web Development'],
     readTime: 5,
@@ -16,7 +17,8 @@ const mockPosts = [
     authorId: 'author1',
     author: {
       name: 'John Doe',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100',
+      image:
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100',
     },
     createdAt: new Date('2024-01-15'),
     updatedAt: new Date('2024-01-15'),
@@ -26,7 +28,8 @@ const mockPosts = [
     title: 'TypeScript Best Practices',
     excerpt: 'Essential TypeScript patterns for better code quality',
     content: 'TypeScript provides excellent type safety...',
-    coverImage: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800',
+    coverImage:
+      'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800',
     category: 'Programming',
     tags: ['TypeScript', 'Best Practices', 'Development'],
     readTime: 8,
@@ -35,7 +38,8 @@ const mockPosts = [
     authorId: 'author2',
     author: {
       name: 'Jane Smith',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b332c83c?w=100',
+      image:
+        'https://images.unsplash.com/photo-1494790108755-2616b332c83c?w=100',
     },
     createdAt: new Date('2024-01-10'),
     updatedAt: new Date('2024-01-10'),
@@ -53,9 +57,10 @@ export async function GET(request: Request) {
 
     // Filter by query
     if (query) {
-      filteredPosts = filteredPosts.filter(post =>
-        post.title.toLowerCase().includes(query.toLowerCase()) ||
-        post.content.toLowerCase().includes(query.toLowerCase())
+      filteredPosts = filteredPosts.filter(
+        post =>
+          post.title.toLowerCase().includes(query.toLowerCase()) ||
+          post.content.toLowerCase().includes(query.toLowerCase())
       );
     }
 
@@ -68,13 +73,19 @@ export async function GET(request: Request) {
     filteredPosts.sort((a, b) => {
       switch (sortBy) {
         case 'newest':
-          return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+          return (
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          );
         case 'oldest':
-          return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+          return (
+            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+          );
         case 'popular':
           return b.viewCount - a.viewCount;
         default:
-          return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+          return (
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          );
       }
     });
 

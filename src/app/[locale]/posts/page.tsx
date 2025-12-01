@@ -12,89 +12,101 @@ const demoPostsData = {
     {
       id: '1',
       title: 'Getting Started with Next.js 15',
-      excerpt: 'Learn how to build modern web applications with Next.js 15 and the latest React features.',
+      excerpt:
+        'Learn how to build modern web applications with Next.js 15 and the latest React features.',
       category: 'Technology',
       readTime: 5,
       views: 1250,
       comments: 12,
       author: 'John Doe',
       date: '2024-01-15',
-      image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&h=400&fit=crop'
+      image:
+        'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&h=400&fit=crop',
     },
     {
-      id: '2', 
+      id: '2',
       title: 'TypeScript Best Practices',
-      excerpt: 'Essential TypeScript patterns and practices for writing maintainable code in large applications.',
+      excerpt:
+        'Essential TypeScript patterns and practices for writing maintainable code in large applications.',
       category: 'Programming',
       readTime: 8,
       views: 890,
       comments: 7,
       author: 'Jane Smith',
       date: '2024-01-10',
-      image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=400&fit=crop'
+      image:
+        'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=400&fit=crop',
     },
     {
       id: '3',
       title: 'Modern CSS Layout Techniques',
-      excerpt: 'Explore CSS Grid, Flexbox, and Container Queries to create responsive layouts.',
+      excerpt:
+        'Explore CSS Grid, Flexbox, and Container Queries to create responsive layouts.',
       category: 'Design',
       readTime: 6,
       views: 650,
       comments: 15,
       author: 'Mike Johnson',
       date: '2024-01-05',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop'
-    }
+      image:
+        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop',
+    },
   ],
   ru: [
     {
       id: '1',
       title: 'Начало работы с Next.js 15',
-      excerpt: 'Изучите, как создавать современные веб-приложения с Next.js 15 и новейшими возможностями React.',
+      excerpt:
+        'Изучите, как создавать современные веб-приложения с Next.js 15 и новейшими возможностями React.',
       category: 'Технологии',
       readTime: 5,
       views: 1250,
       comments: 12,
       author: 'Джон Доу',
       date: '2024-01-15',
-      image: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&h=400&fit=crop'
+      image:
+        'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&h=400&fit=crop',
     },
     {
       id: '2',
       title: 'Лучшие практики TypeScript',
-      excerpt: 'Основные паттерны и практики TypeScript для написания поддерживаемого кода в крупных приложениях.',
-      category: 'Программирование', 
+      excerpt:
+        'Основные паттерны и практики TypeScript для написания поддерживаемого кода в крупных приложениях.',
+      category: 'Программирование',
       readTime: 8,
       views: 890,
       comments: 7,
       author: 'Джейн Смит',
       date: '2024-01-10',
-      image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=400&fit=crop'
+      image:
+        'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=400&fit=crop',
     },
     {
       id: '3',
       title: 'Современные техники CSS-вёрстки',
-      excerpt: 'Изучите CSS Grid, Flexbox и Container Queries для создания адаптивных макетов.',
+      excerpt:
+        'Изучите CSS Grid, Flexbox и Container Queries для создания адаптивных макетов.',
       category: 'Дизайн',
       readTime: 6,
       views: 650,
       comments: 15,
       author: 'Майк Джонсон',
       date: '2024-01-05',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop'
-    }
-  ]
+      image:
+        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop',
+    },
+  ],
 };
 
 export default function PostsPage() {
   const t = useTranslations('posts');
   const locale = useLocale();
   const [selectedCategory, setSelectedCategory] = useState('all');
-  
+
   // Use current locale from next-intl context
   const currentLang = locale as keyof typeof demoPostsData;
   const posts = demoPostsData[currentLang] || demoPostsData.en;
-  
+
   // Use translated category names
   const categories = [t('all'), t('technology'), t('programming'), t('design')];
 
@@ -125,14 +137,15 @@ export default function PostsPage() {
             <p className="text-lg text-[var(--muted-foreground)] max-w-2xl mx-auto mb-8">
               {t('description')}
             </p>
-            
+
             {/* Demo notice */}
             <div className="bg-[var(--card)] border border-[var(--border)] rounded-lg p-4 mb-8">
               <h3 className="font-semibold text-[var(--foreground)] mb-2">
                 🎨 Theme & Language Demo
               </h3>
               <p className="text-sm text-[var(--muted-foreground)]">
-                Try switching themes (sun/moon icon) and languages (globe icon) in the navbar to see the changes!
+                Try switching themes (sun/moon icon) and languages (globe icon)
+                in the navbar to see the changes!
               </p>
             </div>
           </motion.div>
@@ -149,7 +162,11 @@ export default function PostsPage() {
             {categories.map((category, index) => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(index === 0 ? 'all' : category.toLowerCase())}
+                onClick={() =>
+                  setSelectedCategory(
+                    index === 0 ? 'all' : category.toLowerCase()
+                  )
+                }
                 className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
                   (index === 0 && selectedCategory === 'all') ||
                   selectedCategory === category.toLowerCase()
@@ -191,7 +208,7 @@ export default function PostsPage() {
                   </span>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-[var(--foreground)] mb-2 line-clamp-2">
                   {post.title}
@@ -199,7 +216,7 @@ export default function PostsPage() {
                 <p className="text-[var(--muted-foreground)] text-sm mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
-                
+
                 <div className="flex items-center justify-between text-xs text-[var(--muted-foreground)]">
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-1">
@@ -212,7 +229,7 @@ export default function PostsPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-[var(--border)]">
                   <div className="flex items-center gap-4 text-xs text-[var(--muted-foreground)]">
                     <div className="flex items-center gap-1">
@@ -236,7 +253,7 @@ export default function PostsPage() {
             </motion.div>
           ))}
         </motion.div>
-        
+
         {/* Demo Footer */}
         <div className="mt-16 text-center">
           <div className="bg-[var(--card)] border border-[var(--border)] rounded-lg p-6">
@@ -244,10 +261,22 @@ export default function PostsPage() {
               ✨ Demo Features Showcase
             </h3>
             <div className="text-sm text-[var(--muted-foreground)] space-y-2">
-              <p>🌐 <strong>Language Switcher:</strong> Click the globe icon to switch between English and Russian</p>
-              <p>🎨 <strong>Theme Switcher:</strong> Click the sun/moon icon to toggle between light and dark themes</p>
-              <p>📱 <strong>Responsive Design:</strong> Resize your browser to see mobile/desktop layouts</p>
-              <p>🎭 <strong>Animations:</strong> Smooth transitions and hover effects throughout</p>
+              <p>
+                🌐 <strong>Language Switcher:</strong> Click the globe icon to
+                switch between English and Russian
+              </p>
+              <p>
+                🎨 <strong>Theme Switcher:</strong> Click the sun/moon icon to
+                toggle between light and dark themes
+              </p>
+              <p>
+                📱 <strong>Responsive Design:</strong> Resize your browser to
+                see mobile/desktop layouts
+              </p>
+              <p>
+                🎭 <strong>Animations:</strong> Smooth transitions and hover
+                effects throughout
+              </p>
             </div>
           </div>
         </div>
