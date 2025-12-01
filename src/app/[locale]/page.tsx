@@ -1,18 +1,15 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable import/no-extraneous-dependencies */
-
 'use client';
-
-import { SectionHome1 } from '@/widgets/PreviewMain/ui/SectionHome1';
-import { SectionHome2 } from '@/widgets/PreviewMain/ui/SectionHome2';
-import { SectionHome3 } from '@/widgets/PreviewMain/ui/SectionHome3';
-import { SectionHome4 } from '@/widgets/PreviewMain/ui/SectionHome4';
 
 import { motion } from 'framer-motion';
 import { ArrowRight, Code, Rocket, ShieldCheck, Zap } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
+import { SectionHome4 } from '@/widgets/PreviewMain/ui/SectionHome4';
+import { SectionHome3 } from '@/widgets/PreviewMain/ui/SectionHome3';
+import { SectionHome2 } from '@/widgets/PreviewMain/ui/SectionHome2';
+import { SectionHome1 } from '@/widgets/PreviewMain/ui/SectionHome1';
 
 export default function Home() {
   const t = useTranslations('home');
@@ -27,11 +24,11 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center w-full overflow-hidden">
-       <SectionHome1 />
-       <SectionHome2 />
-       <SectionHome3 />
-       <SectionHome4 />
-      
+      <SectionHome1 />
+      <SectionHome2 />
+      <SectionHome3 />
+      <SectionHome4 />
+
       {/* Hero Section */}
       {/* <motion.section
         className="w-full py-12 sm:py-16 md:py-24 lg:py-32 bg-[var(--background)] relative overflow-hidden"
@@ -63,7 +60,7 @@ export default function Home() {
           </motion.div>
         </div>
       </motion.section> */}
-     
+
       {/* Features Section */}
       {/* <motion.section
         className="w-full py-12 sm:py-16 md:py-24 bg-[var(--card)]"

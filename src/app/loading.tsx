@@ -6,14 +6,14 @@ export default function Loading() {
   // Create a pulse animation for the skeleton elements
   const pulseVariants = {
     initial: { opacity: 0.6 },
-    animate: { opacity: 1 }
+    animate: { opacity: 1 },
   };
-  
+
   // Transition for pulse effect
   const pulseTransition = {
     repeat: Infinity,
-    repeatType: "reverse" as const,
-    duration: 1.2
+    repeatType: 'reverse' as const,
+    duration: 1.2,
   };
 
   return (
@@ -28,12 +28,12 @@ export default function Loading() {
               scale: [1, 1.1, 1],
             }}
             transition={{
-              rotate: { repeat: Infinity, duration: 1.5, ease: "linear" },
-              scale: { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
+              rotate: { repeat: Infinity, duration: 1.5, ease: 'linear' },
+              scale: { repeat: Infinity, duration: 1.5, ease: 'easeInOut' },
             }}
           />
         </div>
-        
+
         {/* Skeleton content */}
         <div className="space-y-8">
           {/* Header skeleton */}
@@ -43,7 +43,7 @@ export default function Loading() {
             transition={pulseTransition}
             className="h-12 bg-[var(--card)] rounded-lg w-3/4 mx-auto"
           />
-          
+
           {/* Content skeletons */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[...Array(6)].map((_, i) => (
@@ -65,10 +65,10 @@ export default function Loading() {
             ))}
           </div>
         </div>
-        
+
         {/* Loading text */}
         <div className="mt-8 text-center">
-          <motion.p 
+          <motion.p
             className="text-[var(--muted-foreground)] text-lg"
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ repeat: Infinity, duration: 2 }}

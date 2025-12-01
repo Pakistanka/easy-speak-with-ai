@@ -1,9 +1,10 @@
 'use client';
 
-import FirstWelcomePage from '@/pages/FirstWelcomePage';
-import SecondWelcomePage from '@/pages/SecondWelcomePage';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
+
+import FirstWelcomePage from '@/pages/FirstWelcomePage';
+import SecondWelcomePage from '@/pages/SecondWelcomePage';
 
 export default function Home() {
   const t = useTranslations('home');

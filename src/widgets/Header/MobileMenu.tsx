@@ -1,10 +1,10 @@
 interface MobileMenuProps {
-  isOpen: boolean
-  children: React.ReactNode
+  isOpen: boolean;
+  children: React.ReactNode;
 }
 
 export const MobileMenu = ({ isOpen, children }: MobileMenuProps) => {
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-40 pt-[104px] bg-[var(--background)] ld:hidden text-[var(--text-color)] text-[21px]">
@@ -12,5 +12,5 @@ export const MobileMenu = ({ isOpen, children }: MobileMenuProps) => {
         {children}
       </div>
     </div>
-  )
-}
+  );
+};

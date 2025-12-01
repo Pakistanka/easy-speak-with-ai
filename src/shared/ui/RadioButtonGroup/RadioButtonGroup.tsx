@@ -7,7 +7,9 @@ interface RadioButtonGroupContextType {
   onValueChange: (value: string) => void;
 }
 
-export const RadioButtonGroupContext = createContext<RadioButtonGroupContextType | undefined>(undefined);
+export const RadioButtonGroupContext = createContext<
+  RadioButtonGroupContextType | undefined
+>(undefined);
 
 interface RadioButtonGroupProps {
   defaultValue?: string;
@@ -22,7 +24,9 @@ export const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
   children,
   className = '',
 }) => {
-  const [selectedValue, setSelectedValue] = useState<string | null>(defaultValue);
+  const [selectedValue, setSelectedValue] = useState<string | null>(
+    defaultValue
+  );
 
   const handleValueChange = (value: string) => {
     setSelectedValue(value);
@@ -30,7 +34,9 @@ export const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
   };
 
   return (
-    <RadioButtonGroupContext.Provider value={{ selectedValue, onValueChange: handleValueChange }}>
+    <RadioButtonGroupContext.Provider
+      value={{ selectedValue, onValueChange: handleValueChange }}
+    >
       <div className={className}>{children}</div>
     </RadioButtonGroupContext.Provider>
   );

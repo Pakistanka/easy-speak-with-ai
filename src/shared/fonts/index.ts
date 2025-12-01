@@ -19,5 +19,5 @@ export const helvetica = localFont({
 });
 
 export const fonts = {
-  helvetica: helvetica.variable
+  helvetica: helvetica.variable,
 };

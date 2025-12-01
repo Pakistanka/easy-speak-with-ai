@@ -1,9 +1,10 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
+
 import { BASE_URL } from '@/shared/lib/metadata';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
-  
+
   return [
     {
       url: BASE_URL,

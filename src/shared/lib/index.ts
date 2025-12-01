@@ -5,4 +5,3 @@ import { displayNumbers } from './utils';
 export { displayNumbers, fetcher, getDateCompare };
 
 export * from './hooks';
-

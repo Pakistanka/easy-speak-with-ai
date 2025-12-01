@@ -1,9 +1,10 @@
 'use client';
 
-import { Button } from '@/shared';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+
+import { Button } from '@/shared';
 
 export default function SecondWelcomePage() {
   const t = useTranslations('welcome.second');
@@ -14,14 +15,14 @@ export default function SecondWelcomePage() {
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="font-sans text-(--text-color) h-full lg:h-fit max-w-[1512px] pt-6 px-[19px] pb-10 lg:px-[105] lg:py-[0] grid grid-rows-[1fr_auto] lg:grid-rows-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center z-10"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <div className="relative w-full flex items-center justify-center lg:max-w-[631px] order-1 lg:order-2 object-contain">
-        <div 
+        <div
           className="absolute 
           blur-[var(--second-accent-light-blur)] 
           w-[var(--second-accent-light-w)] 
@@ -41,8 +42,8 @@ export default function SecondWelcomePage() {
           z-2
           opacity-100"
         />
-        
-        <div 
+
+        <div
           className="absolute 
           blur-[var(--second-primary-light-blur)] 
           w-[var(--second-primary-light-w)] 
@@ -67,16 +68,14 @@ export default function SecondWelcomePage() {
           width={631}
           height={470}
           className="w-full h-auto z-3"
-          priority={false} 
+          priority={false}
           loading="lazy"
         />
       </div>
-      
+
       <div className="space-y-[40px] order-2 lg:order-1 z-3">
         <div className="space-y-4 text-center lg:text-start">
-          <h1 className="text-[27px] lg:text-[61px] font-bold">
-            {t('title')}
-          </h1>
+          <h1 className="text-[27px] lg:text-[61px] font-bold">{t('title')}</h1>
 
           <p className="lg:hidden text-[16px] lg:text-[21px]">
             {t('mobileDescription')}
@@ -87,10 +86,7 @@ export default function SecondWelcomePage() {
           </p>
         </div>
 
-        <Button
-          onClick={handleGetStarted}
-          className="z-3"
-        >
+        <Button onClick={handleGetStarted} className="z-3">
           {t('getStarted')}
         </Button>
       </div>
