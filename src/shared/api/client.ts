@@ -12,25 +12,26 @@ export const apiClient = axios.create({
 
 // Request interceptor
 apiClient.interceptors.request.use(
-  (config) => {
+  config => {
     // Add auth token if available
-    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+    const token =
+      typeof window !== 'undefined' ? localStorage.getItem('token') : null;
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
-  (error) => {
+  error => {
     return Promise.reject(error);
   }
 );
 
 // Response interceptor
 apiClient.interceptors.response.use(
-  (response) => {
+  response => {
     return response;
   },
-  (error) => {
+  error => {
     // Handle common errors
     if (error.response?.status === 401) {
       // Handle unauthorized
@@ -47,7 +48,7 @@ apiClient.interceptors.response.use(
 export const fetchApi = async (url: string, options?: RequestInit) => {
   const baseURL = process.env.NEXT_PUBLIC_API_URL || '/api';
   const fullUrl = url.startsWith('http') ? url : `${baseURL}${url}`;
-  
+
   const config: RequestInit = {
     headers: {
       'Content-Type': 'application/json',
@@ -57,7 +58,8 @@ export const fetchApi = async (url: string, options?: RequestInit) => {
   };
 
   // Add auth token if available
-  const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+  const token =
+    typeof window !== 'undefined' ? localStorage.getItem('token') : null;
   if (token) {
     config.headers = {
       ...config.headers,
@@ -66,7 +68,7 @@ export const fetchApi = async (url: string, options?: RequestInit) => {
   }
 
   const response = await fetch(fullUrl, config);
-  
+
   if (!response.ok) {
     if (response.status === 401) {
       // Handle unauthorized
@@ -76,6 +78,6 @@ export const fetchApi = async (url: string, options?: RequestInit) => {
     }
     throw new Error(`API Error: ${response.status} ${response.statusText}`);
   }
-  
+
   return response;
 };

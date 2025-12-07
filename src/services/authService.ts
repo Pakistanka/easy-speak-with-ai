@@ -28,15 +28,15 @@ export const authService = {
       method: 'POST',
       body: JSON.stringify(credentials),
     });
-    
+
     const data = await response.json();
-    
+
     // Store tokens
     if (typeof window !== 'undefined') {
       localStorage.setItem('token', data.token);
       localStorage.setItem('refreshToken', data.refreshToken);
     }
-    
+
     return data;
   },
 
@@ -45,15 +45,15 @@ export const authService = {
       method: 'POST',
       body: JSON.stringify(userData),
     });
-    
+
     const data = await response.json();
-    
+
     // Store tokens
     if (typeof window !== 'undefined') {
       localStorage.setItem('token', data.token);
       localStorage.setItem('refreshToken', data.refreshToken);
     }
-    
+
     return data;
   },
 
@@ -75,8 +75,11 @@ export const authService = {
   },
 
   refreshToken: async (): Promise<string> => {
-    const refreshToken = typeof window !== 'undefined' ? localStorage.getItem('refreshToken') : null;
-    
+    const refreshToken =
+      typeof window !== 'undefined'
+        ? localStorage.getItem('refreshToken')
+        : null;
+
     if (!refreshToken) {
       throw new Error('No refresh token available');
     }
@@ -85,9 +88,9 @@ export const authService = {
       method: 'POST',
       body: JSON.stringify({ refreshToken }),
     });
-    
+
     const data = await response.json();
-    
+
     // Update stored token
     if (typeof window !== 'undefined') {
       localStorage.setItem('token', data.token);
@@ -95,7 +98,7 @@ export const authService = {
         localStorage.setItem('refreshToken', data.refreshToken);
       }
     }
-    
+
     return data.token;
   },
 
