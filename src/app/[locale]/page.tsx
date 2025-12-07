@@ -1,16 +1,8 @@
 'use client';
 
-import { LandingPage } from '@/widgets/LandingPage';
-import { motion } from 'framer-motion';
-import { ArrowRight, Code, Rocket, ShieldCheck, Zap } from 'lucide-react';
+import { LandingPage } from '@/pages/LandingPage';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-import { SectionHome4 } from '@/widgets/PreviewMain/ui/SectionHome4';
-import { SectionHome3 } from '@/widgets/PreviewMain/ui/SectionHome3';
-import { SectionHome2 } from '@/widgets/PreviewMain/ui/SectionHome2';
-import { SectionHome1 } from '@/widgets/PreviewMain/ui/SectionHome1';
 
 export default function Home() {
   const t = useTranslations('home');
@@ -25,9 +17,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center w-full overflow-hidden">
-      
-    <LandingPage/>
-
+      <LandingPage/>
     </div>
   );
 }

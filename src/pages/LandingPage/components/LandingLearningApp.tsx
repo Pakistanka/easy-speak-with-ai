@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-export const SectionHome3 = () => {
-  const t = useTranslations('homePage');
+export const LandingLearningApp = () => {
+  const t = useTranslations('landing');
 
   return (
     <section className="home-3 pb-30">

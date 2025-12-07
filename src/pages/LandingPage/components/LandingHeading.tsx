@@ -2,8 +2,8 @@ import { useTranslations } from 'next-intl';
 
 import { Button } from '@/shared';
 
-export const SectionHome1 = () => {
-  const t = useTranslations('homePage');
+export const LandingHeading = () => {
+  const t = useTranslations('landing');
   return (
     <section className="home-1 py-15 text-center">
       <div className="container max-w-[1304px] mx-auto px-[19px] xl:px-0">

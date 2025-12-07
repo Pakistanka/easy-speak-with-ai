@@ -67,6 +67,10 @@
     --color-span-s:rgba(225, 182, 182, 1);
     --text-color: rgba(22, 22, 22, 1);
 
+    --header-primary-color: rgba(86,102,237,1);
+    --header-accent-color: rgba(255,182,182,1);
+    --header-hover: rgba(86,102,237,0.2);
+
     --option-accent-bg-color: rgba(86, 102, 237, 0.2);
     --option-primary-bg-color: rgba(250, 250, 250, 1);
     --option-border-color: rgba(233, 233, 233, 1);
@@ -159,6 +163,10 @@
     --input: oklch(30% 0.04 260);
     --ring: oklch(30% 0.05 260);
     --text-color: rgba(250, 250, 250, 1);
+
+    --header-primary-color: rgba(86,102,237,1);
+    --header-accent-color: rgba(255,182,182,1);
+    --header-hover: rgba(254,246,235,0.2);
 
     --option-accent-bg-color: rgba(86, 102, 237, 0.2);
     --option-primary-bg-color: rgba(63, 61, 86, 1);

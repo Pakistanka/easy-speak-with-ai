@@ -1,9 +1,9 @@
 import { useTranslations } from 'next-intl';
 
-import styles from './SectionHome4.module.css';
+import styles from './LandingStartSteps.module.css';
 
-export const SectionHome4 = () => {
-  const t = useTranslations('homePage');
+export const LeandingStartSteps = () => {
+  const t = useTranslations('landing');
 
   return (
     <section className="home-4 pb-30 text-center">

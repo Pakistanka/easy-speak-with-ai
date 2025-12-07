@@ -3,7 +3,7 @@ import { Button } from '@/shared';
 
 //Когда будут элементы форм в мастере, заменить
 export const LandingForm = () => {
-  const t = useTranslations("landingPage");
+  const t = useTranslations("landing");
 
   return (
     <form className="flex flex-col gap-6" noValidate>
