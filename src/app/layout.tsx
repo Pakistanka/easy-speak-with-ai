@@ -9,9 +9,10 @@ import '@/shared/styles/globals.css';
 import type { ChildrenProps } from '@/shared/types';
 import MainNavbar from '@/widgets/Navbar';
 import MainFooter from '@/widgets/Footer';
+import { BASE_URL, generateUniversalMetadata, TLocale } from '@/shared/lib/metadata';
+import Header from '@/widgets/header';
 import type { TLocale } from '@/shared/lib/metadata';
 import { BASE_URL, generateUniversalMetadata } from '@/shared/lib/metadata';
-import Header from '@/widgets/Header';
 
 export async function generateMetadata({
   params,

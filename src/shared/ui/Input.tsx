@@ -6,7 +6,7 @@ export type TInputUIProps = {
   validationMessage?: string;
 } & React.ComponentPropsWithoutRef<'input'>;
 
-export const Input: FC<TInputUIProps> = memo(
+export const InputUI: FC<TInputUIProps> = memo(
   ({ 
     title,
     placeholder,
@@ -15,7 +15,7 @@ export const Input: FC<TInputUIProps> = memo(
     ...props
   }) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
+    
     const isPasswordField = type === 'password';
     const inputType = isPasswordField && isPasswordVisible ? 'text' : type;
 
@@ -31,7 +31,7 @@ export const Input: FC<TInputUIProps> = memo(
         >
           {title}
         </label>
-
+        
         <div className="relative">
           <input 
             id={`${title}_input`}
@@ -54,7 +54,7 @@ export const Input: FC<TInputUIProps> = memo(
             spellCheck="false"
             {...props}
           />
-
+          
           {isPasswordField && (
             <button
               type="button"
@@ -71,7 +71,7 @@ export const Input: FC<TInputUIProps> = memo(
             </button>
           )}
         </div>
-
+        
         {validationMessage && (
           <span className='text-[var(--input-error-color)] text-xs mt-1 block'>{validationMessage}</span>
         )}
