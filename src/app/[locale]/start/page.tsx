@@ -1,8 +1,10 @@
 'use client';
 
-import FirstWelcomePage from '@/pages/FirstWelcomePage';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
+
+import FirstWelcomePage from '@/pages/FirstWelcomePage';
+import SecondWelcomePage from '@/pages/SecondWelcomePage';
 
 export default function Home() {
   const t = useTranslations('home');
@@ -17,7 +19,7 @@ export default function Home() {
 
   return (
     <div className="flex items-center justify-center w-full h-full">
-      <FirstWelcomePage />
+      <SecondWelcomePage />
     </div>
   );
 }
