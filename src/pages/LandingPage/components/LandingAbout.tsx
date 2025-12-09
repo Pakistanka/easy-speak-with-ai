@@ -1,10 +1,8 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import styles from './PrevieMail.module.css';
-
-export const SectionHome2 = () => {
-  const t = useTranslations('homePage');
+export const LandingAbout = () => {
+  const t = useTranslations('landing');
 
   return (
     <section className="home-2 pb-30">
