@@ -46,7 +46,7 @@
         "description": "Explore lessons, book tutors, and enhance your language skills with personalized learning plans."
       },
       "teachOption": {
-        "title": "I'm here to teach", 
+        "title": "I'm here to teach",
         "description": "Share your expertise, connect with students, and guide them on their language-learning adventures."
       },
       "choose": "Choose"
@@ -107,8 +107,37 @@
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
-  
-  "homePage": {
+  "landing": {
+    "getInTouch": "Get in touch!",
+    "contactSupport": "Have a question or need support? Contact us!",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Write your name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Write your last name",
+    "email": "Email",
+    "emailPlaceholder": "email@gmail.com",
+    "message": "Message",
+    "messagePlaceholder": "Type your message…",
+    "termsAgreementBefore": "I fully agree to the ",
+    "termsAgreementLink": "Terms and Conditions",
+    "termsAgreementAfter": " stated.",
+    "termsAgreement": "I fully agree to the Terms and Conditions stated.",
+    "send": "Send",
+    "anyQuestions": "Any questions?",
+    "faqDescription": "Find answers to common questions about how our language learning application works, privacy, and cryptocurrency transactions.",
+    "howDoesItWork": "How does it work?",
+    "howDoesItWorkDesc": "Our language learning application provides a user-friendly platform for teachers and students to connect. It utilizes cryptocurrency payments for added privacy and security.",
+    "isAnonymous": "Is it anonymous?",
+    "isAnonymousDesc": "Yes, our application ensures anonymity by not requiring any banking information. You can enjoy the benefits of learning a new language without compromising your privacy.",
+    "howToMake": "How to make payments?",
+    "howToMakeAnswer": "...",
+    "canTrust": "Can I trust the platform?",
+    "canTrustAnswer": "can",
+    "howToGet": "How to get started?",
+    "howToGetAnswer": "get started",
+    "getStarted": "Get started",
+    "learnLanguageToday": "Learn a new language today",
+    "easySpeakDesc1": "Discover the power of EasySpeak and unlock your potential to speak confidently and fluently in a short amount of time. Join our community and start your journey to improved speaking skills today!",
     "titleSection1_part1": "Learn languages easily with",
     "titleSection1_letterE": "E",
     "titleSection1_middle": "asy",

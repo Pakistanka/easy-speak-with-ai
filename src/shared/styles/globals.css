@@ -44,9 +44,33 @@
     --input: oklch(88% 0.03 260);
     --ring: oklch(65% 0.2 270);
     --color-span-e:rgba(86, 102, 237, 1);
+
+    --color-black: #161618;
+    --color-white: #FAFAFA;
+    --color-dark-grey: #797979;
+    --color-grey: #CACACA;
+    --color-light-grey: #E8E6B9;
+    --color-midnight-blue: #2F2E41;
+    --color-dark-blue: #3F3D56;
+    --color-blue: #5666ED;
+    --color-light-blue: #BCB7FA;
+    --color-pastel-blue: #DED7FF;
+    --color-yellow: #FCA345;
+    --color-brilge: #FFFFEB;
+    --color-pink: #E466A8;
+    --color-light-pink: #FFBBBB;
+    --color-success: #107832;
+    --color-failure: #E3423C;
+    --color-theme-bg: #BBC2FA;
+    --color-theme-active: #E0E3FF;
+
     --color-span-s:rgba(225, 182, 182, 1);
     --text-color: rgba(22, 22, 22, 1);
     --button-outline: rgba(86,102,237,1);
+
+    --header-primary-color: rgba(86,102,237,1);
+    --header-accent-color: rgba(255,182,182,1);
+    --header-hover: rgba(86,102,237,0.2);
 
     --header-primary-color: rgba(86,102,237,1);
     --header-accent-color: rgba(255,182,182,1);
@@ -152,6 +176,10 @@
     --ring: oklch(30% 0.05 260);
     --text-color: rgba(250, 250, 250, 1);
     --button-outline: rgba(255, 182, 182, 1);
+
+    --header-primary-color: rgba(86,102,237,1);
+    --header-accent-color: rgba(255,182,182,1);
+    --header-hover: rgba(254,246,235,0.2);
 
     --header-primary-color: rgba(86,102,237,1);
     --header-accent-color: rgba(255,182,182,1);

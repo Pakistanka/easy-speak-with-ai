@@ -13,6 +13,7 @@ import { BASE_URL, generateUniversalMetadata, TLocale } from '@/shared/lib/metad
 import Header from '@/widgets/header';
 import type { TLocale } from '@/shared/lib/metadata';
 import { BASE_URL, generateUniversalMetadata } from '@/shared/lib/metadata';
+import Header from '@/widgets/header';
 
 export async function generateMetadata({
   params,
