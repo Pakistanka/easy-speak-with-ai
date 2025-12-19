@@ -1,7 +1,8 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-family-sans: var(--font-helvetica), ui-sans-serif, system-ui, sans-serif;
+  --font-family-sans:
+    var(--font-helvetica), ui-sans-serif, system-ui, sans-serif;
 
   --container-padding: 2rem;
   --container-max-width-2xl: 1512px;
@@ -21,7 +22,6 @@
   --color-muted-foreground: oklch(60% 0.05 260);
   --color-card: oklch(98% 0.01 260);
   --color-card-foreground: oklch(25% 0.15 260);
-  
 }
 
 @layer base {
@@ -43,33 +43,33 @@
     --border: oklch(88% 0.03 260);
     --input: oklch(88% 0.03 260);
     --ring: oklch(65% 0.2 270);
-    --color-span-e:rgba(86, 102, 237, 1);
+    --color-span-e: rgba(86, 102, 237, 1);
 
     --color-black: #161618;
-    --color-white: #FAFAFA;
+    --color-white: #fafafa;
     --color-dark-grey: #797979;
-    --color-grey: #CACACA;
-    --color-light-grey: #E8E6B9;
-    --color-midnight-blue: #2F2E41;
-    --color-dark-blue: #3F3D56;
-    --color-blue: #5666ED;
-    --color-light-blue: #BCB7FA;
-    --color-pastel-blue: #DED7FF;
-    --color-yellow: #FCA345;
-    --color-brilge: #FFFFEB;
-    --color-pink: #E466A8;
-    --color-light-pink: #FFBBBB;
+    --color-grey: #cacaca;
+    --color-light-grey: #e8e6b9;
+    --color-midnight-blue: #2f2e41;
+    --color-dark-blue: #3f3d56;
+    --color-blue: #5666ed;
+    --color-light-blue: #bcb7fa;
+    --color-pastel-blue: #ded7ff;
+    --color-yellow: #fca345;
+    --color-brilge: #ffffeb;
+    --color-pink: #e466a8;
+    --color-light-pink: #ffbbbb;
     --color-success: #107832;
-    --color-failure: #E3423C;
-    --color-theme-bg: #BBC2FA;
-    --color-theme-active: #E0E3FF;
+    --color-failure: #e3423c;
+    --color-theme-bg: #bbc2fa;
+    --color-theme-active: #e0e3ff;
 
-    --color-span-s:rgba(225, 182, 182, 1);
+    --color-span-s: rgba(225, 182, 182, 1);
     --text-color: rgba(22, 22, 22, 1);
 
-    --header-primary-color: rgba(86,102,237,1);
-    --header-accent-color: rgba(255,182,182,1);
-    --header-hover: rgba(86,102,237,0.2);
+    --header-primary-color: rgba(86, 102, 237, 1);
+    --header-accent-color: rgba(255, 182, 182, 1);
+    --header-hover: rgba(86, 102, 237, 0.2);
 
     --option-accent-bg-color: rgba(86, 102, 237, 0.2);
     --option-primary-bg-color: rgba(250, 250, 250, 1);
@@ -138,15 +138,15 @@
 
     /* color-home */
     --block-learn-background: rgba(47, 46, 65, 1);
-    --block-pay-background:rgb(255, 255, 255);
-    --block-pay-text:rgba(22, 22, 22, 1);
-    --home-4-stepNumber-color:rgba(47, 46, 65, 1);
-    --color-number-stepNumber:rgba(250, 250, 250, 1);
+    --block-pay-background: rgb(255, 255, 255);
+    --block-pay-text: rgba(22, 22, 22, 1);
+    --home-4-stepNumber-color: rgba(47, 46, 65, 1);
+    --color-number-stepNumber: rgba(250, 250, 250, 1);
   }
 
   .dark {
     --background: rgba(47, 46, 65, 1);
-    --foreground: rgb(250, 250, 250);;
+    --foreground: rgb(250, 250, 250);
     --card: oklch(20% 0.05 260);
     --card-foreground: oklch(90% 0.02 260);
     --popover: oklch(20% 0.05 260);
@@ -164,9 +164,9 @@
     --ring: oklch(30% 0.05 260);
     --text-color: rgba(250, 250, 250, 1);
 
-    --header-primary-color: rgba(86,102,237,1);
-    --header-accent-color: rgba(255,182,182,1);
-    --header-hover: rgba(254,246,235,0.2);
+    --header-primary-color: rgba(86, 102, 237, 1);
+    --header-accent-color: rgba(255, 182, 182, 1);
+    --header-hover: rgba(254, 246, 235, 0.2);
 
     --option-accent-bg-color: rgba(86, 102, 237, 0.2);
     --option-primary-bg-color: rgba(63, 61, 86, 1);
@@ -234,21 +234,20 @@
     --second-accent-light-color: rgba(254, 246, 235, 1);
 
     /* color-home */
-    --block-learn-background: #5666ED33;
-    --block-pay-background:rgba(255, 255, 255);
-    --block-pay-text:rgba(22, 22, 22, 1);
-    --home-4-stepNumber-color:rgba(255, 255, 255);
-    --color-number-stepNumber:rgba(22, 22, 22, 1);
+    --block-learn-background: #5666ed33;
+    --block-pay-background: rgba(255, 255, 255);
+    --block-pay-text: rgba(22, 22, 22, 1);
+    --home-4-stepNumber-color: rgba(255, 255, 255);
+    --color-number-stepNumber: rgba(22, 22, 22, 1);
   }
 }
 
 @layer base {
   * {
     border-color: var(--border);
-    font-family:  Helvetica;
+    font-family: Helvetica;
   }
   body {
-    
     background-color: var(--background);
     color: var(--foreground);
     @apply overflow-x-hidden max-w-full;
