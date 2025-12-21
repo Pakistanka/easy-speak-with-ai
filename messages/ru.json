@@ -62,7 +62,7 @@
   "auth": {
     "title": "Добро пожаловать в EasySpeak!",
     "email": "Email",
-    "emailPlaceholder": "email@gmail.com",
+    "emailPlaceholder": "example@mail.com",
     "password": "Пароль",
     "passwordPlaceholder": "Пароль",
     "keepLoggedIn": "Запомнить меня",
