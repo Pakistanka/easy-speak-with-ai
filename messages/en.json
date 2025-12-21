@@ -17,17 +17,17 @@
     "wallet": "Crypto wallet",
     "buttons": {
       "signUp": "Sign up",
-      "logIn": "Log in", 
+      "logIn": "Log in",
       "logOut": "Log out"
     }
   },
   "navigation": {
     "features": "Features",
-    "howItWorks": "How it works", 
+    "howItWorks": "How it works",
     "contactUs": "Contact us",
     "faqs": "FAQs",
     "myProfile": "My profile",
-    "becomeAStudent": "Become a student", 
+    "becomeAStudent": "Become a student",
     "becomeATeacher": "Become a teacher",
     "support": "Support"
   },
@@ -57,6 +57,37 @@
       "desktopDescription": "Experience joyful learning with us, no matter where you are! Discover the freedom to learn on the go. With EasySpeak, dive into a world of knowledge anytime, anywhere. Join us in embracing learning beyond boundaries.",
       "getStarted": "Get started",
       "imageAlt": "Learning everywhere illustration"
+    }
+  },
+  "auth": {
+    "title": "Welcome to EasySpeak!",
+    "email": "Email",
+    "emailPlaceholder": "email@gmail.com",
+    "password": "Password",
+    "passwordPlaceholder": "Password",
+    "keepLoggedIn": "Keep me logged in",
+    "login": "Log In",
+    "loggingIn": "Logging in...",
+    "loginFailed": "Login failed. Please try again.",
+    "register": "Sign up",
+    "registering": "Creating account...",
+    "send": "Send",
+    "sending": "Sending...",
+    "forgotPassword": "Forgot password?",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Not account yet?",
+    "forgotDescription": "Please enter your email address below so we can send you a link to reset your password.",
+    "description": {
+      "agree": "By logging in or creating an account, you agree to our",
+      "terms": "Terms of Service",
+      "and": "and",
+      "privacy": "Privacy Policy"
+    },
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email must be in the format example@mail.com",
+      "passwordMinLength": "Password must be at least 8 characters",
+      "passwordRequired": "Password is required"
     }
   },
   "posts": {

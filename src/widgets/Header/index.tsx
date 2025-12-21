@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 import type { UserRole, NavItem } from '@/shared';
@@ -26,7 +26,7 @@ interface HeaderProps {
 }
 
 export default function Header({
-  isLoggedIn = true,
+  isLoggedIn = false,
   withLogo = true,
   role = 'teacher',
 }: HeaderProps) {
@@ -34,6 +34,11 @@ export default function Header({
   const n = useTranslations('navigation');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [settingsMenuOpen, setSettingsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log(settingsMenuOpen);
+  });
 
   // TO DO: ссылки
   const navConfig = useMemo(() => {
@@ -76,7 +81,6 @@ export default function Header({
   }, [isLoggedIn, role, n]);
 
   // TO DO: добавить модалку настроек
-  // TO DO: добавить обработку кликов на кнопки аутентификации
 
   return (
     <>
@@ -97,6 +101,7 @@ export default function Header({
                   setSettingsMenuOpen(true);
                 }}
                 className="hidden lg:block lg:hover:bg-[var(--header-hover)] lg:hover:outline-8 lg:hover:outline-offset-0 lg:hover:outline-[var(--header-hover)] rounded-[1px]"
+                type="button"
               >
                 <NavButton label={t('settings')} labelClassName="py-2" />
               </button>
@@ -120,6 +125,7 @@ export default function Header({
               setSettingsMenuOpen(true);
             }}
             className="flex gap-4 items-center"
+            type="button"
           >
             <NavButton
               label={t('settings')}
