@@ -70,26 +70,29 @@ export const Modal: React.FC<ModalProps> = ({
   return createPortal(
     <AnimatePresence mode="wait">
       {isOpen && (
-        <div className="fixed inset-0 z-[1000] flex items-center justify-center">
+        <div className="fixed inset-0 z-[1000] flex items-end justify-center">
           <motion.div
             ref={overlayRef}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/40"
+            className="fixed inset-0 bg-black/40 cursor-pointer"
           />
           <motion.div
             ref={contentRef}
-            layout
             role="dialog"
             aria-modal="true"
             aria-labelledby="dialog-title"
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            transition={{ duration: 0.2, layout: { duration: 0.3 } }}
-            className="relative z-[1001] p-5 lg:p-10 h-full lg:h-fit w-full max-w-lg shadow-2xl overflow-hidden bg-[var(--background)] text-[var(--text-color)]"
+            initial={{ y: '100%', opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: '100%', opacity: 0 }}
+            transition={{
+              type: 'spring',
+              damping: 25,
+              stiffness: 200,
+            }}
+            className="relative z-[1001] p-5 lg:p-10 h-full lg:h-fit w-full max-w-lg shadow-2xl overflow-hidden bg-[var(--background)] text-[var(--text-color)] m-[auto]"
           >
             {onBack && withCross && (
               <div className="mb-6 flex items-center justify-between">

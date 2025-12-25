@@ -6,12 +6,12 @@ export type TCheckboxUIProps = {
 } & React.ComponentPropsWithoutRef<'input'>;
 
 export const CheckboxUI: React.FC<TCheckboxUIProps> = memo(
-  ({ children, value, name, error, ...props }) => {
+  ({ children, value, name, error, className, ...props }) => {
     const inputId = `${name}_checkbox_item_with_value__${value}`;
 
     return (
       <div
-        className="flex relative w-fit gap-3 items-center cursor-pointer hover:opacity-75"
+        className={`${className} flex relative w-fit gap-3 items-center cursor-pointer hover:opacity-75`}
         key={inputId}
       >
         <div className="relative flex items-center justify-center">

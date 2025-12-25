@@ -66,7 +66,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       title={titles[step]}
     >
       <CurrentDescription className="text-xs text-(--input-placeholder) mb-6" />
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <StepWrapper key={step} keyName={step}>
           <CurrentStep onStepChange={handleChangeStep} />
         </StepWrapper>

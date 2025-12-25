@@ -68,11 +68,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ children }) => {
       />
 
       <div className="flex justify-between items-center">
-        <SmartField
-          name="keepLoggedIn"
-          title={t('keepLoggedIn')}
-          type="checkbox"
-        >
+        <SmartField name="keepLoggedIn" type="checkbox">
           {t('keepLoggedIn')}
         </SmartField>
         {children}

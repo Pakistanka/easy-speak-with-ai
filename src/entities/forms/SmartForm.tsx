@@ -22,7 +22,7 @@ export const SmartForm = <T extends FieldValues, TData, TError, TContext>({
   const onSubmit = (values: T) => {
     mutation.mutate(values, {
       onSuccess,
-      onError: () => {},
+      onError: () => {}, // когда будет апи, посмотреть как лучше прикреплять ошибки к полям
       onSettled,
     });
   };

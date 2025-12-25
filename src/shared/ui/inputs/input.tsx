@@ -9,7 +9,15 @@ export type TInputUIProps = {
 } & React.ComponentPropsWithoutRef<'input'>;
 
 export const InputUI: FC<TInputUIProps> = memo(
-  ({ title, placeholder, error, type = 'text', autoComplete, ...props }) => {
+  ({
+    title,
+    placeholder,
+    error,
+    type = 'text',
+    autoComplete,
+    className,
+    ...props
+  }) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     const isPasswordField = type === 'password';
@@ -20,7 +28,7 @@ export const InputUI: FC<TInputUIProps> = memo(
     }, []);
 
     return (
-      <>
+      <div className={className}>
         <label htmlFor={`${title}_input`} className="block mb-1 text-inherit">
           {title}
         </label>
@@ -68,7 +76,7 @@ export const InputUI: FC<TInputUIProps> = memo(
             </button>
           )}
         </div>
-      </>
+      </div>
     );
   }
 );

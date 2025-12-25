@@ -41,6 +41,9 @@
     "first": {
       "title": "Welcome to EasySpeak!",
       "subtitle": "Let's get started on your language-learning journey. Are you here to learn or teach?",
+      "validation": {
+        "roleRequired": "Please select one of the options to continue"
+      },
       "learnOption": {
         "title": "I'm here to learn",
         "description": "Explore lessons, book tutors, and enhance your language skills with personalized learning plans."
