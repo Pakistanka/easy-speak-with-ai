@@ -7,6 +7,9 @@ import type {
 } from 'react-hook-form';
 import { BiDollar } from 'react-icons/bi';
 
+export { CheckboxUI } from './checkbox';
+export { InputUI } from './input';
+
 interface InputProps {
   id: string;
   label: string;

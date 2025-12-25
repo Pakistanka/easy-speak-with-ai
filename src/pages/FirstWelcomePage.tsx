@@ -2,19 +2,52 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import z from 'zod';
+import { useMutation } from '@tanstack/react-query';
+import { zodResolver } from '@hookform/resolvers/zod';
 
-import { RadioButtonGroup, RadioButton } from '@/shared/ui/RadioButtonGroup';
 import { Button } from '@/shared';
+import { SmartField, SmartForm } from '@/entities/forms';
+
+const getOptions = (t: ReturnType<typeof useTranslations>) => {
+  return [
+    {
+      value: 'tutor',
+      title: t('learnOption.title'),
+      description: t('learnOption.description'),
+    },
+    {
+      value: 'teacher',
+      title: t('teachOption.title'),
+      description: t('teachOption.description'),
+    },
+  ];
+};
+
+const createWelcomeSchema = (t: ReturnType<typeof useTranslations>) =>
+  z.object({
+    role: z.string().min(1, t('validation.roleRequired')),
+  });
+
+type WelcomeFormValues = z.infer<ReturnType<typeof createWelcomeSchema>>;
 
 export default function FirstWelcomePage() {
   const t = useTranslations('welcome.first');
-  const [selectedValue, setSelectedValue] = useState<string | null>(null);
+  const options = getOptions(t);
+  const welcomeSchema = createWelcomeSchema(t);
 
-  const handleChooseClick = () => {
-    // TODO: Добавить логику обработки выбора
-    console.log('Выбран вариант:', selectedValue);
-  };
+  const mutation = useMutation({
+    mutationFn: async (data: WelcomeFormValues) => {
+      // Имитация задержки
+      await new Promise(resolve => {
+        setTimeout(resolve, 1500);
+      });
+
+      // eslint-disable-next-line no-console
+      console.log('API Welcome Success:', data);
+      return { role: data.role };
+    },
+  });
 
   return (
     <motion.div
@@ -64,52 +97,37 @@ export default function FirstWelcomePage() {
         z-1"
       />
 
-      <div className="space-y-[40px] z-3">
-        <div className="space-y-2 lg:text-center">
-          <h1 className="text-[27px] lg:text-4xl font-bold">{t('title')}</h1>
-          <p className="text-[16px] lg:text-[21px]">{t('subtitle')}</p>
+      <SmartForm
+        mutation={mutation}
+        formConfig={{
+          defaultValues: {
+            role: '',
+          },
+          resolver: zodResolver(welcomeSchema),
+        }}
+        onSuccess={data => {
+          // eslint-disable-next-line no-alert
+          alert(`Добро пожаловать ${data.role}`);
+        }}
+      >
+        <div className="space-y-[40px] z-3">
+          <div className="space-y-2 lg:text-center">
+            <h1 className="text-[27px] lg:text-4xl font-bold">{t('title')}</h1>
+            <p className="text-[16px] lg:text-[21px]">{t('subtitle')}</p>
+          </div>
+
+          <SmartField
+            name="role"
+            type="radio-group"
+            options={options}
+            className="flex flex-col gap-3"
+          />
         </div>
 
-        <RadioButtonGroup
-          defaultValue={selectedValue || undefined}
-          onValueChange={setSelectedValue}
-          className="space-y-4"
-        >
-          <RadioButton value="wantToLearn">
-            <div className="flex flex-col gap-2">
-              <span className="text-base font-bold">
-                {t('learnOption.title')}
-              </span>
-              <span className="text-base">{t('learnOption.description')}</span>
-            </div>
-          </RadioButton>
-
-          <RadioButton value="wantToTeach">
-            <div className="flex flex-col gap-2">
-              <span className="text-base font-bold">
-                {t('teachOption.title')}
-              </span>
-              <span className="text-base">{t('teachOption.description')}</span>
-            </div>
-          </RadioButton>
-        </RadioButtonGroup>
-      </div>
-
-      {/* <button
-        disabled={!selectedValue}
-        onClick={handleChooseClick}
-        className="z-3 w-full lg:w-auto lg:m-auto bg-[#5666ED] text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
-      >
-        {t('choose')}
-      </button> */}
-
-      <Button
-        disabled={!selectedValue}
-        onClick={handleChooseClick}
-        className="z-3"
-      >
-        {t('choose')}
-      </Button>
+        <Button type="submit" className="z-3">
+          {t('choose')}
+        </Button>
+      </SmartForm>
     </motion.div>
   );
 }

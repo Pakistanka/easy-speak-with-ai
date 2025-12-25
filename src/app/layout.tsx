@@ -7,7 +7,6 @@ import { QueryProvider } from '@/shared/providers/query';
 import { ThemeProvider } from '@/shared/providers/theme';
 import '@/shared/styles/globals.css';
 import type { ChildrenProps } from '@/shared/types';
-import MainNavbar from '@/widgets/Navbar';
 import MainFooter from '@/widgets/Footer';
 import type { TLocale } from '@/shared/lib/metadata';
 import { BASE_URL, generateUniversalMetadata } from '@/shared/lib/metadata';
@@ -76,6 +75,8 @@ export default async function RootLayout({ children }: ChildrenProps) {
             </QueryProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
+
+        <div id="modal-root" />
       </body>
     </html>
   );

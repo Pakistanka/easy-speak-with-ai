@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 import { NavButton } from './navButton';
 
-export type UserRole = 'teacher' | 'student' | 'admin' | 'guest';
+export type UserRole = 'teacher' | 'tutor' | 'admin' | 'guest';
 
 export interface NavItem {
   href: string;
