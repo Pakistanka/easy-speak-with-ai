@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 
 export default function DropdownList() {
+  const tForms = useTranslations('forms');
   const choice = [
     { value: 'english', label: 'English' },
     { value: 'french', label: 'French' },
@@ -11,8 +12,6 @@ export default function DropdownList() {
     { value: 'korean', label: 'Korean' },
     { value: 'spanish', label: 'Spanish' },
   ];
-
-  const tForms = useTranslations('forms');
 
   return (
     <>
@@ -29,7 +28,7 @@ export default function DropdownList() {
             border-black
             rounded-lg
             max-w-full
-            h-[44px]
+            h-11
             lg:w-[632px]
             transition-all 
             focus:outline-none 
