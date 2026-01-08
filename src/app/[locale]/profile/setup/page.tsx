@@ -1,11 +1,11 @@
 'use client';
 import { Button } from '@/shared';
-import DropDown from './select-list';
 import { useTranslations } from 'next-intl';
+import DropdownList from '@/shared/ui/DropdownList';
+import choice from './choice.js';
 
 export default function LanguageQuestions() {
   const t = useTranslations('profile.setup');
-
   return (
     // <div className="flex flex-col lg:flex-row justify-start lg:justify-center items-center lg:items-start w-full h-full min-h-screen p-4 lg:p-8">
     //   <div className="sticky top-8">
@@ -17,7 +17,7 @@ export default function LanguageQuestions() {
         <h2>{t('nameHeading')}</h2>
         <p>{t('nameSubheading')}</p>
       </div>
-      <DropDown />
+      <DropdownList options={choice} />
       <div
         className="
           button_nav 
