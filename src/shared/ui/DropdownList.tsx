@@ -1,17 +1,11 @@
 import { useTranslations } from 'next-intl';
 
-export default function DropdownList() {
+export default function DropdownList({
+  options,
+}: {
+  options: { value: string; label: string }[];
+}) {
   const tForms = useTranslations('forms');
-  const choice = [
-    { value: 'english', label: 'English' },
-    { value: 'french', label: 'French' },
-    { value: 'german', label: 'German' },
-    { value: 'hindi', label: 'Hindi' },
-    { value: 'indonesian', label: 'Indonesian' },
-    { value: 'japanese', label: 'Japanese' },
-    { value: 'korean', label: 'Korean' },
-    { value: 'spanish', label: 'Spanish' },
-  ];
 
   return (
     <>
@@ -38,7 +32,7 @@ export default function DropdownList() {
             hover:border-gray-400
           "
       >
-        {choice.map(el => (
+        {options.map(el => (
           <option key={el.value} value={el.value}>
             {el.label}
           </option>
