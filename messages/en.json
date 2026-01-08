@@ -17,17 +17,17 @@
     "wallet": "Crypto wallet",
     "buttons": {
       "signUp": "Sign up",
-      "logIn": "Log in", 
+      "logIn": "Log in",
       "logOut": "Log out"
     }
   },
   "navigation": {
     "features": "Features",
-    "howItWorks": "How it works", 
+    "howItWorks": "How it works",
     "contactUs": "Contact us",
     "faqs": "FAQs",
     "myProfile": "My profile",
-    "becomeAStudent": "Become a student", 
+    "becomeAStudent": "Become a student",
     "becomeATeacher": "Become a teacher",
     "support": "Support"
   },
@@ -138,5 +138,16 @@
     "blockStep2Description": "Discover a diverse range of lessons. For students, find the perfect teacher, and for teachers, showcase your lessons to connect with eager learners.",
     "blockStep3Title": "Start your journey to learn a new language",
     "blockStep3Description": "Finalize your connection by booking lessons (for students) or getting booked (for teachers). Pay with crypto and start the learning journey!"
+  },
+  "forms": {
+    "nameLabel": "Name/nickname"
+  },
+  "profile": {
+    "setup": {
+      "title": "What's your name?",
+      "description": "Please enter your name or nickname.",
+      "nameHeading": "What's your name?",
+      "nameSubheading": "Please enter your name or nickname."
+    }
   }
 }

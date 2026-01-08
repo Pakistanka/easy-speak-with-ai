@@ -46,7 +46,7 @@ export async function generateMetadata({
 }
 
 export default async function RootLayout({ children }: ChildrenProps) {
-  const locale = await getLocale(); // ← убрали отступ
+  const locale = await getLocale();
   const messages = await getMessages();
 
   return (
