@@ -1,7 +1,11 @@
 import { fetchApi } from '@/shared/api';
 
 export const postService = {
-  getPosts: async (query: string = '', category?: string, sortBy: string = 'newest') => {
+  getPosts: async (
+    query: string = '',
+    category?: string,
+    sortBy: string = 'newest'
+  ) => {
     const params = new URLSearchParams();
     if (query) params.append('query', query);
     if (category) params.append('category', category);
@@ -36,10 +40,13 @@ export const postService = {
     return response.json();
   },
 
-  updatePost: async (id: string, data: {
-    title?: string;
-    content?: string;
-  }) => {
+  updatePost: async (
+    id: string,
+    data: {
+      title?: string;
+      content?: string;
+    }
+  ) => {
     const response = await fetchApi(`/posts/${id}`, {
       method: 'PUT',
       body: JSON.stringify(data),

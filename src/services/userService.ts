@@ -27,11 +27,11 @@ export const userService = {
       page: page.toString(),
       limit: limit.toString(),
     });
-    
+
     const response = await fetchApi(`/users?${params.toString()}`, {
       method: 'GET',
     });
-    
+
     return response.json();
   },
 
@@ -39,7 +39,7 @@ export const userService = {
     const response = await fetchApi(`/users/${id}`, {
       method: 'GET',
     });
-    
+
     return response.json();
   },
 
@@ -48,7 +48,7 @@ export const userService = {
       method: 'POST',
       body: JSON.stringify(data),
     });
-    
+
     return response.json();
   },
 
@@ -57,7 +57,7 @@ export const userService = {
       method: 'PUT',
       body: JSON.stringify(data),
     });
-    
+
     return response.json();
   },
 
@@ -71,7 +71,7 @@ export const userService = {
     const response = await fetchApi('/users/me', {
       method: 'GET',
     });
-    
+
     return response.json();
   },
 };

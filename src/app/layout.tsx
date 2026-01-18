@@ -1,20 +1,25 @@
-import { fonts } from '@/shared/fonts';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { Toaster } from 'react-hot-toast';
 
+import { fonts } from '@/shared/fonts';
 import { QueryProvider } from '@/shared/providers/query';
 import { ThemeProvider } from '@/shared/providers/theme';
 import '@/shared/styles/globals.css';
 import type { ChildrenProps } from '@/shared/types';
-import MainNavbar from '@/widgets/Navbar';
 import MainFooter from '@/widgets/Footer';
-import { BASE_URL, generateUniversalMetadata, TLocale } from '@/shared/lib/metadata';
+import type { TLocale } from '@/shared/lib/metadata';
+import { BASE_URL, generateUniversalMetadata } from '@/shared/lib/metadata';
+import Header from '@/widgets/header';
 
-export async function generateMetadata({ params }: { params: { locale: TLocale } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: TLocale };
+}) {
   const metadata = await generateUniversalMetadata({
     locale: params.locale,
-    namespace: 'common'
+    namespace: 'common',
   });
 
   return {
@@ -29,9 +34,13 @@ export async function generateMetadata({ params }: { params: { locale: TLocale }
         { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/svg' },
       ],
       apple: [
-        { url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-      ]
-    }
+        {
+          url: '/icons/apple-touch-icon.png',
+          sizes: '180x180',
+          type: 'image/png',
+        },
+      ],
+    },
   };
 }
 
@@ -43,16 +52,15 @@ export default async function RootLayout({ children }: ChildrenProps) {
     <html lang={locale} suppressHydrationWarning className="overflow-x-hidden">
       <body
         className={`${fonts.helvetica} font-sans antialiased overflow-x-hidden`}
+        style={{ paddingTop: 'env(safe-area-inset-top)' }}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <QueryProvider>
               <div className="flex min-h-screen bg-[var(--background)] w-full overflow-x-hidden">
                 <div className="flex-1 flex flex-col w-full">
-                  <MainNavbar />
-                  <main className="flex-1 w-full overflow-x-hidden">
-                    {children}
-                  </main>
+                  <Header />
+                  <main className="flex-1 w-full">{children}</main>
                   <MainFooter />
                 </div>
               </div>
@@ -67,6 +75,8 @@ export default async function RootLayout({ children }: ChildrenProps) {
             </QueryProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
+
+        <div id="modal-root" />
       </body>
     </html>
   );
