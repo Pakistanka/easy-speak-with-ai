@@ -17,17 +17,17 @@
     "wallet": "Crypto wallet",
     "buttons": {
       "signUp": "Sign up",
-      "logIn": "Log in", 
+      "logIn": "Log in",
       "logOut": "Log out"
     }
   },
   "navigation": {
     "features": "Features",
-    "howItWorks": "How it works", 
+    "howItWorks": "How it works",
     "contactUs": "Contact us",
     "faqs": "FAQs",
     "myProfile": "My profile",
-    "becomeAStudent": "Become a student", 
+    "becomeAStudent": "Become a student",
     "becomeATeacher": "Become a teacher",
     "support": "Support"
   },
@@ -41,12 +41,15 @@
     "first": {
       "title": "Welcome to EasySpeak!",
       "subtitle": "Let's get started on your language-learning journey. Are you here to learn or teach?",
+      "validation": {
+        "roleRequired": "Please select one of the options to continue"
+      },
       "learnOption": {
         "title": "I'm here to learn",
         "description": "Explore lessons, book tutors, and enhance your language skills with personalized learning plans."
       },
       "teachOption": {
-        "title": "I'm here to teach", 
+        "title": "I'm here to teach",
         "description": "Share your expertise, connect with students, and guide them on their language-learning adventures."
       },
       "choose": "Choose"
@@ -57,6 +60,37 @@
       "desktopDescription": "Experience joyful learning with us, no matter where you are! Discover the freedom to learn on the go. With EasySpeak, dive into a world of knowledge anytime, anywhere. Join us in embracing learning beyond boundaries.",
       "getStarted": "Get started",
       "imageAlt": "Learning everywhere illustration"
+    }
+  },
+  "auth": {
+    "title": "Welcome to EasySpeak!",
+    "email": "Email",
+    "emailPlaceholder": "example@mail.com",
+    "password": "Password",
+    "passwordPlaceholder": "Password",
+    "keepLoggedIn": "Keep me logged in",
+    "login": "Log In",
+    "loggingIn": "Logging in...",
+    "loginFailed": "Login failed. Please try again.",
+    "register": "Sign up",
+    "registering": "Creating account...",
+    "send": "Send",
+    "sending": "Sending...",
+    "forgotPassword": "Forgot password?",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Not account yet?",
+    "forgotDescription": "Please enter your email address below so we can send you a link to reset your password.",
+    "description": {
+      "agree": "By logging in or creating an account, you agree to our",
+      "terms": "Terms of Service",
+      "and": "and",
+      "privacy": "Privacy Policy"
+    },
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email must be in the format example@mail.com",
+      "passwordMinLength": "Password must be at least 8 characters",
+      "passwordRequired": "Password is required"
     }
   },
   "posts": {
@@ -83,5 +117,60 @@
     "description": "Start building amazing web applications with our production-ready boilerplate featuring the latest technologies and best practices.",
     "getStarted": "Get Started",
     "learnMore": "Learn More"
+  },
+  "landing": {
+    "getInTouch": "Get in touch!",
+    "contactSupport": "Have a question or need support? Contact us!",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Write your name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Write your last name",
+    "email": "Email",
+    "emailPlaceholder": "email@gmail.com",
+    "message": "Message",
+    "messagePlaceholder": "Type your message…",
+    "termsAgreementBefore": "I fully agree to the ",
+    "termsAgreementLink": "Terms and Conditions",
+    "termsAgreementAfter": " stated.",
+    "termsAgreement": "I fully agree to the Terms and Conditions stated.",
+    "send": "Send",
+    "anyQuestions": "Any questions?",
+    "faqDescription": "Find answers to common questions about how our language learning application works, privacy, and cryptocurrency transactions.",
+    "howDoesItWork": "How does it work?",
+    "howDoesItWorkDesc": "Our language learning application provides a user-friendly platform for teachers and students to connect. It utilizes cryptocurrency payments for added privacy and security.",
+    "isAnonymous": "Is it anonymous?",
+    "isAnonymousDesc": "Yes, our application ensures anonymity by not requiring any banking information. You can enjoy the benefits of learning a new language without compromising your privacy.",
+    "howToMake": "How to make payments?",
+    "howToMakeAnswer": "...",
+    "canTrust": "Can I trust the platform?",
+    "canTrustAnswer": "can",
+    "howToGet": "How to get started?",
+    "howToGetAnswer": "get started",
+    "getStarted": "Get started",
+    "learnLanguageToday": "Learn a new language today",
+    "easySpeakDesc1": "Discover the power of EasySpeak and unlock your potential to speak confidently and fluently in a short amount of time. Join our community and start your journey to improved speaking skills today!",
+    "titleSection1_part1": "Learn languages easily with",
+    "titleSection1_letterE": "E",
+    "titleSection1_middle": "asy",
+    "titleSection1_letterS": "S",
+    "titleSection1_part2": "peak - start your journey today",
+    "descriptionSection1": "Our language learning application offers an anonymous and secure environment for teachers and students. With crypto payments, you can enjoy the benefits of a decentralized currency without the need for traditional banking information.",
+    "buttongetStarted": "Get started",
+    "blockPayTitle": "Pay with cryptocurrency",
+    "blockPayDescription": "Effortless transactions: embrace the future of payment",
+    "blockLearnTitle": "Learn languages anonymously",
+    "blockLearnDescription": "Experience the benefits of anonymous language learning",
+    "blockDiscoverTitle": "Discover the power of our app",
+    "blockDiscoverDescription": "Learn at your own pace with our easy-to-use interface",
+    "blockDiscoverBegin": "Begin your language journey today!",
+    "titleSection3": "Discover our innovative Language Learning App",
+    "descriptionSection3": "Our application offers a range of benefits for both teachers and students. Teachers can easily create and manage their language courses, while students can enjoy a seamless learning experience with speaking lessons and personalized feedback.",
+    "titleSection4": "Get started in 3 simple steps",
+    "blockStep1Title": "Join our language learning community today!",
+    "blockStep1Description": "Signing up is quick and easy. Begin your journey by creating a profile. The app helps students explore lessons and  teachers showcase their expertise.",
+    "blockStep2Title": "Explore lessons and connect with the right match",
+    "blockStep2Description": "Discover a diverse range of lessons. For students, find the perfect teacher, and for teachers, showcase your lessons to connect with eager learners.",
+    "blockStep3Title": "Start your journey to learn a new language",
+    "blockStep3Description": "Finalize your connection by booking lessons (for students) or getting booked (for teachers). Pay with crypto and start the learning journey!"
   }
 }

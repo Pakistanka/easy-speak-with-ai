@@ -1,25 +1,22 @@
-'use client';
-
-import React, { useContext } from 'react';
-import { RadioButtonGroupContext } from './RadioButtonGroup';
+import { useRadioContext } from './RadioContext';
 
 interface RadioButtonProps {
   value: string;
-  children: React.ReactNode;
   disabled?: boolean;
+  title?: string;
+  description?: string;
   className?: string;
+  error?: boolean;
 }
 
-export const RadioButton: React.FC<RadioButtonProps> = ({ 
-  value, 
-  children, 
-  disabled = false
+export const RadioButton: React.FC<RadioButtonProps> = ({
+  value,
+  disabled = false,
+  title,
+  description,
+  error,
 }) => {
-  const context = useContext(RadioButtonGroupContext);
-  
-  if (!context) {
-    throw new Error('RadioButton must be used within a RadioButtonGroup');
-  }
+  const context = useRadioContext();
 
   const { selectedValue, onValueChange } = context;
   const isSelected = selectedValue === value;
@@ -43,7 +40,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
     w-full
     text-left
     shadow-[var(--option-shadow)]
-    border-[var(--option-border-color)]
+    ${error ? 'border-[var(--input-error-color)]' : 'border-[var(--option-border-color)]'}
   `;
 
   const normalStyles = `
@@ -75,7 +72,14 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
         ${!isSelected && !disabled ? 'cursor-pointer' : ''}
       `}
     >
-      {children}
+      {title ? (
+        <div className="flex flex-col gap-2">
+          <span className="text-base font-bold">{title}</span>
+          <span className="text-base">{description}</span>
+        </div>
+      ) : (
+        <span className="text-base">{description}</span>
+      )}
     </button>
   );
 };

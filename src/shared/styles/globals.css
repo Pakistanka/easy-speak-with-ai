@@ -27,7 +27,7 @@
 @layer base {
   :root {
     --background: oklch(100% 0 0);
-    --foreground: oklch(25% 0.15 260);
+    --foreground: rgba(22, 22, 22, 1);
     --card: oklch(98% 0.01 260);
     --card-foreground: oklch(25% 0.15 260);
     --popover: oklch(98% 0.01 260);
@@ -43,13 +43,40 @@
     --border: oklch(88% 0.03 260);
     --input: oklch(88% 0.03 260);
     --ring: oklch(65% 0.2 270);
+    --color-span-e: rgba(86, 102, 237, 1);
 
+    --color-black: #161618;
+    --color-white: #fafafa;
+    --color-dark-grey: #797979;
+    --color-grey: #cacaca;
+    --color-light-grey: #e8e6b9;
+    --color-midnight-blue: #2f2e41;
+    --color-dark-blue: #3f3d56;
+    --color-blue: #5666ed;
+    --color-light-blue: #bcb7fa;
+    --color-pastel-blue: #ded7ff;
+    --color-yellow: #fca345;
+    --color-brilge: #ffffeb;
+    --color-pink: #e466a8;
+    --color-light-pink: #ffbbbb;
+    --color-success: #107832;
+    --color-failure: #e3423c;
+    --color-theme-bg: #bbc2fa;
+    --color-theme-active: #e0e3ff;
+
+    --color-span-s: rgba(225, 182, 182, 1);
     --text-color: rgba(22, 22, 22, 1);
-    --button-outline: rgba(86,102,237,1);
-    
-    --header-primary-color: rgba(86,102,237,1);
-    --header-accent-color: rgba(255,182,182,1);
-    --header-hover: rgba(86,102,237,0.2);
+
+    --input-placeholder: rgba(121, 121, 121, 1);
+    --input-bg: transparent;
+    --input-bg-autofill: rgba(86, 102, 237, 0.2);
+    --input-border-color: rgba(187, 194, 250, 1);
+    --input-border-focus: rgba(86, 102, 237, 1);
+    --input-error-color: rgba(231, 76, 60, 1);
+
+    --header-primary-color: rgba(86, 102, 237, 1);
+    --header-accent-color: rgba(255, 182, 182, 1);
+    --header-hover: rgba(86, 102, 237, 0.2);
 
     --option-accent-bg-color: rgba(86, 102, 237, 0.2);
     --option-primary-bg-color: rgba(250, 250, 250, 1);
@@ -115,11 +142,18 @@
     --second-accent-light-rotate: 150deg;
     --second-accent-light-blur: 50px;
     --second-accent-light-color: rgba(254, 246, 235, 1);
+
+    /* color-home */
+    --block-learn-background: rgba(47, 46, 65, 1);
+    --block-pay-background: rgb(255, 255, 255);
+    --block-pay-text: rgba(22, 22, 22, 1);
+    --home-4-stepNumber-color: rgba(47, 46, 65, 1);
+    --color-number-stepNumber: rgba(250, 250, 250, 1);
   }
 
   .dark {
     --background: rgba(47, 46, 65, 1);
-    --foreground: oklch(90% 0.02 260);
+    --foreground: rgb(250, 250, 250);
     --card: oklch(20% 0.05 260);
     --card-foreground: oklch(90% 0.02 260);
     --popover: oklch(20% 0.05 260);
@@ -137,11 +171,17 @@
     --ring: oklch(30% 0.05 260);
 
     --text-color: rgba(250, 250, 250, 1);
-    --button-outline: rgba(255, 182, 182, 1);
 
-    --header-primary-color: rgba(86,102,237,1);
-    --header-accent-color: rgba(255,182,182,1);
-    --header-hover: rgba(254,246,235,0.2);
+    --input-placeholder: rgba(202, 202, 202, 1);
+    --input-bg: rgba(63, 61, 86, 1);
+    --input-bg-autofill: rgba(86, 102, 237, 0.2);
+    --input-border-color: rgba(187, 194, 250, 1);
+    --input-border-focus: rgba(86, 102, 237, 1);
+    --input-border-error: rgba(231, 76, 60, 1);
+
+    --header-primary-color: rgba(86, 102, 237, 1);
+    --header-accent-color: rgba(255, 182, 182, 1);
+    --header-hover: rgba(254, 246, 235, 0.2);
 
     --option-accent-bg-color: rgba(86, 102, 237, 0.2);
     --option-primary-bg-color: rgba(63, 61, 86, 1);
@@ -149,7 +189,7 @@
     --option-shadow: 0px 4px 11.3px 0px rgba(71, 70, 116, 0.6);
 
     --first-primary-light-lg-w: 90%;
-    --first-primary-light-lg-h: 180%;
+    --first-primary-light-lg-h: 200%;
     --first-primary-light-lg-left: -15%;
     --first-primary-light-lg-top: -50%;
     --first-primary-light-lg-rotate: 70deg;
@@ -207,12 +247,20 @@
     --second-accent-light-rotate: 90deg;
     --second-accent-light-blur: 75px;
     --second-accent-light-color: rgba(254, 246, 235, 1);
+
+    /* color-home */
+    --block-learn-background: #5666ed33;
+    --block-pay-background: rgba(255, 255, 255);
+    --block-pay-text: rgba(22, 22, 22, 1);
+    --home-4-stepNumber-color: rgba(255, 255, 255);
+    --color-number-stepNumber: rgba(22, 22, 22, 1);
   }
 }
 
 @layer base {
   * {
     border-color: var(--border);
+    font-family: Helvetica;
   }
   body {
     background-color: var(--background);
@@ -221,5 +269,40 @@
   }
   html {
     @apply overflow-x-hidden max-w-full;
+  }
+}
+
+input[type='password']::-ms-reveal,
+input[type='password']::-ms-clear {
+  display: none;
+}
+
+/* Стили для автозаполнения в WebKit браузерах (Chrome, Safari, Edge) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--input-bg-autofill) inset !important;
+  border-color: var(--input-border-focus) !important;
+  background-color: var(--input-bg-autofill) !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+}
+
+/* Для Firefox */
+input:-moz-autofill,
+input:-moz-autofill:hover,
+input:-moz-autofill:focus,
+input:-moz-autofill:active {
+  background-color: var(--input-bg-autofill) !important;
+  box-shadow: 0 0 0 1000px var(--input-bg-autofill) inset !important;
+  border-color: var(--input-border-color) !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+}
+
+/* Современный подход с @supports */
+@supports (-webkit-touch-callout: none) {
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--input-bg-autofill) inset !important;
+    -webkit-text-fill-color: var(--text-color) !important;
   }
 }

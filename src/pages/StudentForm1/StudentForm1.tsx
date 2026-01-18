@@ -1,15 +1,17 @@
-import { useState, useEffect, ChangeEvent, JSX } from 'react';
+import type { ChangeEvent, JSX } from 'react';
+import { useState, useEffect } from 'react';
+
 import styles from './OnboardingPage.module.css';
 
 export default function OnboardingPage(): JSX.Element {
   const [name, setName] = useState<string>('');
   const [debouncedName, setDebouncedName] = useState<string>('');
-  
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedName(name);
     }, 1500);
-    
+
     return () => clearTimeout(timer);
   }, [name]);
 
@@ -27,19 +29,23 @@ export default function OnboardingPage(): JSX.Element {
 
   return (
     <div className={styles.container}>
-
-        <div className={styles.sidebar}>
+      <div className={styles.sidebar}>
         <div className={styles.sidebarContent}>
-
           <h1 className={styles.appTitle}>Easy Speak</h1>
-          
+
           <ul className={styles.featuresList}>
             <li className={styles.featureItem}>Your native language</li>
-            <li className={styles.featureItem}>The language you want to learn</li>
-            <li className={styles.featureItem}>Your current level of knowledge</li>
-            <li className={styles.featureItem}>The purpose of learning language</li>
+            <li className={styles.featureItem}>
+              The language you want to learn
+            </li>
+            <li className={styles.featureItem}>
+              Your current level of knowledge
+            </li>
+            <li className={styles.featureItem}>
+              The purpose of learning language
+            </li>
           </ul>
-          
+
           <div className={styles.sidebarFooter}>
             <p className={styles.footerText}>Taste {'>'}</p>
             <p className={styles.footerText}>Discard {'>'}</p>
@@ -47,7 +53,7 @@ export default function OnboardingPage(): JSX.Element {
             <p className={styles.copyright}>© 2022 All rights reserved.</p>
           </div>
         </div>
-        </div>
+      </div>
 
       <div className={styles.mainContent}>
         <header className={styles.header}>
@@ -61,7 +67,7 @@ export default function OnboardingPage(): JSX.Element {
         <main className={styles.main}>
           <h2 className={styles.sectionTitle}>What is your name/nickname?</h2>
           <p className={styles.subtitle}>Please, write your name or nickname</p>
-          
+
           <div className={styles.inputSection}>
             <label className={styles.inputLabel}>Name/nickname</label>
             <input
@@ -83,16 +89,14 @@ export default function OnboardingPage(): JSX.Element {
           <button className={styles.returnButton} onClick={handleReturn}>
             Return
           </button>
-          <button 
-            className={styles.nextButton} 
+          <button
+            className={styles.nextButton}
             onClick={handleNext}
             disabled={!debouncedName}
           >
             Next
           </button>
         </footer>
-
-        
       </div>
     </div>
   );

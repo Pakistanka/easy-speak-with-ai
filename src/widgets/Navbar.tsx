@@ -24,7 +24,10 @@ export default function MainNavbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[var(--background)]/[0.85] backdrop-blur-lg border-b border-[var(--border)] shadow-sm">
       <div className="container flex h-16 items-center justify-between px-4 sm:px-6 max-w-full">
-        <Link href={`/${currentLocale}`} className="flex items-center space-x-2">
+        <Link
+          href={`/${currentLocale}`}
+          className="flex items-center space-x-2"
+        >
           <span className="text-xl sm:text-2xl font-bold font-poppins bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] bg-clip-text text-transparent">
             EasySpeak
           </span>

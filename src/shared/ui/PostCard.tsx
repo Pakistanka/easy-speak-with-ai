@@ -1,9 +1,10 @@
-import { Badge } from '@/shared/ui/badge/badge';
 import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 import { CalendarIcon, Eye, MessageSquare } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { Badge } from '@/shared/ui/badge/badge';
 
 const Avatar = ({ src, alt, fallback, className = '' }: any) => {
   return (
@@ -106,7 +107,9 @@ export default function PostCard({
           <h2 className="text-xl font-semibold text-[var(--foreground)] mb-2 group-hover:text-[var(--primary)] transition-colors duration-200 line-clamp-2">
             {title}
           </h2>
-          <p className="text-[var(--muted-foreground)] mb-4 line-clamp-2">{excerpt}</p>
+          <p className="text-[var(--muted-foreground)] mb-4 line-clamp-2">
+            {excerpt}
+          </p>
         </Link>
 
         <div className="flex items-center justify-between mt-4 pt-4 border-t border-[var(--border)]">
