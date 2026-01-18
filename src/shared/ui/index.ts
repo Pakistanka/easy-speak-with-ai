@@ -14,3 +14,4 @@ export { Logo } from './Logo';
 export { Navigation } from './navigation/Navigation';
 export type { UserRole, NavItem } from './navigation/Navigation';
 export { NavButton } from './navigation/navButton';
+export { StepWrapper, Modal } from '@/shared/ui/modals';

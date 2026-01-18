@@ -1,23 +1,30 @@
 import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 
 import { Button } from '@/shared';
+
+import { AuthModal } from '../authModal';
+import type { AuthStep } from '../authModal/helpers';
 
 interface AuthButtonsProps {
   isLoggedIn: boolean;
   className?: string;
-  onLogin?: () => void;
-  onLogout?: () => void;
-  onSignUp?: () => void;
 }
 
 export const AuthButtons = ({
   isLoggedIn,
   className = '',
-  onLogin,
-  onLogout,
-  onSignUp,
 }: AuthButtonsProps) => {
   const t = useTranslations('header');
+  const [isOpen, setIsOpen] = useState(false);
+  const [step, setStep] = useState<AuthStep>('login');
+
+  const handleOpenAuth = (targetStep: AuthStep) => {
+    setStep(targetStep);
+    setIsOpen(true);
+  };
+
+  const onLogout = () => {};
 
   if (isLoggedIn) {
     return (
@@ -33,18 +40,33 @@ export const AuthButtons = ({
   }
 
   return (
-    <div className={`flex gap-4 lg:gap-2 ${className}`}>
-      <Button onClick={onSignUp} variant="primary" size="figma_md">
-        {t('buttons.signUp')}
-      </Button>
-      <Button
-        onClick={onLogin}
-        variant="outline"
-        size="figma_md"
-        className="border-[var(--button-outline)] bg-transparent text-4 text-[var(--text-color)]"
-      >
-        {t('buttons.logIn')}
-      </Button>
-    </div>
+    <>
+      <div className={`flex gap-4 lg:gap-2 ${className}`}>
+        <Button
+          onClick={() => {
+            handleOpenAuth('register');
+          }}
+          variant="primary"
+          size="figma_md"
+        >
+          {t('buttons.signUp')}
+        </Button>
+        <Button
+          onClick={() => {
+            handleOpenAuth('login');
+          }}
+          variant="outline"
+          size="figma_md"
+          className="border-[var(--button-outline)] bg-transparent text-4 text-[var(--text-color)]"
+        >
+          {t('buttons.logIn')}
+        </Button>
+      </div>
+      <AuthModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        initialStep={step}
+      />
+    </>
   );
 };
