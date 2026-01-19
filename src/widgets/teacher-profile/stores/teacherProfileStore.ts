@@ -1,109 +1,51 @@
+// widgets/teacher-profile/stores/teacherProfileStore.ts
 import { create } from 'zustand';
-import { TeacherProfile } from '../type/teacher';
-import { teacherProfileService } from '../services/teacherProfileService';
+import { mockTeacherProfile } from '@/widgets/teacher-profile/moks/teacherProfile'; // путь к мокам
 
-interface TeacherProfileStore {
-  profile: TeacherProfile | null;
+interface TeacherProfileState {
+  profile: any; // или используй тип TeacherProfile
   isLoading: boolean;
-  isEditing: boolean;
   error: string | null;
-  
-  // Actions
-  fetchProfile: (teacherId: string) => Promise<void>;
-  updateProfile: (teacherId: string, updates: Partial<TeacherProfile>) => Promise<void>;
-  setIsEditing: (isEditing: boolean) => void;
-  clearError: () => void;
-  reset: () => void;
+  formattedPrice: string;
+  fetchProfile: (id: string) => Promise<void>;
+  refetch: () => void;
 }
 
-const initialState = {
+export const useTeacherProfile = create<TeacherProfileState>((set, get) => ({
   profile: null,
-  isLoading: false,
-  isEditing: false,
+  isLoading: true, // начинаем с true
   error: null,
-};
+  formattedPrice: '',
 
-export const useTeacherProfileStore = create<TeacherProfileStore>((set, get) => ({
-  ...initialState,
+  fetchProfile: async (id: string) => {
+    console.log('fetchProfile called with id:', id);
 
-  fetchProfile: async (teacherId: string) => {
+    // Сначала показываем загрузку
     set({ isLoading: true, error: null });
-    
-    try {
-      const profile = await teacherProfileService.fetchProfile(teacherId);
-      set({ profile, isLoading: false });
-    } catch (error) {
-      set({ 
-        error: error instanceof Error ? error.message : 'Failed to load profile', 
-        isLoading: false 
-      });
-    }
+
+    // Имитация загрузки данных
+    setTimeout(() => {
+      try {
+        console.log('Setting mock data');
+        set({
+          profile: mockTeacherProfile,
+          isLoading: false,
+          formattedPrice: `$${mockTeacherProfile.price.toFixed(2)}`,
+        });
+      } catch (error) {
+        console.error('Error in fetchProfile:', error);
+        set({
+          error: 'Failed to load profile',
+          isLoading: false,
+        });
+      }
+    }, 500); // небольшая задержка для имитации
   },
 
-  updateProfile: async (teacherId: string, updates: Partial<TeacherProfile>) => {
-    set({ isLoading: true, error: null });
-    
-    try {
-      const updatedProfile = await teacherProfileService.updateProfile(teacherId, updates);
-      set({ 
-        profile: updatedProfile, 
-        isLoading: false,
-        isEditing: false 
-      });
-    } catch (error) {
-      set({ 
-        error: error instanceof Error ? error.message : 'Failed to update profile', 
-        isLoading: false 
-      });
-    }
+  refetch: () => {
+    console.log('refetch called');
+    const { fetchProfile } = get();
+    const teacherId = '1'; // или передавать параметром
+    fetchProfile(teacherId);
   },
-
-  setIsEditing: (isEditing: boolean) => set({ isEditing }),
-  
-  clearError: () => set({ error: null }),
-  
-  reset: () => set(initialState),
 }));
-
-// Hook для удобного использования
-export const useTeacherProfile = (teacherId?: string) => {
-  const { 
-    profile, 
-    isLoading, 
-    isEditing, 
-    error,
-    fetchProfile, 
-    updateProfile, 
-    setIsEditing,
-    clearError,
-    reset 
-  } = useTeacherProfileStore();
-
-  // Computed values
-  const formattedPrice = profile ? `${profile.currency} ${profile.price.toFixed(2)}` : '';
-  const ratingStars = profile ? '★'.repeat(Math.floor(profile.rating)) : '';
-
-  return {
-    // State
-    profile,
-    isLoading,
-    isEditing,
-    error,
-    
-    // Actions
-    updateProfile: (updates: Partial<TeacherProfile>) => 
-      teacherId ? updateProfile(teacherId, updates) : Promise.resolve(),
-    setIsEditing,
-    clearError,
-    reset,
-    
-    // Convenience methods
-    startEditing: () => setIsEditing(true),
-    stopEditing: () => setIsEditing(false),
-    refetch: () => teacherId ? fetchProfile(teacherId) : Promise.resolve(),
-    
-    // Computed values
-    formattedPrice,
-    ratingStars,
-  };
-};
