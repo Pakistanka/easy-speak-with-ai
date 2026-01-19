@@ -1,20 +1,25 @@
-import { fonts } from '@/shared/fonts';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { Toaster } from 'react-hot-toast';
 
+import { fonts } from '@/shared/fonts';
 import { QueryProvider } from '@/shared/providers/query';
 import { ThemeProvider } from '@/shared/providers/theme';
 import '@/shared/styles/globals.css';
 import type { ChildrenProps } from '@/shared/types';
-import MainNavbar from '@/widgets/Navbar';
 import MainFooter from '@/widgets/Footer';
+<<<<<<< HEAD
 import {
   BASE_URL,
   generateUniversalMetadata,
   TLocale,
 } from '@/shared/lib/metadata';
 import Header from '@/widgets/Header';
+=======
+import type { TLocale } from '@/shared/lib/metadata';
+import { BASE_URL, generateUniversalMetadata } from '@/shared/lib/metadata';
+import Header from '@/widgets/header';
+>>>>>>> 190266c55998084719284e60c8b1526aff669fa5
 
 export async function generateMetadata({
   params,
@@ -79,6 +84,8 @@ export default async function RootLayout({ children }: ChildrenProps) {
             </QueryProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
+
+        <div id="modal-root" />
       </body>
     </html>
   );

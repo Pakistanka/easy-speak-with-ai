@@ -4,11 +4,7 @@ export { userService } from './userService';
 export { authService } from './authService';
 
 // Export types
-export type {
-  User,
-  CreateUserData,
-  UpdateUserData,
-} from './userService';
+export type { User, CreateUserData, UpdateUserData } from './userService';
 
 export type {
   LoginCredentials,

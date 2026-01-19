@@ -95,7 +95,8 @@ const NotFoundContent = () => {
             Oops, Page Not Found
           </h2>
           <p className="text-[var(--muted-foreground)] max-w-md mx-auto">
-            The page you&apos;re looking for seems to have vanished. Let&apos;s get you back on track!
+            The page you&apos;re looking for seems to have vanished. Let&apos;s
+            get you back on track!
           </p>
         </motion.div>
 
