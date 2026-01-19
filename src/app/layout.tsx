@@ -9,13 +9,21 @@ import '@/shared/styles/globals.css';
 import type { ChildrenProps } from '@/shared/types';
 import MainNavbar from '@/widgets/Navbar';
 import MainFooter from '@/widgets/Footer';
-import { BASE_URL, generateUniversalMetadata, TLocale } from '@/shared/lib/metadata';
-import Header from '@/widgets/header';
+import {
+  BASE_URL,
+  generateUniversalMetadata,
+  TLocale,
+} from '@/shared/lib/metadata';
+import Header from '@/widgets/Header';
 
-export async function generateMetadata({ params }: { params: { locale: TLocale } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: TLocale };
+}) {
   const metadata = await generateUniversalMetadata({
     locale: params.locale,
-    namespace: 'common'
+    namespace: 'common',
   });
 
   return {
@@ -30,9 +38,13 @@ export async function generateMetadata({ params }: { params: { locale: TLocale }
         { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/svg' },
       ],
       apple: [
-        { url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-      ]
-    }
+        {
+          url: '/icons/apple-touch-icon.png',
+          sizes: '180x180',
+          type: 'image/png',
+        },
+      ],
+    },
   };
 }
 
@@ -52,9 +64,7 @@ export default async function RootLayout({ children }: ChildrenProps) {
               <div className="flex min-h-screen bg-[var(--background)] w-full overflow-x-hidden">
                 <div className="flex-1 flex flex-col w-full">
                   <Header />
-                  <main className="flex-1 w-full">
-                    {children}
-                  </main>
+                  <main className="flex-1 w-full">{children}</main>
                   <MainFooter />
                 </div>
               </div>

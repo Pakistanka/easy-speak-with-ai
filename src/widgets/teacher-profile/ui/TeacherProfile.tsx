@@ -5,6 +5,7 @@ import accentBg from '@/public/images/backgrounds/teacher-profile-accent.png';
 import { useTeacherProfile } from '../stores/teacherProfileStore';
 import { helvetica } from '@/shared/fonts';
 import { Button } from '@/shared';
+import FilterComponent from '@/widgets/filters/FilterComponent';
 
 const TeacherProfile = () => {
   const teacherId = '1';
