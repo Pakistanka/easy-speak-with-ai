@@ -67,6 +67,118 @@
     --color-span-s: rgba(225, 182, 182, 1);
     --text-color: rgba(22, 22, 22, 1);
 
+    --input-placeholder: rgba(121, 121, 121, 1);
+    --input-bg: transparent;
+    --input-bg-autofill: rgba(86, 102, 237, 0.2);
+    --input-border-color: rgba(187, 194, 250, 1);
+    --input-border-focus: rgba(86, 102, 237, 1);
+    --input-error-color: rgba(231, 76, 60, 1);
+
+    --header-primary-color: rgba(86, 102, 237, 1);
+    --header-accent-color: rgba(255, 182, 182, 1);
+    --header-hover: rgba(86, 102, 237, 0.2);
+
+    --option-accent-bg-color: rgba(86, 102, 237, 0.2);
+    --option-primary-bg-color: rgba(250, 250, 250, 1);
+    --option-border-color: rgba(233, 233, 233, 1);
+    --option-shadow: 0px 4px 8px 0px rgba(71, 70, 116, 0.3);
+
+    --first-primary-light-lg-w: 40%;
+    --first-primary-light-lg-h: 100%;
+    --first-primary-light-lg-left: 15%;
+    --first-primary-light-lg-top: -20%;
+    --first-primary-light-lg-rotate: 60deg;
+    --first-primary-light-lg-blur: 200px;
+    --first-primary-light-lg-color: rgba(187, 194, 250, 1);
+    --first-primary-light-w: 60%;
+    --first-primary-light-h: 90%;
+    --first-primary-light-left: -15%;
+    --first-primary-light-top: -15%;
+    --first-primary-light-rotate: 60deg;
+    --first-primary-light-blur: 150px;
+    --first-primary-light-color: rgba(187, 194, 250, 1);
+
+    --first-accent-light-lg-w: 40%;
+    --first-accent-light-lg-h: 120%;
+    --first-accent-light-lg-left: 45%;
+    --first-accent-light-lg-top: 15%;
+    --first-accent-light-lg-rotate: 75deg;
+    --first-accent-light-lg-blur: 50px;
+    --first-accent-light-lg-color: rgba(254, 246, 235, 1);
+    --first-accent-light-w: 50%;
+    --first-accent-light-h: 120%;
+    --first-accent-light-left: 45%;
+    --first-accent-light-top: 5%;
+    --first-accent-light-rotate: 75deg;
+    --first-accent-light-blur: 25px;
+    --first-accent-light-color: rgba(254, 246, 235, 1);
+
+    --second-primary-light-lg-w: 85%;
+    --second-primary-light-lg-h: 160%;
+    --second-primary-light-lg-left: -10%;
+    --second-primary-light-lg-top: -30%;
+    --second-primary-light-lg-rotate: -120deg;
+    --second-primary-light-lg-blur: 200px;
+    --second-primary-light-lg-color: rgba(187, 194, 250, 1);
+    --second-primary-light-w: 85%;
+    --second-primary-light-h: 180%;
+    --second-primary-light-left: -5%;
+    --second-primary-light-top: -60%;
+    --second-primary-light-rotate: -115deg;
+    --second-primary-light-blur: 150px;
+    --second-primary-light-color: rgba(187, 194, 250, 1);
+
+    --second-accent-light-lg-w: 100%;
+    --second-accent-light-lg-h: 60%;
+    --second-accent-light-lg-left: 0;
+    --second-accent-light-lg-top: 25%;
+    --second-accent-light-lg-rotate: 130deg;
+    --second-accent-light-lg-blur: 75px;
+    --second-accent-light-lg-color: rgba(254, 246, 235, 1);
+    --second-accent-light-w: 100%;
+    --second-accent-light-h: 100%;
+    --second-accent-light-left: 15%;
+    --second-accent-light-top: 25%;
+    --second-accent-light-rotate: 150deg;
+    --second-accent-light-blur: 50px;
+    --second-accent-light-color: rgba(254, 246, 235, 1);
+
+    /* color-home */
+    --block-learn-background: rgba(47, 46, 65, 1);
+    --block-pay-background: rgb(255, 255, 255);
+    --block-pay-text: rgba(22, 22, 22, 1);
+    --home-4-stepNumber-color: rgba(47, 46, 65, 1);
+    --color-number-stepNumber: rgba(250, 250, 250, 1);
+  }
+
+  .dark {
+    --background: rgba(47, 46, 65, 1);
+    --foreground: rgb(250, 250, 250);
+    --card: oklch(20% 0.05 260);
+    --card-foreground: oklch(90% 0.02 260);
+    --popover: oklch(20% 0.05 260);
+    --popover-foreground: oklch(90% 0.02 260);
+    --primary: oklch(100% 0.00011 271.152);
+    --primary-foreground: oklch(90% 0.02 260);
+    --secondary: oklch(40% 0.06 260);
+    --secondary-foreground: oklch(90% 0.02 260);
+    --muted: rgb(57, 57, 67);
+    --muted-foreground: oklch(65% 0.05 260);
+    --accent: oklch(75% 0.15 60);
+    --accent-foreground: oklch(90% 0.02 260);
+    --border: oklch(30% 0.04 260);
+    --input: oklch(30% 0.04 260);
+    --ring: oklch(30% 0.05 260);
+
+    --text-color: rgba(250, 250, 250, 1);
+
+    --input-placeholder: rgba(202, 202, 202, 1);
+    --input-bg: rgba(63, 61, 86, 1);
+    --input-bg-autofill: rgba(86, 102, 237, 0.2);
+    --input-border-color: rgba(187, 194, 250, 1);
+    --input-border-focus: rgba(86, 102, 237, 1);
+    --input-border-error: rgba(231, 76, 60, 1);
+
     --header-primary-color: rgba(86, 102, 237, 1);
     --header-accent-color: rgba(255, 182, 182, 1);
     --header-hover: rgba(254, 246, 235, 0.2);
