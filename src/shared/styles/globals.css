@@ -271,38 +271,3 @@
     @apply overflow-x-hidden max-w-full;
   }
 }
-
-input[type='password']::-ms-reveal,
-input[type='password']::-ms-clear {
-  display: none;
-}
-
-/* Стили для автозаполнения в WebKit браузерах (Chrome, Safari, Edge) */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px var(--input-bg-autofill) inset !important;
-  border-color: var(--input-border-focus) !important;
-  background-color: var(--input-bg-autofill) !important;
-  -webkit-text-fill-color: var(--text-color) !important;
-}
-
-/* Для Firefox */
-input:-moz-autofill,
-input:-moz-autofill:hover,
-input:-moz-autofill:focus,
-input:-moz-autofill:active {
-  background-color: var(--input-bg-autofill) !important;
-  box-shadow: 0 0 0 1000px var(--input-bg-autofill) inset !important;
-  border-color: var(--input-border-color) !important;
-  -webkit-text-fill-color: var(--text-color) !important;
-}
-
-/* Современный подход с @supports */
-@supports (-webkit-touch-callout: none) {
-  input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px var(--input-bg-autofill) inset !important;
-    -webkit-text-fill-color: var(--text-color) !important;
-  }
-}

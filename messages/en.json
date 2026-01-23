@@ -172,5 +172,16 @@
     "blockStep2Description": "Discover a diverse range of lessons. For students, find the perfect teacher, and for teachers, showcase your lessons to connect with eager learners.",
     "blockStep3Title": "Start your journey to learn a new language",
     "blockStep3Description": "Finalize your connection by booking lessons (for students) or getting booked (for teachers). Pay with crypto and start the learning journey!"
+  },
+  "forms": {
+    "nameLabel": "Name/nickname"
+  },
+  "profile": {
+    "setup": {
+      "title": "What's your name?",
+      "description": "Please enter your name or nickname.",
+      "nameHeading": "What's your name?",
+      "nameSubheading": "Please enter your name or nickname."
+    }
   }
 }

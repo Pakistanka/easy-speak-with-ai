@@ -8,11 +8,8 @@ import { ThemeProvider } from '@/shared/providers/theme';
 import '@/shared/styles/globals.css';
 import type { ChildrenProps } from '@/shared/types';
 import MainFooter from '@/widgets/Footer';
-import {
-  BASE_URL,
-  generateUniversalMetadata,
-  TLocale,
-} from '@/shared/lib/metadata';
+import type { TLocale } from '@/shared/lib/metadata';
+import { BASE_URL, generateUniversalMetadata } from '@/shared/lib/metadata';
 import Header from '@/widgets/Header';
 
 export async function generateMetadata({

@@ -24,9 +24,13 @@
     }
   },
   "include": [
-    "next-env.d.ts",
+    " .next/dev/types/**/*.ts ",
+    " .next/types/**/*.ts ",
     "**/*.ts",
     "**/*.tsx",
+    "next-env.d.ts",
+    "src/app/[locale]/profile/setup/choice.ts",
+    ".next/types/**/*.ts"
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "src/shared/ui/checkbocxs"
