@@ -169,6 +169,7 @@
     --border: oklch(30% 0.04 260);
     --input: oklch(30% 0.04 260);
     --ring: oklch(30% 0.05 260);
+
     --text-color: rgba(250, 250, 250, 1);
 
     --input-placeholder: rgba(202, 202, 202, 1);
